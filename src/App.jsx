@@ -12,7 +12,9 @@ import {
   ArrowLeft, 
   Lock, 
   ImageIcon,
-  ArrowUp
+  ArrowUp,
+  Menu,
+  X
 } from 'lucide-react';
 
 /* --- ERROR BOUNDARY --- */
@@ -70,7 +72,7 @@ function ScrollToTopButton() {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-neutral-900 text-white shadow-xl hover:bg-neutral-800 border border-neutral-700 active:scale-95 transition-all flex items-center justify-center"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-neutral-900 text-white shadow-xl hover:bg-neutral-800 border border-neutral-700 active:scale-95 transition-all flex items-center justify-center cursor-pointer"
     >
       <ArrowUp className="w-4 h-4" />
     </button>
@@ -206,7 +208,7 @@ const FLAGSHIP_2026_PROJECTS = [
     date: "2026",
     category: "Consumer Appliance",
     badge: "PRODUCTION ID / INJECTION DFM",
-    thumbId: "1",
+    thumbId: "28",
     heroId: "5",
     gallery: [
       { id: "9", caption: "Multi-Zone Centrifugal Impeller CAD Simulation" },
@@ -541,17 +543,25 @@ const ARCHIVE_PROJECTS = [
 
 const ALL_PROJECTS = [...FLAGSHIP_2026_PROJECTS, ...ARCHIVE_PROJECTS];
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION (WITH RESPONSIVE HAMBURGER MENU) --- */
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-neutral-100">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-        <Link to="/" className="text-xl font-medium tracking-tight text-neutral-900 hover:opacity-75 transition-opacity">
-          SAHITYA
+        <Link 
+          to="/" 
+          onClick={closeMenu}
+          className="text-xl font-medium tracking-tight text-neutral-900 hover:opacity-75 transition-opacity"
+        >
+          SAHITYA KASHYAP
         </Link>
         
-        <div className="flex items-center gap-8 md:gap-10">
-          <div className="hidden md:flex items-center gap-8 text-[13px] font-medium text-neutral-500 uppercase tracking-wider">
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-8 md:gap-10">
+          <div className="flex items-center gap-8 text-[13px] font-medium text-neutral-500 uppercase tracking-wider">
             <Link to="/" className="hover:text-neutral-900 transition-colors">Home</Link>
             <Link to="/commercial" className="hover:text-neutral-900 transition-colors">Commercial</Link>
             <Link to="/playground" className="hover:text-neutral-900 transition-colors">Playground</Link>
@@ -573,7 +583,75 @@ function Navbar() {
             Get in touch
           </a>
         </div>
+
+        {/* Mobile Hamburger Toggle Button */}
+        <div className="flex md:hidden items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            className="p-2 text-neutral-800 hover:text-black focus:outline-none cursor-pointer"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Drawer Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-b border-neutral-200 px-6 pt-4 pb-8 shadow-xl animate-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col space-y-4 font-mono text-sm tracking-wider uppercase text-neutral-700">
+            <Link 
+              to="/" 
+              onClick={closeMenu} 
+              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
+            >
+              [01. Home]
+            </Link>
+            <Link 
+              to="/commercial" 
+              onClick={closeMenu} 
+              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
+            >
+              [02. Commercial Hardware]
+            </Link>
+            <Link 
+              to="/playground" 
+              onClick={closeMenu} 
+              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
+            >
+              [03. Playground & Visual Lab]
+            </Link>
+            <Link 
+              to="/about" 
+              onClick={closeMenu} 
+              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
+            >
+              [04. About Sahitya]
+            </Link>
+            <a 
+              href="https://www.behance.net/sahityakashyap" 
+              target="_blank" 
+              rel="noreferrer" 
+              onClick={closeMenu}
+              className="py-2 flex items-center justify-between text-neutral-900 font-bold border-b border-neutral-100"
+            >
+              <span>Behance Portfolio</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+
+            {/* "Get in touch" Button inside Mobile Menu */}
+            <div className="pt-2">
+              <a 
+                href="mailto:design.er.saahi@gmail.com" 
+                onClick={closeMenu}
+                className="w-full text-center block text-xs font-sans font-semibold bg-neutral-900 text-white px-5 py-3 rounded-full hover:bg-neutral-800 active:scale-95 transition-all tracking-normal"
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
@@ -620,7 +698,7 @@ function Footer() {
           <p>© {new Date().getFullYear()} Sahitya Kashyap</p>
           <div className="flex gap-6 uppercase tracking-widest text-[10px]">
             <span>Portfolio v2.0</span>
-            <span>Tool Maker Turned Industrial Designer</span>
+            <span>Industrial Designer</span>
           </div>
         </div>
       </div>
@@ -628,19 +706,19 @@ function Footer() {
   );
 }
 
-/* --- PAGE 1: HOME --- */
+/* --- PAGE 1: HOME (CLEAN EDITORIAL HERO) --- */
 function HomePage() {
   return (
     <div>
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pt-24 pb-32">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-3 mb-8">
+          <div className="inline-flex items-center gap-2.5 mb-8">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
             </span>
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-              Currently working at Future Factory, Mumbai (June 2025 — Present)
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+              INDUSTRIAL DESIGNER @ FUTURE FACTORY, MUMBAI
             </p>
           </div>
           
@@ -650,7 +728,7 @@ function HomePage() {
           </h1>
           
           <p className="text-xl md:text-2xl text-neutral-500 max-w-3xl leading-relaxed font-light">
-            Tool maker turned industrial designer with strong design sensibility and rigorous technical knowledge. Bringing 4 years of Tool & Die precision to human-centric product design—bridging shopfloor manufacturing reality with refined consumer aesthetics.
+            Industrial designer translating complex human behaviors into refined physical products. Leveraging a foundation in Tool & Die precision to ensure that expressive forms, ergonomic interactions, and premium CMF translate flawlessly into high-volume manufacturing.
           </p>
         </div>
       </section>
@@ -793,14 +871,14 @@ function HomePage() {
           >
             <div className="inline-flex items-center gap-2 mb-4">
               <GraduationCapIcon className="w-4 h-4 text-neutral-300" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300">Tool Maker Roots</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300">Design Background</span>
             </div>
             <h4 className="text-xl font-medium text-white mb-2">About Sahitya</h4>
             <p className="text-neutral-400 text-xs leading-relaxed mb-6 font-light">
-              4-Year Tool & Die Making Diploma, DTU Design, CSWP Certified, Blender 3D, and Future Factory experience.
+              B.Des from DTU, Offsite Pro Chicago, CSWP Certified, Blender 3D, and Future Factory experience.
             </p>
             <div className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-white">
-              Read Experience <ArrowUpRight className="w-3.5 h-3.5" />
+              Read Profile <ArrowUpRight className="w-3.5 h-3.5" />
             </div>
           </Link>
         </div>
@@ -837,7 +915,7 @@ function ProjectDetailPage() {
         <div className="max-w-4xl">
           <button 
             onClick={() => navigate(-1)} 
-            className="group inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-neutral-400 hover:text-neutral-900 mb-12 transition-colors uppercase"
+            className="group inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-neutral-400 hover:text-neutral-900 mb-12 transition-colors uppercase cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back
           </button>
@@ -1119,7 +1197,7 @@ function PlaygroundPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const playgroundRenders = [
-    { id: "1", tag: "Blender Cycles", alt: "Refractive Optical Ribs & Light Bleed" },
+    { id: "1", tag: "Studio Portrait", alt: "Sahitya Kashyap CAD & Prototyping Workshop" },
     { id: "2", tag: "Grasshopper", alt: "Continuous Wave Toolpath Modulation" },
     { id: "3", tag: "SolidWorks", alt: "Dual-Durometer Co-Injection Grip" },
     { id: "4", tag: "CMF Study", alt: "Analogous Palette & SPI Polish Blocking" },
@@ -1192,65 +1270,87 @@ function PlaygroundPage() {
   );
 }
 
-/* --- PAGE 5: ABOUT ME (Cleaned Up Competencies + Exact Month-to-Month Timeline) --- */
+/* --- PAGE 5: ABOUT ME (ID-FIRST PEDIGREE & CRISP STUDIO PHOTO) --- */
 function AboutPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div>
-      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-20">
+      {/* Split About Header with Crisp 1.jpg Frame (Zero Fading Overlay) */}
+      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-16 md:pt-20 pb-20">
         <Link to="/" className="group inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-neutral-400 hover:text-neutral-900 mb-12 transition-colors uppercase">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to home
         </Link>
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-2 h-2 rounded-full bg-orange-500"></span>
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-              Tool Maker Turned Industrial Designer
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+          {/* Left Text Column */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2.5 mb-6">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
+              </span>
+              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+                Industrial Designer & Design Strategist
+              </p>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8 leading-[1.08]">
+              Human-centric design, <br />
+              <span className="text-neutral-400">engineered to be built.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-light">
+              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and category-defining hardware that manufacturers can produce without compromise.
             </p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8">
-            Precision at the intersection of <br />
-            <span className="text-neutral-400">machining and design.</span>
-          </h1>
-          <p className="text-2xl text-neutral-600 leading-relaxed font-light">
-            With 4 years of intensive Tool & Die making training followed by formal Industrial Design at DTU, I bridge shopfloor manufacturing reality with clean, human-centered consumer hardware aesthetics.
-          </p>
+
+          {/* Right Image Column: Clean, Crisp 1.jpg Studio Portrait (No Gradient Overlay) */}
+          <div className="lg:col-span-5">
+            <div className="w-full aspect-[4/3] lg:aspect-[16/13] rounded-2xl overflow-hidden shadow-sm border border-neutral-200 bg-neutral-100">
+              <ProjectImage 
+                id="1" 
+                altText="Sahitya Kashyap Studio CAD & Prototyping Setup" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
         </div>
       </header>
 
+      {/* Main Content Details */}
       <section className="bg-neutral-900 py-32 text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
+            {/* Left Column: ID-First Pedigree, Education & Skills */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Pedigree & Accolades</h2>
+                <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Design Pedigree & Honors</h2>
                 <p className="text-neutral-400 text-lg font-light leading-relaxed mb-6">
-                  Design decisions made in CAD directly affect mold longevity, cycle times, parting complexity, and tooling CAPEX. My shopfloor background ensures every draft angle and shutoff is intentional.
+                  Industrial design leadership driven by user empathy, visual form development, and tactical ergonomics. My foundation in toolmaking acts as a production accelerator—ensuring aesthetic visions survive the engineering handoff intact.
                 </p>
                 <div className="flex flex-wrap gap-2.5">
-                  <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">CSWP SolidWorks Pro</span>
-                  <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">CSWA Additive Mfg</span>
+                  <span className="px-3.5 py-1.5 border border-neutral-700 bg-neutral-800/60 rounded-full text-xs text-white font-mono font-medium">B.Des DTU Design</span>
+                  <span className="px-3.5 py-1.5 border border-neutral-700 bg-neutral-800/60 rounded-full text-xs text-white font-mono font-medium">Offsite Pro Chicago</span>
                   <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">WorldSkills Regional Gold</span>
                   <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">WorldSkills Delhi Gold</span>
-                  <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">B.Des DTU</span>
-                  <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">DITE Tool & Die</span>
+                  <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">CSWP SolidWorks Certified</span>
+                  <span className="px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs text-neutral-300 font-mono">CSWA Additive Mfg</span>
+                  <span className="px-3.5 py-1.5 border border-neutral-700/80 rounded-full text-xs text-neutral-400 font-mono">DITE Tool & Die (4-Yr)</span>
                 </div>
               </div>
 
-              {/* Education Card */}
+              {/* Education Card (ID Formal First) */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
-                  <GraduationCapIcon className="w-4 h-4 text-neutral-300" /> Formal Education
+                  <GraduationCapIcon className="w-4 h-4 text-neutral-300" /> Design Pedigree
                 </div>
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-white">Offsite Pro 2024</h5>
-                    <p className="text-neutral-400 text-xs">Advanced Design • Chicago, Illinois (June 2024 – Aug 2024)</p>
-                  </div>
-                  <div className="border-t border-neutral-700/50 pt-3">
                     <h5 className="font-medium text-white">Bachelors of Design (B.Des)</h5>
                     <p className="text-neutral-400 text-xs">Delhi Technological University (DTU) • Aug 2021 – May 2025</p>
+                  </div>
+                  <div className="border-t border-neutral-700/50 pt-3">
+                    <h5 className="font-medium text-white">Offsite Pro 2024</h5>
+                    <p className="text-neutral-400 text-xs">Advanced Industrial Design Intensive • Chicago, Illinois (June 2024 – Aug 2024)</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <h5 className="font-medium text-white">Diploma in Tool & Die Making (4-Year Program)</h5>
@@ -1259,27 +1359,27 @@ function AboutPage() {
                 </div>
               </div>
 
-              {/* Core Competencies (Harmonized, Cleaned-Up, No Distracting Highlights) */}
+              {/* Core Competencies (ID Leading) */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
-                  <WrenchIcon className="w-4 h-4 text-neutral-300" /> Core Competencies
+                  <WrenchIcon className="w-4 h-4 text-neutral-300" /> Design Competencies
                 </div>
                 <div className="space-y-4 text-xs">
                   <div>
-                    <span className="text-neutral-400 block mb-1">3D CAD & Computational Modeling</span>
-                    <p className="text-neutral-200 font-medium leading-relaxed">Rhino, Grasshopper, SolidWorks (CSWP), Autodesk Inventor, Fusion 360</p>
+                    <span className="text-neutral-400 block mb-1">Industrial Design & Form Development</span>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Form Semantics, User Ergonomics, CMF Strategy, Analogous Blocking, Clay & Visual Mockups</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
-                    <span className="text-neutral-400 block mb-1">Rapid Ideation & Advanced Visualization</span>
+                    <span className="text-neutral-400 block mb-1">Digital Ideation & Advanced Visualization</span>
                     <p className="text-neutral-200 font-medium leading-relaxed">Blender (Procedural Material Shading, Fast Form Ideation & Cycles Rendering), KeyShot Studio</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
-                    <span className="text-neutral-400 block mb-1">Manufacturing & Shopfloor DFM</span>
-                    <p className="text-neutral-200 font-medium leading-relaxed">DFM / DFA, Conformal Cooling, GD&T, Metal AM, Press Tools, Injection Moulds, Welding</p>
+                    <span className="text-neutral-400 block mb-1">Computational & Parametric CAD</span>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Rhino, Grasshopper (GhPython), SolidWorks (CSWP), Autodesk Inventor, Fusion 360</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
-                    <span className="text-neutral-400 block mb-1">Prototyping & Documentation</span>
-                    <p className="text-neutral-200 font-medium leading-relaxed">Illustrator, Photoshop, InDesign, SketchBook Pro, Rapid Laser & CNC Nesting</p>
+                    <span className="text-neutral-400 block mb-1">Manufacturing Realization (DFM/DFA)</span>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Injection Mould Core/Cavity, Undercut Mitigation, GD&T, Progressive Dies, Sheet Nesting</p>
                   </div>
                 </div>
               </div>
@@ -1363,7 +1463,7 @@ export default function App() {
         <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col">
           <div className="bg-neutral-900 py-1.5 text-center">
             <span className="text-white font-mono text-[9px] font-bold uppercase tracking-[0.3em]">
-              Website under construction, PLease visit my behance for my portfolio.
+              Website under construction, Please visit my behance for my portfolio.
             </span>
           </div>
           <Navbar />
