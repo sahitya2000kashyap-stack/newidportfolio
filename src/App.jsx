@@ -11,10 +11,17 @@ import {
   ArrowUpRight, 
   ArrowLeft, 
   Lock, 
-  ImageIcon,
-  ArrowUp,
-  Menu,
-  X
+  ImageIcon, 
+  ArrowUp, 
+  Menu, 
+  X,
+  CheckCircle2,
+  Sparkles,
+  Layers,
+  Wrench,
+  ShieldCheck,
+  EyeOff,
+  Quote
 } from 'lucide-react';
 
 /* --- ERROR BOUNDARY --- */
@@ -79,35 +86,77 @@ function ScrollToTopButton() {
   );
 }
 
-/* --- DIRECT STATIC IMPORTS (28 NON-REPEATING SLOTS) --- */
-import img1 from './assets/1.jpg';
-import img2 from './assets/2.jpg';
-import img3 from './assets/3.jpg';
-import img4 from './assets/4.jpg';
-import img5 from './assets/5.jpg';
-import img6 from './assets/6.jpg';
-import img7 from './assets/7.jpg';
-import img8 from './assets/8.jpg';
-import img9 from './assets/9.jpg';
-import img10 from './assets/10.jpg';
-import img11 from './assets/11.jpg';
-import img12 from './assets/12.jpg';
-import img13 from './assets/13.jpg';
-import img14 from './assets/14.jpg';
-import img15 from './assets/15.jpg';
-import img16 from './assets/16.jpg';
-import img17 from './assets/17.jpg';
-import img18 from './assets/18.jpg';
-import img19 from './assets/19.jpg';
-import img20 from './assets/20.jpg';
-import img21 from './assets/21.jpg';
-import img22 from './assets/22.jpg';
-import img23 from './assets/23.jpg';
-import img24 from './assets/24.jpg';
-import img25 from './assets/25.jpg';
-import img26 from './assets/26.jpg';
-import img27 from './assets/27.jpg';
-import img28 from './assets/28.jpg';
+/* --- DIRECT STATIC IMPORTS (CONVERTED STRICTLY TO .PNG) --- */
+import img1 from './assets/1.png';
+import img2 from './assets/2.png';
+import img3 from './assets/3.png';
+import img4 from './assets/4.png';
+import img5 from './assets/5.png';
+import img6 from './assets/6.png';
+import img7 from './assets/7.png';
+import img8 from './assets/8.png';
+import img9 from './assets/9.png';
+import img10 from './assets/10.png';
+import img11 from './assets/11.png';
+import img12 from './assets/12.png';
+import img13 from './assets/13.png';
+import img14 from './assets/14.png';
+import img15 from './assets/15.png';
+import img16 from './assets/16.png';
+import img17 from './assets/17.png';
+import img18 from './assets/18.png';
+import img19 from './assets/19.png';
+import img20 from './assets/20.png';
+import img21 from './assets/21.png';
+import img22 from './assets/22.png';
+import img23 from './assets/23.png';
+import img24 from './assets/24.png';
+import img25 from './assets/25.png';
+import img26 from './assets/26.png';
+import img27 from './assets/27.png';
+import img28 from './assets/28.png';
+import img29 from './assets/29.png';
+import img30 from './assets/30.png';
+import img31 from './assets/31.png';
+import img32 from './assets/32.png';
+import img33 from './assets/33.png';
+import img34 from './assets/34.png';
+import img35 from './assets/35.png';
+import img36 from './assets/36.png';
+import img37 from './assets/37.png';
+import img38 from './assets/38.png';
+import img39 from './assets/39.png';
+import img40 from './assets/40.png';
+import img41 from './assets/41.png';
+import img42 from './assets/42.png';
+import img43 from './assets/43.png';
+import img44 from './assets/44.png';
+import img45 from './assets/45.png';
+import img46 from './assets/46.png';
+import img47 from './assets/47.png';
+import img48 from './assets/48.png';
+import img49 from './assets/49.png';
+import img50 from './assets/50.png';
+import img51 from './assets/51.png';
+import img52 from './assets/52.png';
+import img53 from './assets/53.png';
+import img54 from './assets/54.png';
+import img55 from './assets/55.png';
+import img56 from './assets/56.png';
+import img57 from './assets/57.png';
+import img58 from './assets/58.png';
+import img59 from './assets/59.png';
+import img60 from './assets/60.png';
+import img61 from './assets/61.png';
+import img62 from './assets/62.png';
+import img63 from './assets/63.png';
+import img64 from './assets/64.png';
+import img65 from './assets/65.png';
+import img66 from './assets/66.png';
+import img67 from './assets/67.png';
+import img68 from './assets/68.png';
+import img69 from './assets/69.png';
+import img70 from './assets/70.png';
 
 const imageMap = {
   "1": img1, "2": img2, "3": img3, "4": img4, "5": img5,
@@ -115,7 +164,15 @@ const imageMap = {
   "11": img11, "12": img12, "13": img13, "14": img14, "15": img15,
   "16": img16, "17": img17, "18": img18, "19": img19, "20": img20,
   "21": img21, "22": img22, "23": img23, "24": img24, "25": img25,
-  "26": img26, "27": img27, "28": img28
+  "26": img26, "27": img27, "28": img28, "29": img29, "30": img30,
+  "31": img31, "32": img32, "33": img33, "34": img34, "35": img35,
+  "36": img36, "37": img37, "38": img38, "39": img39, "40": img40,
+  "41": img41, "42": img42, "43": img43, "44": img44, "45": img45,
+  "46": img46, "47": img47, "48": img48, "49": img49, "50": img50,
+  "51": img51, "52": img52, "53": img53, "54": img54, "55": img55,
+  "56": img56, "57": img57, "58": img58, "59": img59, "60": img60,
+  "61": img61, "62": img62, "63": img63, "64": img64, "65": img65,
+  "66": img66, "67": img67, "68": img68, "69": img69, "70": img70
 };
 
 function ProjectImage({ id, altText, className = "" }) {
@@ -123,11 +180,12 @@ function ProjectImage({ id, altText, className = "" }) {
 
   if (!src) {
     return (
-      <div className={`bg-neutral-100 flex flex-col items-center justify-center text-center p-6 w-full h-full ${className}`}>
+      <div className={`bg-neutral-100 flex flex-col items-center justify-center text-center p-6 w-full h-full border border-dashed border-neutral-300 rounded-xl ${className}`}>
         <ImageIcon className="w-8 h-8 text-neutral-300 mb-2 stroke-1" />
-        <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-tighter">
-          {id ? `${id}.jpg` : "Render Preview"}
+        <span className="font-mono text-[11px] text-neutral-600 font-bold tracking-wider">
+          {id ? `${id}.png` : "Render Preview"}
         </span>
+        <span className="font-mono text-[9px] text-neutral-400 mt-0.5">src/assets/{id}.png</span>
       </div>
     );
   }
@@ -155,15 +213,6 @@ function WrenchIcon({ className = "w-4 h-4" }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-    </svg>
-  );
-}
-
-function SparklesIcon({ className = "w-4 h-4" }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-      <path d="M5 3v4M3 5h4M19 17v4M17 19h4"/>
     </svg>
   );
 }
@@ -210,29 +259,29 @@ const FLAGSHIP_2026_PROJECTS = [
     badge: "PRODUCTION ID / INJECTION DFM",
     thumbId: "28",
     heroId: "5",
-    gallery: [
-      { id: "9", caption: "Multi-Zone Centrifugal Impeller CAD Simulation" },
-      { id: "10", caption: "Structural Chassis Split & Anti-Vibration Bayonet Lock" },
-      { id: "11", caption: "2-Part Shell Tooling & Side Lifter Parting Action" }
+    deckBlocks: [
+      {
+        type: "text_top_image_bottom",
+        tag: "ACOUSTICS & ARCHITECTURE",
+        title: "Aero-Acoustic Louvre Topology & Air Vortex CFD",
+        desc: "Domestic purifiers generate unbearable high-pitch motor whistle at high CADR settings. Iterated 12 blade sweep angles to smooth turbulent intake vortices, yielding a 4.2 dB drop in motor whine.",
+        imageId: "9",
+        caption: "Centrifugal Aero-Impeller CFD Pressure Gradient Analysis"
+      },
+      {
+        type: "text_left_image_right",
+        tag: "TOOLING DFM REALIZATION",
+        title: "2-Part Shell Tooling & Side Lifter Mitigation",
+        desc: "Applied a uniform 2.2mm nominal wall thickness with internal structural flow ribs, keeping the exterior strictly toolable on a single-pull straight-action core and cavity mold.",
+        imageId: "10",
+        caption: "Split Chassis Rib Architecture & Bayonet Filter Latch"
+      }
     ],
     heroMetrics: [
       { label: "CADR Output", val: "450 m³/h" },
       { label: "Acoustics", val: "< 24 dB(A)" },
       { label: "Filter Swapping", val: "Magnetic Latch" },
       { label: "Year", val: "2026" }
-    ],
-    brief: "To architect a high-volume domestic air filtration unit balancing 360-degree acoustic damping with toolable, low-draft injection molding geometry.",
-    sections: [
-      {
-        step: "01",
-        title: "Aero-Acoustic Louvre Topology",
-        content: "Iterated 12 blade sweep angles to smooth turbulent intake vortices, yielding a 4.2 dB drop in high-frequency motor whine while maximizing particulate capture."
-      },
-      {
-        step: "02",
-        title: "Tooling-First Chassis Layout",
-        content: "Applied a uniform 2.2mm nominal wall thickness with strategic internal flow ribs, preventing sink marks on the visible consumer exterior."
-      }
     ],
     specs: {
       material: "Matte Polypropylene (PP) Copolymer + Anodized Aluminum Handle Rail",
@@ -252,29 +301,29 @@ const FLAGSHIP_2026_PROJECTS = [
     badge: "KINEMATICS / DIE-CAST & STAINLESS",
     thumbId: "2",
     heroId: "6",
-    gallery: [
-      { id: "12", caption: "Internal Aluminum Thermoblock Packaging Layout" },
-      { id: "13", caption: "Tactile Detent Rotary Dial & Mechanical Pressure Gauge" },
-      { id: "14", caption: "Die-Cast Zinc Group Head Finite Element Stress Analysis" }
+    deckBlocks: [
+      {
+        type: "text_left_image_right",
+        tag: "THERMAL PACKAGING",
+        title: "14cm Footprint Vertical Consolidation",
+        desc: "Consolidated the vibration pump, thermo-coil, and solenoid block into a rigid vertical stack, routing silicone hydraulic lines safely away from hot electrical coils.",
+        imageId: "12",
+        caption: "Internal Aluminum Thermoblock Hydraulic Packaging"
+      },
+      {
+        type: "text_right_image_left",
+        tag: "MECHANICAL HAPTICS",
+        title: "Spring Ball-Bearing Detent Selector",
+        desc: "Engineered custom stepped rotary dials featuring ball-bearing spring detents that deliver crisp mechanical feedback, anchored by a heavy die-cast Zamak counterweight base.",
+        imageId: "14",
+        caption: "Finite Element Stress Verification on Group Head Clamp"
+      }
     ],
     heroMetrics: [
       { label: "Pump Pressure", val: "15 Bar ULKA" },
       { label: "Warm-Up Time", val: "22 Seconds" },
       { label: "Chassis", val: "Die-Cast + 304 SS" },
       { label: "Year", val: "2026" }
-    ],
-    brief: "Distill professional manual espresso extraction into an ultra-narrow 14cm footprint with satisfying mechanical haptics and die-cast ballast.",
-    sections: [
-      {
-        step: "01",
-        title: "Internal Packaging Optimization",
-        content: "Consolidated the vibration pump, thermo-coil, and solenoid block into a rigid vertical stack, routing silicone hydraulic tubing away from hot zones."
-      },
-      {
-        step: "02",
-        title: "Haptic Detent Engineering & Digital Concepting",
-        content: "Utilized Blender for rapid digital surface sculpting prior to drafting mechanical SolidWorks assemblies with ball-bearing spring detents."
-      }
     ],
     specs: {
       material: "Die-Cast Zamak 3 internal spine, brushed 304 Stainless Steel cladding",
@@ -285,6 +334,7 @@ const FLAGSHIP_2026_PROJECTS = [
   }
 ];
 
+/* 4 Foundation Projects Formatted to Match the PDF Flow */
 const ARCHIVE_PROJECTS = [
   {
     slug: "scotch",
@@ -297,60 +347,112 @@ const ARCHIVE_PROJECTS = [
     badge: "CONSUMER HARDWARE / KINEMATICS",
     thumbId: "3",
     heroId: "7",
-    gallery: [
-      { id: "15", caption: "Notch & Pull Kinematic Mechanism Layout" },
-      { id: "16", caption: "Tabletop vs Handheld Ergonomic Testing Models" },
-      { id: "17", caption: "2-Plate Injection Mould Core & Cavity Schematics" }
-    ],
-    heroMetrics: [
-      { label: "Operation", val: "1-Handed" },
-      { label: "Mechanism", val: "Notch & Pull" },
-      { label: "Modes", val: "Dual (Desk & Hand)" },
-      { label: "Timeline", val: "9 Weeks" }
-    ],
-    brief: "To design a tape dispenser variant under the iconic Scotch brand language that requires strictly one hand to hold, dispense, notch, and cleanly cut tape.",
-    successCriteria: [
-      "Works reliably with just one hand",
-      "Satisfies brand value: Resourcefulness ('Using smarter with what you've got')",
-      "Maintains Scotch visual brand language (translucent shell, iconic plaid)"
-    ],
-    sections: [
+    metaHeader: {
+      timeline: "9 Weeks",
+      client: "Group Brainstorming / Individual Project",
+      focus: "Real World Sketching, Product Visualization"
+    },
+    deckBlocks: [
       {
-        step: "01",
-        title: "Problem Identification",
-        content: "The current Scotch Magic Tape dispenser requires two hands to use, forcing the user to take both hands off of their project which needs holding down. Standard heavy desktop blocks solve this partly but sacrifice mobility and cost efficiency."
+        type: "problem_breakdown",
+        tag: "PROBLEM IDENTIFICATION",
+        title: "The Two-Hand Bottleneck",
+        desc: "The current Scotch Magic Tape dispenser requires two hands to use, forcing the user to take both hands off of their project which needs holding down.",
+        steps: ["Release the tape", "Pull the tape", "Cut the tape"],
+        imageId: "10",
+        caption: "Two-Hand Operation Struggle on Active Craft Projects"
       },
       {
-        step: "02",
-        title: "Benchmarking & Ideation",
-        content: "Benchmarked competitor products and analogous mechanisms (jar openers, paper hole punchers, paint rollers, and tape guns). Generated 6 disparate approaches: cutting wheels, sticky-note pull, mechanical suction, cap cutters, and foot tethers."
+        type: "criteria_cards",
+        tag: "SUCCESS CRITERIA",
+        title: "How do we define success for this product?",
+        items: [
+          { title: "Works with just one hand", note: "Hold, dispense, notch & shear tape reliably" },
+          { title: "Satisfy Brand Values: Resourcefulness", note: "Using smarter with what you've got" },
+          { title: "Satisfy Brand Language", note: "Optical clarity, curved silhouettes, iconic tartan" }
+        ]
       },
       {
-        step: "03",
+        type: "text_top_image_bottom",
+        tag: "BENCHMARKING",
+        title: "Competitor & Analogous Products",
+        desc: "Studied existing market tape tools alongside analogous single-hand products (jar openers, hole punchers, pizza cutting wheels, and paint rollers) to isolate intuitive tactile cues.",
+        imageId: "14",
+        caption: "Benchmarking Existing & Analogous Physical Mechanisms"
+      },
+      {
+        type: "text_top_image_bottom",
+        tag: "IDEATION & EVALUATION",
+        title: "Generating Variety of Ideas",
+        desc: "Brainstormed 6 functional categories: Cutting Wheel, Stack Sticky-Note Style, Earbuds with Blade on Cap, Mechanical Suction, and Foot Tether.",
+        imageId: "15",
+        caption: "Ideation Matrix: Evaluating Ideas Based on Functionality and Cost"
+      },
+      {
+        type: "comparison_columns",
+        tag: "3 CHOSEN CONCEPTS",
         title: "Evaluation & Concept Selection",
-        content: "Evaluated 3 chosen concepts: 1. 'Fix It' (mechanical suction base), 2. 'Notch & Pull' (versatile tabletop & handheld hinge), 3. 'Cutter Cap' (portable sleeve). Concept 2 (Notch & Pull) was selected as it complied best with the brand core value of resourcefulness while keeping part count minimal."
+        concepts: [
+          { name: "1. Fix It", tag: "Mechanical Suction", pros: "Direct, easy to use, lower upfront cost", cons: "Cannot be used if surface is porous" },
+          { name: "2. Notch & Pull", tag: "Selected Concept", pros: "Versatile tabletop & handheld, minimal parts, highly intuitive", cons: "Requires calibrated shear geometry", selected: true },
+          { name: "3. Cutter Cap", tag: "Portable Sleeve", pros: "Highly compact, portable", cons: "More expensive, complex internal sliders" }
+        ]
       },
       {
-        step: "04",
-        title: "Refined Concept & Part Count Reduction",
-        content: "Transitioned from a multi-piece sliding mechanism to an elegant top notching hinge. Pressing the top lever engages the concealed micro-blade; a gentle wrist twist shears the tape cleanly without springs or metal screws."
+        type: "text_left_image_right",
+        tag: "REFINED CONCEPT",
+        title: "Refined Concept — Notch & Pull",
+        desc: "Reduced the number of parts by adopting a top notching hinge rather than a sliding cutter. Pressing down engages the concealed micro-blade; a light wrist flick tears the tape cleanly.",
+        imageId: "16",
+        caption: "Slide-to-Hinge Kinematic Conversion & Notching Tool Layout"
       },
       {
-        step: "05",
-        title: "Usability in Dual Modes",
-        content: "Tabletop Mode: Hold tape end -> Pull tape -> Press Notch Hinge -> Twist tape to tear off. Handheld Mode: Hold dispenser -> Roll tape directly on surface -> Press Notch Hinge -> Twist dispenser to tear off cleanly."
+        type: "usability_dual_mode",
+        tag: "USABILITY SKETCHES",
+        title: "Tabletop vs Handheld Dual-Mode Walkthrough",
+        imageId: "17",
+        caption: "Four-Step Usability Sequence in Both Desk and Handheld Modes"
       },
       {
-        step: "06",
-        title: "Form Development & Success Verification",
-        content: "Engineered dual ergonomic balance: anti-skid base geometry prevents rolling forward on tables; contoured thumb rests align pressure directly above the notching hinge in hand. Verified against all three initial success criteria."
+        type: "text_top_image_bottom",
+        tag: "BRAND ANALYSIS",
+        title: "Brand Language & Core Value Analysis",
+        desc: "Resourcefulness is a core value at Scotch: 'Resourcefulness is about adapting, making do and doing more with what you've got. It's not about using less, but using smarter.'",
+        imageId: "18",
+        caption: "Deconstructing Packaging Variants, Color Architecture & Price Points"
+      },
+      {
+        type: "text_left_image_right",
+        tag: "FORM DEVELOPMENT",
+        title: "Form — Making It Look More Scotch",
+        desc: "Integrated functional silhouettes: contoured thumb notch hinge, finger rest grooves, and an anti-rollover base lip that anchors horizontal pull forces.",
+        imageId: "19",
+        caption: "Form Iterations & Functional Feature Integration"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "20",
+        caption: "Dual-Mode Functional Hero Render"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "7",
+        caption: "Final Production Render in Translucent Optical Finish"
+      },
+      {
+        type: "success_verification",
+        tag: "EVALUATION",
+        title: "Did I hit the mark?",
+        desc: "Verified against the kickoff success criteria: single-hand operation, true adherence to brand resourcefulness, and iconic Scotch visual transparency.",
+        imageId: "25",
+        caption: "Previously Set Success Criteria Confirmed Hit"
       }
     ],
     specs: {
-      material: "Optical-grade Polycarbonate (PC) + Rubberised TPE Base Pad",
-      finish: "SPI-A2 High Polish Shell with VDI 24 Textured Finger Grip",
-      tooling: "2-plate injection mould with mechanical lifters for the inner spool hub",
-      software: "SolidWorks, Blender (Form Concepting), KeyShot Studio, Rapid Physical Cardboard & FDM Mockups"
+      material: "Optical-grade Polycarbonate (PC) + High-Tack Overmoulded TPE Grip",
+      finish: "SPI-A2 High Polish Body with VDI 24 Textured Thumb Indents",
+      tooling: "2-plate injection mould with dual mechanical slide lifters for core spool hub",
+      software: "SolidWorks, Blender (Ideation & Rendering), KeyShot Studio, Rapid 3D Mockups"
     }
   },
   {
@@ -364,56 +466,72 @@ const ARCHIVE_PROJECTS = [
     badge: "TOY ARCHITECTURE / LOW-CAPEX DFM",
     thumbId: "4",
     heroId: "8",
-    gallery: [
-      { id: "18", caption: "Sheet Nesting Optimization & Friction Fit Joints" },
-      { id: "19", caption: "Kinematic Turret 180° Rotational Pivot Assembly" },
-      { id: "20", caption: "Physical Playtesting with 2D Cartesian Coordinate Dice" }
-    ],
-    heroMetrics: [
-      { label: "Target Cost", val: "< ₹1,000 (₹350)" },
-      { label: "Tooling Capex", val: "Zero Injection" },
-      { label: "Age Group", val: "8 to 12 Years" },
-      { label: "Core Concept", val: "Cartesian Indexing" }
-    ],
-    brief: "Design an interactive STEAM-based educational toy for children aged 8 to 12 to be sold under Rs. 1000/-, engineered without expensive injection mold tooling.",
-    successCriteria: [
-      "Zero injection tooling CAPEX (<6% scrap allowance)",
-      "Highly interactive physical tactile mechanics without screen dependency",
-      "STEAM concept based: teaching 2D Cartesian coordinates (X, Y) and trajectory physics",
-      "Visually intuitive with distinct levels of difficulty"
-    ],
-    sections: [
+    metaHeader: {
+      timeline: "2 Months",
+      client: "Webby Toys — Freshmen Year Internship Project",
+      focus: "Toy Design, Design Process, Prototyping (Credits: Vikrant for Graphics)"
+    },
+    deckBlocks: [
       {
-        step: "01",
-        title: "User Research & Industry Insights",
-        content: "Parents and educators noted that modern toys often over-automate with lights and sounds, taking away active imagination. Research highlighted two core insights: simpler toys that are 'easy to understand, hard to master' are most desirable, and satisfying physical reset actions create an engrossing 'flow state'."
+        type: "quote_and_insights",
+        tag: "RESEARCH & INSIGHTS",
+        quote: "Toys are more interactive now. A lot of them take the imagination out of it. Everything has lights and sounds... kinda takes the creativity out of it.",
+        quoteAuthor: "Parent Interview (Male, 42, children aged 5, 8)",
+        insights: [
+          { label: "Low Initial Investment", text: "Zero injection molded parts to avoid heavy upfront tooling CAPEX." },
+          { label: "Easy to Understand, Hard to Master", text: "Simpler toys with progressive mastery are significantly more desirable." },
+          { label: "Satisfying Physical UX", text: "Physical reset actions create a high-engagement loop." },
+          { label: "State of Flow", text: "Correct challenge balance puts children into focused flow." }
+        ]
       },
       {
-        step: "02",
-        title: "Finding Opportunities & STEAM Concept",
-        content: "Mapped intersections between classic games (Pinball, Carrom) and educational curricula (spatial reasoning, 2D coordinate maps, trajectory angles). Created an opportunity matrix focused on coordinate indexing and manual aiming."
+        type: "text_top_image_bottom",
+        tag: "OPPORTUNITY MAPPING",
+        title: "Finding Opportunities in STEAM Curricula",
+        desc: "Mapped intersections between classic games (Pinball, Carrom) and childhood behaviors (spatial reasoning, 2D maps, trajectory angles) to anchor Cartesian coordinate math in physical play.",
+        imageId: "31",
+        caption: "Comprehensive Opportunity Matrix Across Science, Math & Spatial Reasoning"
       },
       {
-        step: "03",
-        title: "Prototyping & Mechanism Evolution",
-        content: "Iterated through 4 functional physical prototypes. Refined the sheet slot-and-tab interlocking joints, 180° rotational turret pivot, and marble trigger clearance to guarantee shot consistency across varied tabletop friction."
+        type: "text_left_image_right",
+        tag: "CONCEPT IDEATION",
+        title: "Mechanism Explorations & Trajectory Linkages",
+        desc: "Explored 3 concepts: Concept #1 Slider linkages, Concept #2 Light ray angles, and Concept #3 Rotating Turret Linkages. Concept #3 was selected for its direct tactile feedback.",
+        imageId: "32",
+        caption: "Mechanism Ideation Sheets & Aiming Detent Concepts"
       },
       {
-        step: "04",
-        title: "How to Play (Gameplay Flow)",
-        content: "Step 1: Throw the coordinate dice. Step 2: Calculate the coordinate intersection, orient the mechanical turret angle, aim & shoot. Step 3: Record score on friction-fit sliding markers."
+        type: "text_top_image_bottom",
+        tag: "RAPID PROTOTYPING",
+        title: "Prototyping & Structural Evolution",
+        desc: "Iterated through 4 functional working mockups to test friction fit tab-and-slot joints, 180° rotational turret tolerances, and consistent marble launch trajectories.",
+        imageId: "33",
+        caption: "Prototype Evolution Milestones Leading to the Final Functional Structure"
       },
       {
-        step: "05",
-        title: "Zero-Tooling Production Optimization",
-        content: "Constructed entirely from standardized sheet stock utilizing high-yield CNC laser cutting and die nesting optimization, achieving unit economics well below the sub-₹1000 retail price threshold."
+        type: "pure_render_spread",
+        imageId: "34",
+        caption: "Production Prototype Assembly & Score Board Layout"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "36",
+        caption: "Plan View Coordinate Grid: (X, Y) Numerical Trajectory Layout"
+      },
+      {
+        type: "text_top_image_bottom",
+        tag: "HOW TO PLAY",
+        title: "Play! Throw the Dice, Aim & Shoot, Record Score",
+        desc: "Step 1: Throw the dice -> Step 2: Find the coordinate intersection, adjust turret angle, aim & shoot -> Step 3: Slide the score detents.",
+        imageId: "38",
+        caption: "Tactile User Interaction Sequence & Physical Gameplay Verification"
       }
     ],
     specs: {
       material: "Precision FSC MDF / Pine composite sheets + Low-friction Delrin bushings",
       finish: "Direct UV Screen Printed Graphics with clear matte protective coat",
-      tooling: "High-yield CNC laser cutting and die nesting optimization (<6% scrap allowance)",
-      software: "Rhino 3D, Blender (Product Stills & Assembly Views), SolidWorks, AutoCAD Nesting"
+      tooling: "High-yield CNC laser cutting and die nesting optimization (<6% scrap rate)",
+      software: "Rhino 3D, Blender (Product Stills & Assembly Exploded Views), SolidWorks, AutoCAD"
     }
   },
   {
@@ -427,54 +545,97 @@ const ARCHIVE_PROJECTS = [
     badge: "COMPUTATIONAL ID / AM + INJECTION",
     thumbId: "21",
     heroId: "22",
-    gallery: [
-      { id: "23", caption: "Grasshopper Parametric Toolpath Computation" },
-      { id: "24", caption: "Non-Planar Curved Parting Line Enclosure CAD" },
-      { id: "25", caption: "Dual Potentiometer Arduino Breadboard & CCT Test" }
-    ],
-    heroMetrics: [
-      { label: "Print Mode", val: "Continuous Spiral" },
-      { label: "Tooling", val: "Non-Planar Parting" },
-      { label: "Controls", val: "Dual Analogue Knobs" },
-      { label: "Electronics", val: "Arduino / CCT Warm-Cold" }
-    ],
-    brief: "To harmonize computational algorithmic additive manufacturing with rigorous mass-production injection molding DFM and physical firmware prototyping.",
-    successCriteria: [
-      "Project Goal: Tangible analog tactile knobs & unobtrusive ambient domestic presence",
-      "Personal Goal: Tooling DFM constraints (zero undercuts) & GhPython parametric toolpaths"
-    ],
-    sections: [
+    metaHeader: {
+      timeline: "Independent Build",
+      client: "Skill Demonstration Project",
+      focus: "Computational Design, DFM Tooling, Physical Firmware"
+    },
+    deckBlocks: [
       {
-        step: "01",
-        title: "Form Ideation & Silhouette Evaluation",
-        content: "Explored over 20 distinct form silhouettes balancing minimalist aesthetics against intuitive tactile affordance. Selected an inviting split form pairing an organic diffuser with a grounded, toolable base."
+        type: "dual_goals",
+        tag: "PROJECT & PERSONAL GOALS",
+        title: "Balancing Tangible Touch with Algorithmic Craft",
+        projectGoals: [
+          { label: "Tangible Interactions", text: "Creating satisfying tactile analog knobs." },
+          { label: "Unobtrusive Aesthetic", text: "Design that blends quietly into domestic spaces." }
+        ],
+        personalGoals: [
+          { label: "Tooling & Manufacturing", text: "Designing with injection constraints to turn limitations into creative details." },
+          { label: "Computational Design", text: "Leveraging GhPython algorithms for seamless single-wall 3D printing." }
+        ]
       },
       {
-        step: "02",
-        title: "Generative Grasshopper Algorithm",
-        content: "Developed a custom Grasshopper/GhPython script translating mathematical wave sweeps into continuous single-line toolpaths. Designed specifically for single-walled 'Vase Mode' printing to eliminate travel seams (Z-scar) and optimize optical rib frequencies that eliminate LED glare."
+        type: "text_top_image_bottom",
+        tag: "FORM IDEATION",
+        title: "20+ Form Silhouette Iterations",
+        desc: "Explored varied profiles balancing minimal geometry with inviting analog affordances.",
+        imageId: "42",
+        caption: "Silhouette Form Explorations Balancing Base and Diffuser Ratios"
       },
       {
-        step: "03",
-        title: "Electronic Hardware & Firmware Prototyping",
-        content: "Assembled and programmed an onboard Arduino circuit reading dual analog potentiometers for independent, real-time control over lumen intensity (PWM) and warm-to-cold correlated color temperature (CCT)."
+        type: "text_left_image_right",
+        tag: "EVALUATION & PARTING LINES",
+        title: "Concept Evaluation & Parting Line Innovation",
+        desc: "Evaluated 3 concepts. Chose the split configuration with angled dial bosses, designing a non-planar 3D parting line to demold the bosses without costly side-actions.",
+        imageId: "43",
+        caption: "Evaluating Form, Affordance & Line-of-Draw Demold Constraints"
       },
       {
-        step: "04",
-        title: "Shopfloor Tooling & Undercut Mitigation",
-        content: "Applied Tool & Die principles to the lower chassis. Engineered non-planar curved parting lines around the rotary potentiometer bosses and power inputs, achieving clean zero-undercut line-of-draw demolding without internal mechanical side lifters."
+        type: "text_top_image_bottom",
+        tag: "DFM SECTION DRAFT",
+        title: "Development Sketch & Tooling Architecture",
+        desc: "Engineered single-wall spiral vase mode for the shade, quick-draw threads, and draft angles for injection molding.",
+        imageId: "44",
+        caption: "Cross-Sectional DFM Architecture for Injection & Additive Manufacturing"
       },
       {
-        step: "05",
-        title: "Physical Working Model Assembly",
-        content: "Fabricated full functional models: 3D printed translucent PETG lampshades, hand-finished ABS chassis with Mold-Tech MT-11010 fine texture, custom turned knurled knobs, and internal soldered driver electronics."
+        type: "text_top_image_bottom",
+        tag: "NATURAL INSPIRATION",
+        title: "Form Cues: Curls, Curves & Geometric Fluting",
+        desc: "Extracted surface wave mathematics from spiraling shells, cream swirls, and architectural facade ribbing.",
+        imageId: "45",
+        caption: "Inspiration Board Guiding the Parametric Mathematical Toolpaths"
+      },
+      {
+        type: "text_left_image_right",
+        tag: "COMPUTATIONAL DESIGN",
+        title: "Grasshopper Parametric Wave Algorithm",
+        desc: "Formulated a custom Grasshopper script that translates mathematical wave sweeps into continuous single-line G-code toolpaths.",
+        imageId: "46",
+        caption: "Grasshopper Visual Script for Continuous Toolpath Wave Modulation"
+      },
+      {
+        type: "text_top_image_bottom",
+        tag: "PROTOTYPING & WORKSHOP",
+        title: "Visual Optical Testing & Firmware Breadboards",
+        desc: "Printed test shades at varied frequencies to eliminate LED glare, paired with an Arduino circuit controlling PWM dimming and warm-to-cold CCT balance.",
+        imageId: "47",
+        caption: "Optical Shade Testing Samples & Arduino Potentiometer Breadboard Circuit"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "49",
+        caption: "DFM Line-of-Draw Exploration: Non-Planar Parting Line CAD"
+      },
+      {
+        type: "text_top_image_bottom",
+        tag: "PHYSICAL BUILD",
+        title: "Ender 3 Continuous Printing & Base Post-Processing",
+        desc: "Fabricated functional working models using continuous spiral PETG printing, hand-sprayed fine texture ABS bases, and turned knobs.",
+        imageId: "54",
+        caption: "Workshop Production: 3D Printing, Enclosure Sanding & Internal Soldering"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "50",
+        caption: "Final Production Model in Illuminated Ambient Environment"
       }
     ],
     specs: {
-      material: "Lampshade: Translucent PETG (AM). Base: Matte ABS Injection Resins",
-      finish: "Lampshade: Optical refractive ribs. Base: Mold-Tech MT-11010 Fine Matte",
-      tooling: "Complex curved parting line eliminating internal slide undercuts for DC barrel jack and dual potentiometer bosses",
-      software: "Rhino, Grasshopper (GhPython), Blender (Procedural Optical Shaders), SolidWorks, Arduino IDE"
+      material: "Shade: Translucent PETG (Continuous AM). Base: Matte ABS Injection Resins",
+      finish: "Diffuser: Optical refractive wave fluting. Base: Mold-Tech MT-11010 Fine Matte",
+      tooling: "Single-action 2-plate tool using non-planar curves to avoid costly side-actions",
+      software: "Rhino, Grasshopper (GhPython), Blender (Procedural Shaders), SolidWorks, Arduino"
     }
   },
   {
@@ -488,48 +649,77 @@ const ARCHIVE_PROJECTS = [
     badge: "BRAND DNA / KINEMATICS",
     thumbId: "26",
     heroId: "27",
-    gallery: [
-      { id: "28", caption: "Chromatic Blocking & Material Breakdown" },
-      { id: "10", caption: "Twist-and-Lock Detent Articulation Joint" },
-      { id: "13", caption: "PTC Ceramic Heating Core & Anti-Drool Silicone Nozzle" }
-    ],
-    heroMetrics: [
-      { label: "Articulations", val: "Pencil & Pistol" },
-      { label: "Charging", val: "USB-C Internal" },
-      { label: "CMF Style", val: "Dual-Tone Blocking" },
-      { label: "Timeline", val: "8 Weeks" }
-    ],
-    brief: "To translate the clean functional design language and 'Problem Solved / Buy once. Buy well.' philosophy of Joseph Joseph into workshop craft equipment.",
-    successCriteria: [
-      "Eliminate wrist fatigue during precision micro-craftwork",
-      "Integrate safe thermal management and anti-drool silicone protection",
-      "Translate Joseph Joseph CMF DNA: analogous palettes, functional material separation, recessed branding"
-    ],
-    sections: [
+    metaHeader: {
+      timeline: "8 Weeks",
+      client: "Personal Brand Translation Project",
+      focus: "Brand Language, CMF, Ergonomics & Kinematics"
+    },
+    deckBlocks: [
       {
-        step: "01",
-        title: "Brand Philosophy & DNA Analysis",
-        content: "Deconstructed Joseph Joseph's design language: functional material separation to divide visual weight, analogous color palettes with neutral contrast, clean flush transitions between materials, and soft geometric forms."
+        type: "brand_manifesto",
+        tag: "BRAND PHILOSOPHY",
+        title: "Joseph Joseph: Problem Solved / Buy Once. Buy Well.",
+        desc: "Joseph Joseph design philosophy keeps functionality at the heart of everything. Starting by identifying an everyday problem and devising durable, beautiful solutions following circular economy principles.",
+        imageId: "61",
+        caption: "Joseph Joseph Functional Innovation & Material Quality Benchmark"
       },
       {
-        step: "02",
-        title: "Problem Identification & Market Positioning",
-        content: "Identified widespread user pain points: standard pistol grips are ill-suited for precision work causing severe hand cramping; tools drool molten adhesive when idling; lack of temperature feedback; and awkward two-handed on/off switches."
+        type: "text_top_image_bottom",
+        tag: "BRAND DNA ANALYSIS",
+        title: "Deconstructing Design Language Markers",
+        desc: "Analyzed design hallmarks: functional material separation to divide visual weight, analogous color palettes with neutral contrast, clean flush transitions between materials, and soft geometric forms.",
+        imageId: "62",
+        caption: "Comprehensive Visual Brand Language & CMF Analysis Matrix"
       },
       {
-        step: "03",
-        title: "Kinematic Exploration: Mild to Wild",
-        content: "Explored 3 mechanism architectures: Concept 1 'Attach' (swappable modular handles), Concept 2 'Bend' (single plane hinge), and Concept 3 'Twist' (twist-and-lock detent joint). Concept 3 was selected for robust internal wire conduit protection and firm tactile locking."
+        type: "text_left_image_right",
+        tag: "OPPORTUNITY MAPPING",
+        title: "Market Positioning & User Mind Map",
+        desc: "Mapped user personas (DIY enthusiasts, electronics crafters) against functional requirements: preventing burn hazards, dual grip modes, thermal indication, and anti-drool protection.",
+        imageId: "64",
+        caption: "Ergonomic Pain Points Mind Map & Market Positioning Quadrant"
       },
       {
-        step: "04",
-        title: "Dual-Grip Ergonomic Articulation",
-        content: "The body pivots seamlessly between a low-angle Pencil Grip (optimal for fine craft and electronics assembly) and an upright Pistol Grip (for heavy continuous pressure). Contoured rests provide natural thumb indexing in both configurations."
+        type: "text_top_image_bottom",
+        tag: "PROBLEM IDENTIFICATION",
+        title: "5 Critical Hot-Glue Gun Pain Points",
+        desc: "1. Not meant for precision micro-work. 2. Some controls need two hands. 3. Not knowing when it's ready. 4. Frequent turning on/off. 5. Molten adhesive drools during idle rests.",
+        imageId: "65",
+        caption: "Step-by-Step Problem Identification & Hand Interaction Studies"
       },
       {
-        step: "05",
-        title: "Functional Hardware Refinement & Material Studies",
-        content: "Integrated an internal PTC ceramic heating core with automatic timeout, analog-style rocker switch with distinct color dot feedback, internal USB-C fast charging, and an anti-drool food-grade silicone nozzle shroud."
+        type: "text_left_image_right",
+        tag: "KINEMATICS: MILD TO WILD",
+        title: "Attach, Bend, and Twist Architectures",
+        desc: "Explored 3 mechanism architectures: Concept 1 'Attach' (swappable handles), Concept 2 'Bend' (single-plane hinge), and Concept 3 'Twist' (twist-and-lock detent joint). Concept 3 was selected for internal wire protection and tactile locking.",
+        imageId: "67",
+        caption: "Kinematic Exploration: Comparing Mechanical Hinge Concepts"
+      },
+      {
+        type: "text_top_image_bottom",
+        tag: "FORM EVOLUTION",
+        title: "Form Exploration Across Articulations",
+        desc: "Iterated handle proportions across straight-line, 45-degree, and 90-degree angles to ensure natural thumb indexing in both pencil and pistol configurations.",
+        imageId: "68",
+        caption: "Form Variations Investigating Balance in Pencil and Pistol Modes"
+      },
+      {
+        type: "text_left_image_right",
+        tag: "CONCEPT REFINEMENT",
+        title: "Haptic Detents, Rocker Switches & USB-C",
+        desc: "Integrated an internal PTC ceramic heating core, analog rocker switch with color dot feedback, internal USB-C fast charging, and an anti-drool food-grade silicone nozzle shroud.",
+        imageId: "74",
+        caption: "CMF Detailing: Soft-Touch Chassis, High-Gloss Actuators & Rocker Switches"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "75",
+        caption: "Hero Render: Articulating Craft Adhesive Tool in Pencil Grip Mode"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "78",
+        caption: "CMF Product Still: Balanced Dual-Tone Ergonomics and Silicone Shroud"
       }
     ],
     specs: {
@@ -543,7 +733,7 @@ const ARCHIVE_PROJECTS = [
 
 const ALL_PROJECTS = [...FLAGSHIP_2026_PROJECTS, ...ARCHIVE_PROJECTS];
 
-/* --- NAVIGATION (WITH RESPONSIVE HAMBURGER MENU) --- */
+/* --- NAVIGATION --- */
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
@@ -554,12 +744,12 @@ function Navbar() {
         <Link 
           to="/" 
           onClick={closeMenu}
-          className="text-xl font-medium tracking-tight text-neutral-900 hover:opacity-75 transition-opacity"
+          className="text-lg md:text-xl font-medium tracking-[0.08em] text-neutral-900 hover:opacity-75 transition-opacity"
         >
           SAHITYA KASHYAP
         </Link>
         
-        {/* Desktop Navigation Links */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 md:gap-10">
           <div className="flex items-center gap-8 text-[13px] font-medium text-neutral-500 uppercase tracking-wider">
             <Link to="/" className="hover:text-neutral-900 transition-colors">Home</Link>
@@ -600,34 +790,10 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-b border-neutral-200 px-6 pt-4 pb-8 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-4 font-mono text-sm tracking-wider uppercase text-neutral-700">
-            <Link 
-              to="/" 
-              onClick={closeMenu} 
-              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
-            >
-              [01. Home]
-            </Link>
-            <Link 
-              to="/commercial" 
-              onClick={closeMenu} 
-              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
-            >
-              [02. Commercial Hardware]
-            </Link>
-            <Link 
-              to="/playground" 
-              onClick={closeMenu} 
-              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
-            >
-              [03. Playground & Visual Lab]
-            </Link>
-            <Link 
-              to="/about" 
-              onClick={closeMenu} 
-              className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
-            >
-              [04. About Sahitya]
-            </Link>
+            <Link to="/" onClick={closeMenu} className="py-2 border-b border-neutral-100 hover:text-black transition-colors">[01. Home]</Link>
+            <Link to="/commercial" onClick={closeMenu} className="py-2 border-b border-neutral-100 hover:text-black transition-colors">[02. Commercial Hardware]</Link>
+            <Link to="/playground" onClick={closeMenu} className="py-2 border-b border-neutral-100 hover:text-black transition-colors">[03. Playground & Visual Lab]</Link>
+            <Link to="/about" onClick={closeMenu} className="py-2 border-b border-neutral-100 hover:text-black transition-colors">[04. About Sahitya]</Link>
             <a 
               href="https://www.behance.net/sahityakashyap" 
               target="_blank" 
@@ -638,8 +804,6 @@ function Navbar() {
               <span>Behance Portfolio</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
-
-            {/* "Get in touch" Button inside Mobile Menu */}
             <div className="pt-2">
               <a 
                 href="mailto:design.er.saahi@gmail.com" 
@@ -664,10 +828,10 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
           <div className="max-w-md">
             <h3 className="text-3xl font-medium text-neutral-900 mb-6 leading-tight">
-              Bridging craftsmanship and industrial precision.
+              Bridging design sensibility and technical vigour.
             </h3>
             <p className="text-neutral-500 text-lg leading-relaxed font-light">
-              Industrial Designer & Tool Maker based in Mumbai / Delhi. Designing mass-market appliances and precision hardware for global brands.
+              Industrial Designer based in Mumbai / Delhi. Designing mass-market appliances and precision hardware for global brands.
             </p>
           </div>
           
@@ -706,7 +870,7 @@ function Footer() {
   );
 }
 
-/* --- PAGE 1: HOME (CLEAN EDITORIAL HERO) --- */
+/* --- PAGE 1: HOME --- */
 function HomePage() {
   return (
     <div>
@@ -733,64 +897,73 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 1: 2026 FLAGSHIP PROJECTS */}
+      {/* SECTION 1: 2026 FLAGSHIP PROJECTS (LOCKED & BLURRED ACTIVE PREVIEWS) */}
       <section id="work" className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
         <div className="flex items-center justify-between mb-12 border-b border-neutral-100 pb-6">
           <div className="flex items-center gap-3">
             <span className="px-2.5 py-0.5 bg-neutral-900 text-white font-mono text-[10px] font-bold uppercase rounded">2026</span>
             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">Featured Flagship Works</h2>
           </div>
-          <span className="text-xs font-mono text-neutral-400">Current Competency</span>
+          <span className="text-xs font-mono text-neutral-400">In Active Development</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-20">
           {FLAGSHIP_2026_PROJECTS.map((proj) => (
-            <Link 
+            <div 
               key={proj.slug} 
-              to={`/project/${proj.slug}`}
-              className="group flex flex-col"
+              className="flex flex-col relative select-none cursor-not-allowed group"
             >
-              <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden mb-6 md:mb-8 relative rounded-2xl shadow-xs border border-neutral-150">
+              {/* Blurred Thumbnail with Lock Watermark Overlay */}
+              <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden mb-6 md:mb-8 relative rounded-2xl shadow-xs border border-neutral-200">
                 <ProjectImage 
                   id={proj.thumbId} 
                   altText={proj.title}
-                  className="group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  className="filter blur-[8px] opacity-60 scale-105 pointer-events-none" 
                 />
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm">
-                  <ArrowUpRight className="w-4 h-4 text-neutral-900" />
+                
+                {/* Clean Lock Badge Overlay */}
+                <div className="absolute inset-0 bg-neutral-900/10 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
+                  <div className="bg-neutral-900/90 border border-neutral-700 text-white px-4 py-2 rounded-full flex items-center gap-2 font-mono text-[10px] tracking-wider uppercase mb-1 shadow-sm">
+                    <Lock className="w-3.5 h-3.5 text-orange-400" />
+                    <span>In Active Development</span>
+                  </div>
+                  <span className="font-mono text-[9px] text-neutral-700 font-semibold tracking-wider">
+                    Unreleased Flagship Program
+                  </span>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[11px]">
-                <span className="font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2.5 py-0.5 rounded">
-                  {proj.category}
-                </span>
-                <span className="text-neutral-400 font-semibold">
-                  {proj.date}
-                </span>
-              </div>
+              {/* Blurred Metadata & Text */}
+              <div className="filter blur-[4px] opacity-40 pointer-events-none transition-all">
+                <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[11px]">
+                  <span className="font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2.5 py-0.5 rounded">
+                    {proj.category}
+                  </span>
+                  <span className="text-neutral-400 font-semibold">{proj.date}</span>
+                </div>
 
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-2 group-hover:text-neutral-600 transition-colors leading-snug">
-                  {proj.title}
-                </h3>
-                <p className="text-neutral-500 text-sm md:text-[15px] font-normal leading-relaxed">
-                  {proj.tagline}
-                </p>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-2 leading-snug">
+                    {proj.title}
+                  </h3>
+                  <p className="text-neutral-500 text-sm md:text-[15px] font-normal leading-relaxed">
+                    {proj.tagline}
+                  </p>
+                </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* SECTION 2: 4 PAST CASE STUDIES */}
+      {/* SECTION 2: 4 PAST CASE STUDIES (CLICKABLE FULL PRESENTATION DECKS) */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
         <div className="flex items-center justify-between mb-8 border-t border-neutral-100 pt-16 pb-4">
           <div className="flex items-center gap-3">
             <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 font-mono text-[10px] font-bold uppercase rounded">2023 — 2024</span>
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">Foundation Projects & Archive Studies</h3>
           </div>
-          <span className="text-xs text-neutral-400">04 Case Studies</span>
+          <span className="text-xs text-neutral-400">04 Presentation Case Studies</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
@@ -809,12 +982,8 @@ function HomePage() {
               </div>
               <div>
                 <div className="flex items-center justify-between mb-1.5 font-mono text-[10px]">
-                  <span className="font-bold uppercase tracking-wider text-neutral-500">
-                    {proj.category}
-                  </span>
-                  <span className="text-neutral-400">
-                    {proj.date}
-                  </span>
+                  <span className="font-bold uppercase tracking-wider text-neutral-500">{proj.category}</span>
+                  <span className="text-neutral-400">{proj.date}</span>
                 </div>
                 <h4 className="text-base md:text-lg font-medium text-neutral-900 mb-1 group-hover:text-neutral-600 transition-colors leading-snug">
                   {proj.title}
@@ -853,7 +1022,7 @@ function HomePage() {
             className="group block bg-white border border-neutral-200 rounded-2xl p-8 hover:border-neutral-900 transition-colors duration-300"
           >
             <div className="inline-flex items-center gap-2 mb-4">
-              <SparklesIcon className="w-4 h-4 text-neutral-900" />
+              <Sparkles className="w-4 h-4 text-neutral-900" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-900">Visual Lab</span>
             </div>
             <h4 className="text-xl font-medium text-neutral-900 mb-2">Design Playground</h4>
@@ -875,7 +1044,7 @@ function HomePage() {
             </div>
             <h4 className="text-xl font-medium text-white mb-2">About Sahitya</h4>
             <p className="text-neutral-400 text-xs leading-relaxed mb-6 font-light">
-              B.Des from DTU, Offsite Pro Chicago, CSWP Certified, Blender 3D, and Future Factory experience.
+              B.Des from DTU, Offsite Pro Chicago, CSWP Certified, Blender 3D, and Future Factory experience[cite: 8].
             </p>
             <div className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-white">
               Read Profile <ArrowUpRight className="w-3.5 h-3.5" />
@@ -887,7 +1056,7 @@ function HomePage() {
   );
 }
 
-/* --- PAGE 2: PROJECT DETAIL --- */
+/* --- PAGE 2: PRESENTATION-ALIGNED PROJECT CASE STUDY --- */
 function ProjectDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -911,37 +1080,45 @@ function ProjectDetailPage() {
 
   return (
     <article className="pb-32">
-      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-20">
+      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-16">
         <div className="max-w-4xl">
           <button 
             onClick={() => navigate(-1)} 
             className="group inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-neutral-400 hover:text-neutral-900 mb-12 transition-colors uppercase cursor-pointer"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to projects
           </button>
           
-          <div className="mb-6 flex gap-4">
-            <span className="px-3 py-1 bg-neutral-100 text-neutral-600 text-[10px] font-bold uppercase tracking-widest rounded-full">
+          <div className="mb-6 flex flex-wrap gap-3">
+            <span className="px-3 py-1 bg-neutral-100 text-neutral-700 text-[10px] font-bold uppercase tracking-widest rounded-full font-mono">
               {project.category}
             </span>
-            <span className="px-3 py-1 bg-neutral-100 text-neutral-600 text-[10px] font-bold uppercase tracking-widest rounded-full font-mono">
-              {project.date}
+            <span className="px-3 py-1 bg-neutral-100 text-neutral-700 text-[10px] font-bold uppercase tracking-widest rounded-full font-mono">
+              {project.date} // {project.timeline}
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8">
+          <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-6 leading-tight">
             {project.title}
           </h1>
           <p className="text-2xl text-neutral-500 leading-relaxed max-w-3xl font-light">
             {project.tagline}
           </p>
+
+          {project.metaHeader && (
+            <div className="mt-8 pt-6 border-t border-neutral-100 grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-neutral-500">
+              <div><span className="text-neutral-400 block text-[10px]">TIMELINE:</span> {project.metaHeader.timeline}</div>
+              <div><span className="text-neutral-400 block text-[10px]">CLIENT / CONTEXT:</span> {project.metaHeader.client}</div>
+              <div><span className="text-neutral-400 block text-[10px]">FOCUS:</span> {project.metaHeader.focus}</div>
+            </div>
+          )}
         </div>
         
         {project.heroMetrics && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-20 pt-12 border-t border-neutral-100">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-12 pt-10 border-t border-neutral-100 font-mono">
             {project.heroMetrics.map((m, idx) => (
               <div key={idx}>
-                <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">{m.label}</span>
+                <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest block mb-1">{m.label}</span>
                 <span className="text-lg font-medium text-neutral-900">{m.val}</span>
               </div>
             ))}
@@ -949,98 +1126,306 @@ function ProjectDetailPage() {
         )}
       </header>
 
-      <div className="w-full aspect-[21/9] bg-neutral-100 overflow-hidden mb-24">
-        <ProjectImage 
-          id={project.heroId} 
-          altText={`${project.title} Showcase`} 
-          className="w-full h-full"
-        />
+      {/* Main Wide Hero Banner */}
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-28">
+        <div className="w-full aspect-[21/9] bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 shadow-sm">
+          <ProjectImage 
+            id={project.heroId} 
+            altText={`${project.title} Hero Banner`} 
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32">
-          <div className="lg:col-span-8">
-            <div className="space-y-24">
-              
-              {project.brief && (
-                <section>
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-6 flex items-center gap-4">
-                    <span className="w-8 h-[1px] bg-neutral-200"></span> The Brief & Objectives
-                  </h3>
-                  <p className="text-xl text-neutral-700 leading-relaxed font-light mb-8">
-                    {project.brief}
-                  </p>
-                  {project.successCriteria && (
-                    <div className="p-6 bg-neutral-50 rounded-2xl border border-neutral-100">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 block mb-3">Success Criteria</span>
-                      <ul className="space-y-2">
-                        {project.successCriteria.map((c, i) => (
-                          <li key={i} className="text-sm text-neutral-600 flex items-start gap-2">
-                            <span className="text-neutral-400">•</span> {c}
-                          </li>
-                        ))}
-                      </ul>
+      {/* Dynamic Slide Blocks Engine Tailored Per Presentation */}
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-28">
+        {project.deckBlocks && project.deckBlocks.map((block, idx) => {
+          
+          if (block.type === 'problem_breakdown') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-10">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">// {block.tag}</span>
+                  <h3 className="text-3xl md:text-4xl font-medium text-neutral-900 mb-4">{block.title}</h3>
+                  <p className="text-lg text-neutral-600 font-light leading-relaxed mb-6">{block.desc}</p>
+                  
+                  {block.steps && (
+                    <div className="flex flex-wrap gap-3 font-mono text-xs">
+                      {block.steps.map((st, sIdx) => (
+                        <div key={sIdx} className="bg-neutral-100 border border-neutral-200 text-neutral-800 px-4 py-2 rounded-xl flex items-center gap-2">
+                          <span className="w-5 h-5 rounded-full bg-neutral-900 text-white flex items-center justify-center text-[10px] font-bold">{sIdx + 1}</span>
+                          <span>{st}</span>
+                        </div>
+                      ))}
                     </div>
                   )}
-                </section>
-              )}
+                </div>
 
-              {project.sections && project.sections.map((sec, idx) => (
-                <section key={idx}>
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-6 flex items-center gap-4">
-                    <span className="w-8 h-[1px] bg-neutral-200"></span> {sec.step || `0${idx + 1}`}. {sec.title}
-                  </h3>
-                  <p className="text-lg text-neutral-600 leading-relaxed font-light">
-                    {sec.content}
+                <div className="w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100">
+                  <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                </div>
+                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+              </section>
+            );
+          }
+
+          if (block.type === 'criteria_cards') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-10">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">// {block.tag}</span>
+                  <h3 className="text-3xl md:text-4xl font-medium text-neutral-900">{block.title}</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {block.items.map((it, iIdx) => (
+                    <div key={iIdx} className="p-8 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
+                      <div className="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-bold mb-6">
+                        0{iIdx + 1}
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-medium text-neutral-900 mb-2">{it.title}</h4>
+                        <p className="text-neutral-500 text-sm font-light leading-relaxed">{it.note}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          }
+
+          if (block.type === 'text_top_image_bottom') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-8">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">// {block.tag}</span>
+                  <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-3">{block.title}</h3>
+                  <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
+                </div>
+                <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
+                  <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                </div>
+                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+              </section>
+            );
+          }
+
+          if (block.type === 'text_left_image_right') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                  <div className="lg:col-span-5 space-y-4">
+                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block">// {block.tag}</span>
+                    <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 leading-snug">{block.title}</h3>
+                    <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
+                  </div>
+                  <div className="lg:col-span-7">
+                    <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
+                      <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (block.type === 'text_right_image_left') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                  <div className="lg:col-span-7 order-2 lg:order-1">
+                    <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
+                      <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                  </div>
+                  <div className="lg:col-span-5 order-1 lg:order-2 space-y-4">
+                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block">// {block.tag}</span>
+                    <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 leading-snug">{block.title}</h3>
+                    <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (block.type === 'comparison_columns') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-10">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">// {block.tag}</span>
+                  <h3 className="text-3xl font-medium text-neutral-900">{block.title}</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {block.concepts.map((c, cIdx) => (
+                    <div key={cIdx} className={`p-8 rounded-2xl border flex flex-col justify-between ${c.selected ? 'bg-neutral-900 text-white border-neutral-800 shadow-lg' : 'bg-neutral-50 text-neutral-900 border-neutral-200'}`}>
+                      <div>
+                        <div className="flex justify-between items-center mb-4 font-mono text-[10px]">
+                          <span className={`uppercase tracking-wider ${c.selected ? 'text-orange-400 font-bold' : 'text-neutral-400'}`}>{c.tag}</span>
+                          {c.selected && <span className="bg-orange-500 text-black px-2 py-0.5 rounded font-bold">SELECTED</span>}
+                        </div>
+                        <h4 className="text-2xl font-medium mb-4">{c.name}</h4>
+                        <div className="space-y-3 text-sm font-light">
+                          <p><strong className={c.selected ? 'text-white' : 'text-neutral-900'}>Pros:</strong> {c.pros}</p>
+                          <p><strong className={c.selected ? 'text-white' : 'text-neutral-900'}>Cons:</strong> {c.cons}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          }
+
+          if (block.type === 'pure_render_spread') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-12">
+                <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 shadow-sm">
+                  <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                </div>
+                {block.caption && (
+                  <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-3 text-center">
+                    {block.caption}
+                  </span>
+                )}
+              </section>
+            );
+          }
+
+          if (block.type === 'quote_and_insights') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="p-8 md:p-12 bg-neutral-50 rounded-3xl border border-neutral-200 mb-12">
+                  <Quote className="w-8 h-8 text-neutral-300 mb-4" />
+                  <p className="text-xl md:text-2xl text-neutral-800 font-light italic leading-relaxed mb-4">
+                    "{block.quote}"
                   </p>
-                </section>
-              ))}
-            </div>
-          </div>
-          
-          {project.specs && (
-            <div className="lg:col-span-4">
-              <div className="sticky top-32 p-8 bg-neutral-50 rounded-2xl border border-neutral-100">
-                <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-8">Technical Specs</h4>
-                <div className="space-y-8">
-                  <div>
-                    <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">Material</span>
-                    <p className="text-[13px] text-neutral-700 leading-relaxed font-medium">{project.specs.material}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">Finish</span>
-                    <p className="text-[13px] text-neutral-700 leading-relaxed font-medium">{project.specs.finish}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">Tooling</span>
-                    <p className="text-[13px] text-neutral-700 leading-relaxed font-medium">{project.specs.tooling}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">Software</span>
-                    <p className="text-[13px] text-neutral-700 leading-relaxed font-medium">{project.specs.software}</p>
-                  </div>
+                  <span className="font-mono text-xs text-neutral-400 block">— {block.quoteAuthor}</span>
                 </div>
-              </div>
-            </div>
-          )}
-        </div>
 
-        {project.gallery && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 mb-32">
-            {project.gallery.map((img, idx) => (
-              <div key={idx} className="group space-y-4">
-                <div className="aspect-square bg-neutral-100 overflow-hidden rounded-md">
-                  <ProjectImage 
-                    id={img.id} 
-                    altText={img.caption} 
-                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {block.insights.map((ins, inIdx) => (
+                    <div key={inIdx} className="p-6 bg-white rounded-2xl border border-neutral-200 shadow-xs">
+                      <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest block mb-2">0{inIdx + 1} / INSIGHT</span>
+                      <h4 className="text-base font-medium text-neutral-900 mb-2">{ins.label}</h4>
+                      <p className="text-neutral-500 text-xs font-light leading-relaxed">{ins.text}</p>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-[11px] font-medium text-neutral-400 uppercase tracking-[0.1em]">{img.caption}</p>
+              </section>
+            );
+          }
+
+          if (block.type === 'dual_goals') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-10">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">// {block.tag}</span>
+                  <h3 className="text-3xl font-medium text-neutral-900">{block.title}</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="p-8 bg-neutral-50 rounded-2xl border border-neutral-200">
+                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-6">// PROJECT GOALS</span>
+                    <div className="space-y-6">
+                      {block.projectGoals.map((pg, pIdx) => (
+                        <div key={pIdx}>
+                          <h4 className="text-lg font-medium text-neutral-900 mb-1">{pg.label}</h4>
+                          <p className="text-neutral-500 text-sm font-light leading-relaxed">{pg.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-8 bg-neutral-900 text-white rounded-2xl border border-neutral-800">
+                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-6">// PERSONAL GOALS</span>
+                    <div className="space-y-6">
+                      {block.personalGoals.map((pg, pIdx) => (
+                        <div key={pIdx}>
+                          <h4 className="text-lg font-medium text-white mb-1">{pg.label}</h4>
+                          <p className="text-neutral-400 text-sm font-light leading-relaxed">{pg.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (block.type === 'brand_manifesto') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                  <div className="lg:col-span-5 space-y-4">
+                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block">// {block.tag}</span>
+                    <h3 className="text-3xl font-medium text-neutral-900 leading-snug">{block.title}</h3>
+                    <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
+                  </div>
+                  <div className="lg:col-span-7">
+                    <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
+                      <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          return (
+            <section key={idx} className="border-t border-neutral-200 pt-16">
+              <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
+                <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
               </div>
-            ))}
+            </section>
+          );
+        })}
+
+        {/* Technical DFM Specifications Drawer */}
+        {project.specs && (
+          <div className="p-8 md:p-12 bg-neutral-900 text-white rounded-3xl border border-neutral-800 font-mono text-xs">
+            <div className="text-neutral-400 font-semibold mb-6 flex items-center gap-2">
+              <Wrench className="w-4 h-4 text-orange-400" />
+              <span>SHOPFLOOR DFM & TOOLING ARCHITECTURE</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div>
+                <span className="text-neutral-500 block mb-1">MATERIAL SPECIFICATION:</span>
+                <span className="text-neutral-200 font-medium leading-relaxed block">{project.specs.material}</span>
+              </div>
+              <div>
+                <span className="text-neutral-500 block mb-1">SURFACE & CMF:</span>
+                <span className="text-neutral-200 font-medium leading-relaxed block">{project.specs.finish}</span>
+              </div>
+              <div>
+                <span className="text-neutral-500 block mb-1">TOOLING ARCHITECTURE:</span>
+                <span className="text-neutral-200 font-medium leading-relaxed block">{project.specs.tooling}</span>
+              </div>
+              <div>
+                <span className="text-neutral-500 block mb-1">SOFTWARE & VISUALS:</span>
+                <span className="text-neutral-200 font-medium leading-relaxed block">{project.specs.software}</span>
+              </div>
+            </div>
           </div>
         )}
+
+        {/* Bottom Navigation */}
+        <div className="flex justify-between items-center pt-8 border-t border-neutral-200 font-mono text-xs">
+          <Link to="/" className="text-neutral-500 hover:text-neutral-900 underline">
+            ← Return to Overview
+          </Link>
+          <a 
+            href="https://www.behance.net/sahityakashyap" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="flex items-center gap-1.5 text-neutral-900 font-bold hover:underline"
+          >
+            Full High-Res Boards on Behance <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
       </div>
     </article>
   );
@@ -1059,11 +1444,12 @@ function CommercialPage() {
         {
           title: "Dual-Function Utility Stool & Cleaning Bucket System",
           tag: "PP Copolymer Tooling & Anthropometric Seating",
-          desc: "Architected a dual-purpose sanitary domestic stool-cum-bucket meeting high-volume injection constraints.",
+          desc: "Architected a dual-purpose sanitary domestic stool-cum-bucket meeting high-volume injection constraints. Features structural load-bearing rib matrices, quick single-pull tooling, and stackable container logistics.",
+          imageId: "29",
           specs: [
             "Total Plastic Weight: 674g – 693g",
-            "Dual Water Chamber: 6L+6L / 6.4L+6.4L",
-            "Stacking & Shipping Nesting Ratio: 4:1",
+            "Dual Water Chamber: 6L+6L",
+            "Stacking Nesting Ratio: 4:1",
             "Tooling: 2-Part Single-Pull Core & Cavity"
           ]
         }
@@ -1077,23 +1463,25 @@ function CommercialPage() {
         {
           title: "High-Capacity Institutional Floor-Standing Purification Station",
           tag: "Industrial Canteen & Enterprise Architecture",
-          desc: "Engineered an industrial-scale standing RO purification station for high-footfall institutions, canteens, and enterprise workspaces.",
+          desc: "Engineered an industrial-scale standing RO purification station for high-footfall institutions, canteens, and enterprise workspaces. Multi-bay maintenance access and insulated foam tanks.",
+          imageId: "30",
           specs: [
             "Heavy-Duty 1.5mm CRCA Metal Enclosure",
             "Insulated Foam Infill Tank Enclosure",
-            "Heater, Chiller & Pump Modular Bay",
+            "Modular Pump & Filter Bay",
             "1:1 Physical Visual Mockup Validated"
           ]
         },
         {
           title: "Architectural Wall-Mounted Domestic Purifier Unit",
           tag: "Compact Kitchen Integration & Tool-Free Servicing",
-          desc: "Designed an architectural wall-mounted domestic purifier unit with a compact footprint and tool-free servicing.",
+          desc: "Designed an architectural wall-mounted domestic purifier unit with a compact footprint, tool-free filter replacement, and ambient status readouts.",
+          imageId: "30",
           specs: [
-            "Internal Filter & Booster Pump Packaging",
-            "Kinematic Drop-Down Maintenance Door",
+            "Internal Booster Pump Packaging",
+            "Kinematic Drop-Down Service Door",
             "Integrated Ambient LED & TDS Readout",
-            "Full 1:1 Functional Appearance Prototype"
+            "Full 1:1 Appearance Prototype"
           ]
         }
       ]
@@ -1106,12 +1494,13 @@ function CommercialPage() {
         {
           title: "Domestic Inverter Battery Enclosure & Texture Study",
           tag: "Parametric Surface Texture & Heavy-Duty Load Linkages",
-          desc: "Re-engineered heavy 150 Ah tall-tubular inverter battery housings into a modern domestic hardware asset.",
+          desc: "Re-engineered heavy 150 Ah tall-tubular inverter battery housings into a modern domestic hardware asset with aerated stiffness dimples and dual rope pivot handles.",
+          imageId: "31",
           specs: [
-            "High-Impact Polypropylene Battery Shell",
-            "Parametric Dimple Aerated Stiffness Grid",
-            "Integrated Dual Rope Pivot Handles",
-            "Level Indicator & Terminal Shrouds"
+            "High-Impact Polypropylene Shell",
+            "Parametric Dimple Aerated Grid",
+            "Dual Rope Pivot Carrying Handles",
+            "Integrated Terminal Shrouds"
           ]
         }
       ]
@@ -1128,26 +1517,24 @@ function CommercialPage() {
         <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-white bg-neutral-900 px-3 py-1 rounded-full uppercase tracking-widest">
           <Lock className="w-3 h-3" /> Confidential Commercial Portfolio
         </div>
-        <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8">
+        <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8 leading-tight">
           Mass Production & <br /> Industrial Programs
         </h1>
         <p className="text-2xl text-neutral-500 leading-relaxed font-light">
-          Sanitized engineering overviews of high-volume consumer cleaning equipment, institutional hydraulic fluid systems, and domestic appliances. Brand names withheld under non-disclosure agreements.
+          Sanitized engineering overviews of high-volume consumer cleaning equipment, institutional hydraulic fluid systems, and domestic appliances. Brand names and sensitive CAD assemblies are obscured under active non-disclosure agreements.
         </p>
       </div>
 
-      <div className="space-y-20">
+      <div className="space-y-24">
         {commercialPrograms.map((prog, pIdx) => (
           <div key={pIdx} className="border-t border-neutral-200 pt-12">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center">
-                  {prog.icon}
-                </div>
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-medium text-neutral-900">{prog.category}</h2>
-                  <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">{prog.badge}</span>
-                </div>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center">
+                {prog.icon}
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-medium text-neutral-900">{prog.category}</h2>
+                <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">{prog.badge}</span>
               </div>
             </div>
 
@@ -1155,19 +1542,38 @@ function CommercialPage() {
               {prog.items.map((item, itemIdx) => (
                 <div 
                   key={itemIdx} 
-                  className="p-10 bg-neutral-50 rounded-2xl border border-neutral-100 flex flex-col justify-between hover:border-neutral-300 transition-colors duration-300"
+                  className="bg-neutral-50 rounded-2xl border border-neutral-200/90 overflow-hidden flex flex-col justify-between hover:border-neutral-400 transition-colors duration-300"
                 >
-                  <div>
-                    <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-3">{item.tag}</span>
-                    <h3 className="text-2xl font-medium text-neutral-900 mb-4">{item.title}</h3>
-                    <p className="text-neutral-600 text-[15px] leading-relaxed mb-8 font-light">{item.desc}</p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-neutral-200/50">
-                    {item.specs.map((s, i) => (
-                      <span key={i} className="text-[10px] font-bold uppercase tracking-widest bg-white border border-neutral-200 px-3 py-1.5 rounded text-neutral-600">
-                        {s}
+                  <div className="w-full h-56 bg-neutral-200/60 relative overflow-hidden border-b border-neutral-200">
+                    <ProjectImage 
+                      id={item.imageId} 
+                      altText={`${item.title} Confidential Hardware`} 
+                      className="w-full h-full object-cover filter blur-[6px] scale-105 opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-neutral-950/20 backdrop-blur-[2px] flex flex-col items-center justify-center text-center p-4">
+                      <div className="bg-black/80 border border-neutral-700 text-white px-3 py-1.5 rounded-full flex items-center gap-2 font-mono text-[10px] tracking-wider uppercase mb-1">
+                        <EyeOff className="w-3.5 h-3.5 text-neutral-400" />
+                        <span>Confidential Hardware Architecture</span>
+                      </div>
+                      <span className="font-mono text-[9px] text-neutral-200">
+                        Sanitized CAD Preview // NDA Protected
                       </span>
-                    ))}
+                    </div>
+                  </div>
+
+                  <div className="p-8 md:p-10 flex-grow flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">{item.tag}</span>
+                      <h3 className="text-xl md:text-2xl font-medium text-neutral-900 mb-3">{item.title}</h3>
+                      <p className="text-neutral-600 text-sm leading-relaxed mb-6 font-light">{item.desc}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-neutral-200/70">
+                      {item.specs.map((s, i) => (
+                        <span key={i} className="text-[10px] font-bold uppercase tracking-wider bg-white border border-neutral-200 px-2.5 py-1 rounded text-neutral-700">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1177,13 +1583,13 @@ function CommercialPage() {
       </div>
       
       <div className="mt-28 p-12 bg-neutral-900 rounded-3xl text-center flex flex-col items-center">
-        <h3 className="text-3xl font-medium text-white mb-6">Request full portfolio walk-through</h3>
-        <p className="text-neutral-400 text-lg mb-10 max-w-xl font-light">
+        <h3 className="text-3xl font-medium text-white mb-4">Request sanitized CAD walkthrough</h3>
+        <p className="text-neutral-400 text-base mb-8 max-w-xl font-light">
           Available for private walk-throughs of sanitized CAD models, physical visual mockups, and production tooling drawings for verified teams.
         </p>
         <a 
           href="mailto:design.er.saahi@gmail.com?subject=Confidential%20Portfolio%20Review" 
-          className="bg-white text-neutral-900 px-10 py-4 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-neutral-100 active:scale-95 transition-all duration-200"
+          className="bg-white text-neutral-900 px-8 py-3.5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-neutral-100 active:scale-95 transition-all duration-200"
         >
           Contact for access
         </a>
@@ -1215,9 +1621,9 @@ function PlaygroundPage() {
       
       <div className="max-w-3xl mb-12">
         <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-neutral-900 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full uppercase tracking-widest">
-          <SparklesIcon className="w-3 h-3 text-neutral-900" /> Visual Lab & Playground
+          <Sparkles className="w-3 h-3 text-neutral-900" /> Visual Lab & Playground
         </div>
-        <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-6">
+        <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-6 leading-tight">
           Renders, Form Studies <br />& Explorations
         </h1>
         <p className="text-xl text-neutral-500 leading-relaxed font-light">
@@ -1260,7 +1666,7 @@ function PlaygroundPage() {
         <a 
           href="https://www.behance.net/sahityakashyap" 
           target="_blank" 
-          rel="noreferrer"
+          rel="noreferrer" 
           className="inline-flex items-center gap-3 bg-neutral-900 text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 hover:shadow-lg active:scale-95 transition-all duration-200 shrink-0"
         >
           Check my Behance till then <ArrowUpRight className="w-4 h-4" />
@@ -1270,19 +1676,17 @@ function PlaygroundPage() {
   );
 }
 
-/* --- PAGE 5: ABOUT ME (ID-FIRST PEDIGREE & CRISP STUDIO PHOTO) --- */
+/* --- PAGE 5: ABOUT ME --- */
 function AboutPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div>
-      {/* Split About Header with Crisp 1.jpg Frame (Zero Fading Overlay) */}
       <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-16 md:pt-20 pb-20">
         <Link to="/" className="group inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-neutral-400 hover:text-neutral-900 mb-12 transition-colors uppercase">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to home
         </Link>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
-          {/* Left Text Column */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2.5 mb-6">
               <span className="relative flex h-2.5 w-2.5">
@@ -1295,14 +1699,13 @@ function AboutPage() {
             </div>
             <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8 leading-[1.08]">
               Design Sensibility <br />
-              <span className="text-neutral-400"> With Technical Vigour</span>
+              <span className="text-neutral-400">With Technical Vigour.</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-light">
-              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and category-defining hardware that manufacturers can produce without compromise.
+              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship[cite: 8]. I craft cohesive product languages, ergonomic consumer experiences, and category-defining hardware that manufacturers can produce without compromise.
             </p>
           </div>
 
-          {/* Right Image Column: Clean, Crisp 1.jpg Studio Portrait (No Gradient Overlay) */}
           <div className="lg:col-span-5">
             <div className="w-full aspect-[4/3] lg:aspect-[16/13] rounded-2xl overflow-hidden shadow-sm border border-neutral-200 bg-neutral-100">
               <ProjectImage 
@@ -1315,12 +1718,10 @@ function AboutPage() {
         </div>
       </header>
 
-      {/* Main Content Details */}
       <section className="bg-neutral-900 py-32 text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
-            {/* Left Column: ID-First Pedigree, Education & Skills */}
             <div className="lg:col-span-5 space-y-12">
               <div>
                 <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Design Pedigree & Honors</h2>
@@ -1338,28 +1739,26 @@ function AboutPage() {
                 </div>
               </div>
 
-              {/* Education Card (ID Formal First) */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
-                  <GraduationCapIcon className="w-4 h-4 text-neutral-300" /> Design Pedigree
+                  <GraduationCapIcon className="w-4 h-4 text-neutral-300" /> Formal Education
                 </div>
                 <div className="space-y-4 text-sm">
                   <div>
                     <h5 className="font-medium text-white">Bachelors of Design (B.Des)</h5>
-                    <p className="text-neutral-400 text-xs">Delhi Technological University (DTU) • Aug 2021 – May 2025</p>
+                    <p className="text-neutral-400 text-xs">Delhi Technological University (DTU) • Aug 2021 – May 2025[cite: 8]</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <h5 className="font-medium text-white">Offsite Pro 2024</h5>
-                    <p className="text-neutral-400 text-xs">Advanced Industrial Design Intensive • Chicago, Illinois (June 2024 – Aug 2024)</p>
+                    <p className="text-neutral-400 text-xs">Advanced Industrial Design Intensive • Chicago, Illinois (June 2024 – Aug 2024)[cite: 8]</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <h5 className="font-medium text-white">Diploma in Tool & Die Making (4-Year Program)</h5>
-                    <p className="text-neutral-400 text-xs">Delhi Institute of Tool Engineering (DITE) • Aug 2017 – July 2021</p>
+                    <p className="text-neutral-400 text-xs">Delhi Institute of Tool Engineering (DITE) • Aug 2017 – July 2021[cite: 8]</p>
                   </div>
                 </div>
               </div>
 
-              {/* Core Competencies (ID Leading) */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
                   <WrenchIcon className="w-4 h-4 text-neutral-300" /> Design Competencies
@@ -1375,17 +1774,16 @@ function AboutPage() {
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <span className="text-neutral-400 block mb-1">Computational & Parametric CAD</span>
-                    <p className="text-neutral-200 font-medium leading-relaxed">Rhino, Grasshopper (GhPython), SolidWorks (CSWP), Autodesk Inventor, Fusion 360</p>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Rhino, Grasshopper (GhPython), SolidWorks (CSWP), Autodesk Inventor, Fusion 360[cite: 8]</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <span className="text-neutral-400 block mb-1">Manufacturing Realization (DFM/DFA)</span>
-                    <p className="text-neutral-200 font-medium leading-relaxed">Injection Mould Core/Cavity, Undercut Mitigation, GD&T, Progressive Dies, Sheet Nesting</p>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Injection Mould Core/Cavity, Undercut Mitigation, GD&T, Progressive Dies, Sheet Nesting[cite: 8]</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Right Column: Work Experience Timeline with Explicit Month-to-Month Dates */}
             <div className="lg:col-span-7">
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-8">Work Experience</h3>
               <div className="space-y-8">
