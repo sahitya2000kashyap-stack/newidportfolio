@@ -719,7 +719,7 @@ const ARCHIVE_PROJECTS = [
   },
   {
     slug: "joseph-joseph",
-    title: "Articulating Glue Gun",
+    title: "Joseph Joseph Glue Gun",
     tagline: "A glue gun concept designed in line with the design language & philosophy of Joseph Joseph.",
     client: "Personal Brand Translation Project",
     timeline: "8 Weeks",
