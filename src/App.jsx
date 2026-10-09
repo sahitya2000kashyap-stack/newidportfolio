@@ -86,7 +86,7 @@ function ScrollToTopButton() {
   );
 }
 
-/* --- DIRECT STATIC IMPORTS (CONVERTED STRICTLY TO .PNG) --- */
+/* --- DIRECT STATIC IMPORTS (PRESERVING 1-70 EXACTLY & EXPANDED TO 85) --- */
 import img1 from './assets/1.png';
 import img2 from './assets/2.png';
 import img3 from './assets/3.png';
@@ -157,6 +157,21 @@ import img67 from './assets/67.png';
 import img68 from './assets/68.png';
 import img69 from './assets/69.png';
 import img70 from './assets/70.png';
+import img71 from './assets/71.png';
+import img72 from './assets/72.png';
+import img73 from './assets/73.png';
+import img74 from './assets/74.png';
+import img75 from './assets/75.png';
+import img76 from './assets/76.png';
+import img77 from './assets/77.png';
+import img78 from './assets/78.png';
+import img79 from './assets/79.png';
+import img80 from './assets/80.png';
+import img81 from './assets/81.png';
+import img82 from './assets/82.png';
+import img83 from './assets/83.png';
+import img84 from './assets/84.png';
+import img85 from './assets/85.png';
 
 const imageMap = {
   "1": img1, "2": img2, "3": img3, "4": img4, "5": img5,
@@ -172,15 +187,18 @@ const imageMap = {
   "51": img51, "52": img52, "53": img53, "54": img54, "55": img55,
   "56": img56, "57": img57, "58": img58, "59": img59, "60": img60,
   "61": img61, "62": img62, "63": img63, "64": img64, "65": img65,
-  "66": img66, "67": img67, "68": img68, "69": img69, "70": img70
+  "66": img66, "67": img67, "68": img68, "69": img69, "70": img70,
+  "71": img71, "72": img72, "73": img73, "74": img74, "75": img75,
+  "76": img76, "77": img77, "78": img78, "79": img79, "80": img80,
+  "81": img81, "82": img82, "83": img83, "84": img84, "85": img85
 };
 
-function ProjectImage({ id, altText, className = "" }) {
+function ProjectImage({ id, altText, className = "", fitMode = "object-cover" }) {
   const src = imageMap[String(id)];
 
   if (!src) {
     return (
-      <div className={`bg-neutral-100 flex flex-col items-center justify-center text-center p-6 w-full h-full border border-dashed border-neutral-300 rounded-xl ${className}`}>
+      <div className={`bg-neutral-100 flex flex-col items-center justify-center text-center p-6 w-full h-full ${className}`}>
         <ImageIcon className="w-8 h-8 text-neutral-300 mb-2 stroke-1" />
         <span className="font-mono text-[11px] text-neutral-600 font-bold tracking-wider">
           {id ? `${id}.png` : "Render Preview"}
@@ -194,7 +212,7 @@ function ProjectImage({ id, altText, className = "" }) {
     <img 
       src={src} 
       alt={altText} 
-      className={`object-cover w-full h-full ${className}`} 
+      className={`${fitMode} w-full h-full ${className}`} 
     />
   );
 }
@@ -266,7 +284,9 @@ const FLAGSHIP_2026_PROJECTS = [
         title: "Aero-Acoustic Louvre Topology & Air Vortex CFD",
         desc: "Domestic purifiers generate unbearable high-pitch motor whistle at high CADR settings. Iterated 12 blade sweep angles to smooth turbulent intake vortices, yielding a 4.2 dB drop in motor whine.",
         imageId: "9",
-        caption: "Centrifugal Aero-Impeller CFD Pressure Gradient Analysis"
+        caption: "Centrifugal Aero-Impeller CFD Pressure Gradient Analysis",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
       },
       {
         type: "text_left_image_right",
@@ -274,7 +294,9 @@ const FLAGSHIP_2026_PROJECTS = [
         title: "2-Part Shell Tooling & Side Lifter Mitigation",
         desc: "Applied a uniform 2.2mm nominal wall thickness with internal structural flow ribs, keeping the exterior strictly toolable on a single-pull straight-action core and cavity mold.",
         imageId: "10",
-        caption: "Split Chassis Rib Architecture & Bayonet Filter Latch"
+        caption: "Split Chassis Rib Architecture & Bayonet Filter Latch",
+        aspectClass: "aspect-[16/10]",
+        fitMode: "object-cover"
       }
     ],
     heroMetrics: [
@@ -308,7 +330,9 @@ const FLAGSHIP_2026_PROJECTS = [
         title: "14cm Footprint Vertical Consolidation",
         desc: "Consolidated the vibration pump, thermo-coil, and solenoid block into a rigid vertical stack, routing silicone hydraulic lines safely away from hot electrical coils.",
         imageId: "12",
-        caption: "Internal Aluminum Thermoblock Hydraulic Packaging"
+        caption: "Internal Aluminum Thermoblock Hydraulic Packaging",
+        aspectClass: "aspect-[16/10]",
+        fitMode: "object-cover"
       },
       {
         type: "text_right_image_left",
@@ -316,7 +340,9 @@ const FLAGSHIP_2026_PROJECTS = [
         title: "Spring Ball-Bearing Detent Selector",
         desc: "Engineered custom stepped rotary dials featuring ball-bearing spring detents that deliver crisp mechanical feedback, anchored by a heavy die-cast Zamak counterweight base.",
         imageId: "14",
-        caption: "Finite Element Stress Verification on Group Head Clamp"
+        caption: "Finite Element Stress Verification on Group Head Clamp",
+        aspectClass: "aspect-[16/10]",
+        fitMode: "object-cover"
       }
     ],
     heroMetrics: [
@@ -334,7 +360,6 @@ const FLAGSHIP_2026_PROJECTS = [
   }
 ];
 
-/* 4 Foundation Projects Formatted to Match the PDF Flow */
 const ARCHIVE_PROJECTS = [
   {
     slug: "scotch",
@@ -360,7 +385,9 @@ const ARCHIVE_PROJECTS = [
         desc: "The current Scotch Magic Tape dispenser requires two hands to use, forcing the user to take both hands off of their project which needs holding down.",
         steps: ["Release the tape", "Pull the tape", "Cut the tape"],
         imageId: "10",
-        caption: "Two-Hand Operation Struggle on Active Craft Projects"
+        caption: "Slide 04: The Two-Hand Frustration & Interaction Breakdown",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       },
       {
         type: "criteria_cards",
@@ -378,7 +405,9 @@ const ARCHIVE_PROJECTS = [
         title: "Competitor & Analogous Products",
         desc: "Studied existing market tape tools alongside analogous single-hand products (jar openers, hole punchers, pizza cutting wheels, and paint rollers) to isolate intuitive tactile cues.",
         imageId: "14",
-        caption: "Benchmarking Existing & Analogous Physical Mechanisms"
+        caption: "Slide 06: Benchmarking Existing & Analogous Physical Mechanisms",
+        aspectClass: "aspect-[16/10]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "text_top_image_bottom",
@@ -386,7 +415,9 @@ const ARCHIVE_PROJECTS = [
         title: "Generating Variety of Ideas",
         desc: "Brainstormed 6 functional categories: Cutting Wheel, Stack Sticky-Note Style, Earbuds with Blade on Cap, Mechanical Suction, and Foot Tether.",
         imageId: "15",
-        caption: "Ideation Matrix: Evaluating Ideas Based on Functionality and Cost"
+        caption: "Slide 07: 6-Column Brainstorming Matrix Evaluating Functionality & Part Counts",
+        aspectClass: "aspect-[4/3] md:aspect-[5/4]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "comparison_columns",
@@ -399,19 +430,24 @@ const ARCHIVE_PROJECTS = [
         ]
       },
       {
-        type: "text_left_image_right",
+        type: "thin_horizontal_strip",
         tag: "REFINED CONCEPT",
-        title: "Refined Concept — Notch & Pull",
+        title: "Refined Concept — Notch & Pull (Slide to Hinge)",
         desc: "Reduced the number of parts by adopting a top notching hinge rather than a sliding cutter. Pressing down engages the concealed micro-blade; a light wrist flick tears the tape cleanly.",
         imageId: "16",
-        caption: "Slide-to-Hinge Kinematic Conversion & Notching Tool Layout"
+        caption: "Slide 09: Slide-to-Hinge Kinematic Conversion & Notching Tool Architecture",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "usability_dual_mode",
+        type: "thin_horizontal_strip",
         tag: "USABILITY SKETCHES",
         title: "Tabletop vs Handheld Dual-Mode Walkthrough",
+        desc: "Tabletop Mode: Hold tape end -> Pull tape -> Press Notch Hinge -> Twist tape to tear off. Handheld Mode: Hold dispenser -> Roll tape directly on surface -> Press Notch Hinge -> Twist dispenser to tear off.",
         imageId: "17",
-        caption: "Four-Step Usability Sequence in Both Desk and Handheld Modes"
+        caption: "Slide 10: 4-Step Interaction Sequences Comparing Desktop and Handheld Usability",
+        aspectClass: "aspect-[21/9] md:aspect-[26/8]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "text_top_image_bottom",
@@ -419,25 +455,33 @@ const ARCHIVE_PROJECTS = [
         title: "Brand Language & Core Value Analysis",
         desc: "Resourcefulness is a core value at Scotch: 'Resourcefulness is about adapting, making do and doing more with what you've got. It's not about using less, but using smarter.'",
         imageId: "18",
-        caption: "Deconstructing Packaging Variants, Color Architecture & Price Points"
+        caption: "Slide 11: Deconstructing Packaging Variants, Color Architecture & Price Points",
+        aspectClass: "aspect-[16/10] md:aspect-[16/9]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_left_image_right",
+        type: "thin_horizontal_strip",
         tag: "FORM DEVELOPMENT",
         title: "Form — Making It Look More Scotch",
         desc: "Integrated functional silhouettes: contoured thumb notch hinge, finger rest grooves, and an anti-rollover base lip that anchors horizontal pull forces.",
         imageId: "19",
-        caption: "Form Iterations & Functional Feature Integration"
+        caption: "Slide 12: Form Iterations & Functional Feature Integration Array",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "pure_render_spread",
         imageId: "20",
-        caption: "Dual-Mode Functional Hero Render"
+        caption: "Slide 14: Dual-Mode Functional Hero Render",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       },
       {
         type: "pure_render_spread",
         imageId: "7",
-        caption: "Final Production Render in Translucent Optical Finish"
+        caption: "Slide 16: Final Production Model in Translucent Optical Finish",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       },
       {
         type: "success_verification",
@@ -445,7 +489,9 @@ const ARCHIVE_PROJECTS = [
         title: "Did I hit the mark?",
         desc: "Verified against the kickoff success criteria: single-hand operation, true adherence to brand resourcefulness, and iconic Scotch visual transparency.",
         imageId: "25",
-        caption: "Previously Set Success Criteria Confirmed Hit"
+        caption: "Slide 17: Previously Set Success Criteria Confirmed Hit",
+        aspectClass: "aspect-[16/10]",
+        fitMode: "object-contain bg-white"
       }
     ],
     specs: {
@@ -475,7 +521,7 @@ const ARCHIVE_PROJECTS = [
       {
         type: "quote_and_insights",
         tag: "RESEARCH & INSIGHTS",
-        quote: "Toys are more interactive now. A lot of them take the imagination out of it. Everything has lights and sounds... kinda takes the creativity out of it.",
+        quote: "Toys are more interactive now. A lot of them take the imagination out of it. Action figures used to have a little plastic gun, now they have this HUGE oversized gun that actually fires projectiles. Or everything has lights, and sounds... kinda takes the creativity out of it.",
         quoteAuthor: "Parent Interview (Male, 42, children aged 5, 8)",
         insights: [
           { label: "Low Initial Investment", text: "Zero injection molded parts to avoid heavy upfront tooling CAPEX." },
@@ -490,7 +536,9 @@ const ARCHIVE_PROJECTS = [
         title: "Finding Opportunities in STEAM Curricula",
         desc: "Mapped intersections between classic games (Pinball, Carrom) and childhood behaviors (spatial reasoning, 2D maps, trajectory angles) to anchor Cartesian coordinate math in physical play.",
         imageId: "31",
-        caption: "Comprehensive Opportunity Matrix Across Science, Math & Spatial Reasoning"
+        caption: "Slide 21: Opportunity Tree Across Science, Math & Spatial Reasoning",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "text_left_image_right",
@@ -498,33 +546,46 @@ const ARCHIVE_PROJECTS = [
         title: "Mechanism Explorations & Trajectory Linkages",
         desc: "Explored 3 concepts: Concept #1 Slider linkages, Concept #2 Light ray angles, and Concept #3 Rotating Turret Linkages. Concept #3 was selected for its direct tactile feedback.",
         imageId: "32",
-        caption: "Mechanism Ideation Sheets & Aiming Detent Concepts"
+        caption: "Slide 23: Mechanism Ideation Sheets & Aiming Detent Concepts",
+        aspectClass: "aspect-[4/3]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_top_image_bottom",
+        type: "thin_horizontal_strip",
         tag: "RAPID PROTOTYPING",
-        title: "Prototyping & Structural Evolution",
+        title: "Prototype Evolution & Structural Assembly",
         desc: "Iterated through 4 functional working mockups to test friction fit tab-and-slot joints, 180° rotational turret tolerances, and consistent marble launch trajectories.",
         imageId: "33",
-        caption: "Prototype Evolution Milestones Leading to the Final Functional Structure"
+        caption: "Slide 24: Progressive Physical Prototyping Evolution Milestones",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "pure_render_spread",
         imageId: "34",
-        caption: "Production Prototype Assembly & Score Board Layout"
+        caption: "Slide 25: Production Laser-Cut Assembly & Integrated Score Board",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       },
       {
-        type: "pure_render_spread",
+        type: "text_top_image_bottom",
+        tag: "COORDINATE INDEXING",
+        title: "Plan View Coordinate Grid: (X, Y) Numerical Trajectory Layout",
+        desc: "Calculated layout of 16 precision drop holes marked with discrete Cartesian indices (1,1 to 4,4), calibrated directly to dice roll probability matrices.",
         imageId: "36",
-        caption: "Plan View Coordinate Grid: (X, Y) Numerical Trajectory Layout"
+        caption: "Slide 27: Top-Down Plan View Numerical Grid Map",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-contain bg-neutral-900"
       },
       {
         type: "text_top_image_bottom",
         tag: "HOW TO PLAY",
         title: "Play! Throw the Dice, Aim & Shoot, Record Score",
-        desc: "Step 1: Throw the dice -> Step 2: Find the coordinate intersection, adjust turret angle, aim & shoot -> Step 3: Slide the score detents.",
+        desc: "Step 1: Throw the coordinate dice -> Step 2: Calculate the coordinate intersection, orient the mechanical turret angle, aim & shoot -> Step 3: Record score on friction-fit sliding markers.",
         imageId: "38",
-        caption: "Tactile User Interaction Sequence & Physical Gameplay Verification"
+        caption: "Slide 28: Interactive Gameplay Flow & Tactile Scoring Steps",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-contain bg-white"
       }
     ],
     specs: {
@@ -565,20 +626,24 @@ const ARCHIVE_PROJECTS = [
         ]
       },
       {
-        type: "text_top_image_bottom",
+        type: "thin_horizontal_strip",
         tag: "FORM IDEATION",
         title: "20+ Form Silhouette Iterations",
         desc: "Explored varied profiles balancing minimal geometry with inviting analog affordances.",
         imageId: "42",
-        caption: "Silhouette Form Explorations Balancing Base and Diffuser Ratios"
+        caption: "Slide 31: 20+ Silhouette Explorations Balancing Base and Diffuser Ratios",
+        aspectClass: "aspect-[21/9] md:aspect-[26/9]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_left_image_right",
+        type: "thin_horizontal_strip",
         tag: "EVALUATION & PARTING LINES",
         title: "Concept Evaluation & Parting Line Innovation",
         desc: "Evaluated 3 concepts. Chose the split configuration with angled dial bosses, designing a non-planar 3D parting line to demold the bosses without costly side-actions.",
         imageId: "43",
-        caption: "Evaluating Form, Affordance & Line-of-Draw Demold Constraints"
+        caption: "Slide 32: Evaluating Form, Affordance & Line-of-Draw Demold Constraints",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "text_top_image_bottom",
@@ -586,7 +651,9 @@ const ARCHIVE_PROJECTS = [
         title: "Development Sketch & Tooling Architecture",
         desc: "Engineered single-wall spiral vase mode for the shade, quick-draw threads, and draft angles for injection molding.",
         imageId: "44",
-        caption: "Cross-Sectional DFM Architecture for Injection & Additive Manufacturing"
+        caption: "Slide 33: Cross-Sectional DFM Architecture for Injection & Additive Manufacturing",
+        aspectClass: "aspect-[16/9] md:aspect-[21/10]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "text_top_image_bottom",
@@ -594,41 +661,53 @@ const ARCHIVE_PROJECTS = [
         title: "Form Cues: Curls, Curves & Geometric Fluting",
         desc: "Extracted surface wave mathematics from spiraling shells, cream swirls, and architectural facade ribbing.",
         imageId: "45",
-        caption: "Inspiration Board Guiding the Parametric Mathematical Toolpaths"
+        caption: "Slide 34: Visual Moodboard Guiding the Parametric Mathematical Toolpaths",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
       },
       {
-        type: "text_left_image_right",
+        type: "thin_horizontal_strip",
         tag: "COMPUTATIONAL DESIGN",
         title: "Grasshopper Parametric Wave Algorithm",
         desc: "Formulated a custom Grasshopper script that translates mathematical wave sweeps into continuous single-line G-code toolpaths.",
         imageId: "46",
-        caption: "Grasshopper Visual Script for Continuous Toolpath Wave Modulation"
+        caption: "Slide 35: Grasshopper Visual Script for Continuous Toolpath Wave Modulation",
+        aspectClass: "aspect-[21/7] md:aspect-[28/8]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_top_image_bottom",
+        type: "thin_horizontal_strip",
         tag: "PROTOTYPING & WORKSHOP",
         title: "Visual Optical Testing & Firmware Breadboards",
         desc: "Printed test shades at varied frequencies to eliminate LED glare, paired with an Arduino circuit controlling PWM dimming and warm-to-cold CCT balance.",
         imageId: "47",
-        caption: "Optical Shade Testing Samples & Arduino Potentiometer Breadboard Circuit"
+        caption: "Slide 36: Optical Shade Testing Samples Array",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-cover"
       },
       {
         type: "pure_render_spread",
         imageId: "49",
-        caption: "DFM Line-of-Draw Exploration: Non-Planar Parting Line CAD"
+        caption: "Slide 38: DFM Line-of-Draw Exploration: Non-Planar Parting Line CAD",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_top_image_bottom",
+        type: "thin_horizontal_strip",
         tag: "PHYSICAL BUILD",
         title: "Ender 3 Continuous Printing & Base Post-Processing",
         desc: "Fabricated functional working models using continuous spiral PETG printing, hand-sprayed fine texture ABS bases, and turned knobs.",
         imageId: "54",
-        caption: "Workshop Production: 3D Printing, Enclosure Sanding & Internal Soldering"
+        caption: "Slide 41: Workshop Production: 3D Printing, Enclosure Sanding & Internal Soldering",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-cover"
       },
       {
         type: "pure_render_spread",
         imageId: "50",
-        caption: "Final Production Model in Illuminated Ambient Environment"
+        caption: "Slide 44: Final Working Model in Illuminated Domestic Setting",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       }
     ],
     specs: {
@@ -661,7 +740,9 @@ const ARCHIVE_PROJECTS = [
         title: "Joseph Joseph: Problem Solved / Buy Once. Buy Well.",
         desc: "Joseph Joseph design philosophy keeps functionality at the heart of everything. Starting by identifying an everyday problem and devising durable, beautiful solutions following circular economy principles.",
         imageId: "61",
-        caption: "Joseph Joseph Functional Innovation & Material Quality Benchmark"
+        caption: "Slide 46: Functional Innovation & Material Quality Manifesto",
+        aspectClass: "aspect-[4/3] md:aspect-[16/10]",
+        fitMode: "object-cover"
       },
       {
         type: "text_top_image_bottom",
@@ -669,57 +750,73 @@ const ARCHIVE_PROJECTS = [
         title: "Deconstructing Design Language Markers",
         desc: "Analyzed design hallmarks: functional material separation to divide visual weight, analogous color palettes with neutral contrast, clean flush transitions between materials, and soft geometric forms.",
         imageId: "62",
-        caption: "Comprehensive Visual Brand Language & CMF Analysis Matrix"
+        caption: "Slide 47: Comprehensive Visual Brand Language & CMF Analysis Matrix",
+        aspectClass: "aspect-[4/3] md:aspect-[16/10]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_left_image_right",
+        type: "thin_horizontal_strip",
         tag: "OPPORTUNITY MAPPING",
-        title: "Market Positioning & User Mind Map",
+        title: "Ergonomic Pain Points Mind Map & Market Positioning",
         desc: "Mapped user personas (DIY enthusiasts, electronics crafters) against functional requirements: preventing burn hazards, dual grip modes, thermal indication, and anti-drool protection.",
         imageId: "64",
-        caption: "Ergonomic Pain Points Mind Map & Market Positioning Quadrant"
+        caption: "Slide 49: Extensive Mind Map Connecting Functionality, CMF & Ergonomics",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_top_image_bottom",
+        type: "thin_horizontal_strip",
         tag: "PROBLEM IDENTIFICATION",
         title: "5 Critical Hot-Glue Gun Pain Points",
         desc: "1. Not meant for precision micro-work. 2. Some controls need two hands. 3. Not knowing when it's ready. 4. Frequent turning on/off. 5. Molten adhesive drools during idle rests.",
         imageId: "65",
-        caption: "Step-by-Step Problem Identification & Hand Interaction Studies"
+        caption: "Slide 50: Step-by-Step Problem Identification & Hand Interaction Studies",
+        aspectClass: "aspect-[21/8] md:aspect-[26/8]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_left_image_right",
+        type: "thin_horizontal_strip",
         tag: "KINEMATICS: MILD TO WILD",
         title: "Attach, Bend, and Twist Architectures",
         desc: "Explored 3 mechanism architectures: Concept 1 'Attach' (swappable handles), Concept 2 'Bend' (single-plane hinge), and Concept 3 'Twist' (twist-and-lock detent joint). Concept 3 was selected for internal wire protection and tactile locking.",
         imageId: "67",
-        caption: "Kinematic Exploration: Comparing Mechanical Hinge Concepts"
+        caption: "Slide 52: Kinematic Exploration: Comparing Mechanical Hinge Concepts",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_top_image_bottom",
+        type: "thin_horizontal_strip",
         tag: "FORM EVOLUTION",
         title: "Form Exploration Across Articulations",
         desc: "Iterated handle proportions across straight-line, 45-degree, and 90-degree angles to ensure natural thumb indexing in both pencil and pistol configurations.",
         imageId: "68",
-        caption: "Form Variations Investigating Balance in Pencil and Pistol Modes"
+        caption: "Slide 53: Form Variations Investigating Balance in Pencil and Pistol Modes",
+        aspectClass: "aspect-[21/8] md:aspect-[24/8]",
+        fitMode: "object-contain bg-white"
       },
       {
-        type: "text_left_image_right",
+        type: "text_top_image_bottom",
         tag: "CONCEPT REFINEMENT",
         title: "Haptic Detents, Rocker Switches & USB-C",
         desc: "Integrated an internal PTC ceramic heating core, analog rocker switch with color dot feedback, internal USB-C fast charging, and an anti-drool food-grade silicone nozzle shroud.",
-        imageId: "74",
-        caption: "CMF Detailing: Soft-Touch Chassis, High-Gloss Actuators & Rocker Switches"
+        imageId: "74", // Now properly imported & mapped
+        caption: "Slide 59: CMF Detailing: Soft-Touch Chassis, High-Gloss Actuators & Rocker Switches",
+        aspectClass: "aspect-[16/10] md:aspect-[16/9]",
+        fitMode: "object-contain bg-white"
       },
       {
         type: "pure_render_spread",
         imageId: "75",
-        caption: "Hero Render: Articulating Craft Adhesive Tool in Pencil Grip Mode"
+        caption: "Slide 60: Hero Render: Articulating Craft Adhesive Tool in Pencil Grip Mode",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       },
       {
         type: "pure_render_spread",
         imageId: "78",
-        caption: "CMF Product Still: Balanced Dual-Tone Ergonomics and Silicone Shroud"
+        caption: "Slide 62: CMF Product Still: Balanced Dual-Tone Ergonomics and Silicone Shroud",
+        aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
       }
     ],
     specs: {
@@ -897,7 +994,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 1: 2026 FLAGSHIP PROJECTS (LOCKED & BLURRED ACTIVE PREVIEWS) */}
+      {/* SECTION 1: 2026 FLAGSHIP PROJECTS */}
       <section id="work" className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
         <div className="flex items-center justify-between mb-12 border-b border-neutral-100 pb-6">
           <div className="flex items-center gap-3">
@@ -913,7 +1010,6 @@ function HomePage() {
               key={proj.slug} 
               className="flex flex-col relative select-none cursor-not-allowed group"
             >
-              {/* Blurred Thumbnail with Lock Watermark Overlay */}
               <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden mb-6 md:mb-8 relative rounded-2xl shadow-xs border border-neutral-200">
                 <ProjectImage 
                   id={proj.thumbId} 
@@ -921,7 +1017,6 @@ function HomePage() {
                   className="filter blur-[8px] opacity-60 scale-105 pointer-events-none" 
                 />
                 
-                {/* Clean Lock Badge Overlay */}
                 <div className="absolute inset-0 bg-neutral-900/10 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
                   <div className="bg-neutral-900/90 border border-neutral-700 text-white px-4 py-2 rounded-full flex items-center gap-2 font-mono text-[10px] tracking-wider uppercase mb-1 shadow-sm">
                     <Lock className="w-3.5 h-3.5 text-orange-400" />
@@ -933,7 +1028,6 @@ function HomePage() {
                 </div>
               </div>
 
-              {/* Blurred Metadata & Text */}
               <div className="filter blur-[4px] opacity-40 pointer-events-none transition-all">
                 <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[11px]">
                   <span className="font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2.5 py-0.5 rounded">
@@ -956,7 +1050,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: 4 PAST CASE STUDIES (CLICKABLE FULL PRESENTATION DECKS) */}
+      {/* SECTION 2: 4 PAST CASE STUDIES */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
         <div className="flex items-center justify-between mb-8 border-t border-neutral-100 pt-16 pb-4">
           <div className="flex items-center gap-3">
@@ -1137,10 +1231,33 @@ function ProjectDetailPage() {
         </div>
       </div>
 
-      {/* Dynamic Slide Blocks Engine Tailored Per Presentation */}
+      {/* Dynamic Slide Blocks Engine with Tailored Proportions */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-28">
         {project.deckBlocks && project.deckBlocks.map((block, idx) => {
           
+          /* LAYOUT: Thin Horizontal Strip */
+          if (block.type === 'thin_horizontal_strip') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-8">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">// {block.tag}</span>
+                  <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-3">{block.title}</h3>
+                  {block.desc && <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>}
+                </div>
+                <div className={`w-full ${block.aspectClass || 'aspect-[21/8]'} rounded-2xl overflow-hidden border border-neutral-200 bg-white p-2 shadow-xs`}>
+                  <ProjectImage 
+                    id={block.imageId} 
+                    altText={block.caption} 
+                    fitMode={block.fitMode || "object-contain"} 
+                    className="w-full h-full"
+                  />
+                </div>
+                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+              </section>
+            );
+          }
+
+          /* LAYOUT: Problem Breakdown */
           if (block.type === 'problem_breakdown') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1161,14 +1278,15 @@ function ProjectDetailPage() {
                   )}
                 </div>
 
-                <div className="w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100">
-                  <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                <div className={`w-full ${block.aspectClass || 'aspect-[16/9]'} rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100`}>
+                  <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                 </div>
                 <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
               </section>
             );
           }
 
+          /* LAYOUT: Success Criteria Cards */
           if (block.type === 'criteria_cards') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1194,6 +1312,7 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Text Top, Big Image Bottom */
           if (block.type === 'text_top_image_bottom') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1202,14 +1321,15 @@ function ProjectDetailPage() {
                   <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-3">{block.title}</h3>
                   <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
                 </div>
-                <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
-                  <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
+                  <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                 </div>
                 <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
               </section>
             );
           }
 
+          /* LAYOUT: Text Left, Image Right */
           if (block.type === 'text_left_image_right') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1220,8 +1340,8 @@ function ProjectDetailPage() {
                     <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
                   </div>
                   <div className="lg:col-span-7">
-                    <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
-                      <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                    <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
+                      <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                     </div>
                     <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
                   </div>
@@ -1230,13 +1350,14 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Image Left, Text Right */
           if (block.type === 'text_right_image_left') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   <div className="lg:col-span-7 order-2 lg:order-1">
-                    <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
-                      <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                    <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
+                      <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                     </div>
                     <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
                   </div>
@@ -1250,6 +1371,7 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Comparison Columns */
           if (block.type === 'comparison_columns') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1279,11 +1401,12 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Pure Standalone Render Spread */
           if (block.type === 'pure_render_spread') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-12">
-                <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 shadow-sm">
-                  <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                <div className={`w-full ${block.aspectClass || 'aspect-[16/9] md:aspect-[21/9]'} bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 shadow-sm`}>
+                  <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                 </div>
                 {block.caption && (
                   <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-3 text-center">
@@ -1294,6 +1417,7 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Quote & Insights Block */
           if (block.type === 'quote_and_insights') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1318,6 +1442,7 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Dual Goals Grid */
           if (block.type === 'dual_goals') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1355,6 +1480,7 @@ function ProjectDetailPage() {
             );
           }
 
+          /* LAYOUT: Brand Manifesto Box */
           if (block.type === 'brand_manifesto') {
             return (
               <section key={idx} className="border-t border-neutral-200 pt-16">
@@ -1365,8 +1491,8 @@ function ProjectDetailPage() {
                     <p className="text-base text-neutral-600 font-light leading-relaxed">{block.desc}</p>
                   </div>
                   <div className="lg:col-span-7">
-                    <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
-                      <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                    <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
+                      <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                     </div>
                     <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
                   </div>
@@ -1378,7 +1504,7 @@ function ProjectDetailPage() {
           return (
             <section key={idx} className="border-t border-neutral-200 pt-16">
               <div className="w-full aspect-[16/10] bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
-                <ProjectImage id={block.imageId} altText={block.caption} className="w-full h-full object-cover" />
+                <ProjectImage id={block.imageId} altText={block.caption} fitMode="object-cover" className="w-full h-full" />
               </div>
             </section>
           );
