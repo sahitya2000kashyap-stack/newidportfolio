@@ -47,7 +47,7 @@ class ErrorBoundary extends Component {
   }
 }
 
-/* --- DIRECT STATIC IMPORTS --- */
+/* --- DIRECT STATIC IMPORTS (28 NON-REPEATING SLOTS) --- */
 import img1 from './assets/1.jpg';
 import img2 from './assets/2.jpg';
 import img3 from './assets/3.jpg';
@@ -68,12 +68,22 @@ import img17 from './assets/17.jpg';
 import img18 from './assets/18.jpg';
 import img19 from './assets/19.jpg';
 import img20 from './assets/20.jpg';
+import img21 from './assets/21.jpg';
+import img22 from './assets/22.jpg';
+import img23 from './assets/23.jpg';
+import img24 from './assets/24.jpg';
+import img25 from './assets/25.jpg';
+import img26 from './assets/26.jpg';
+import img27 from './assets/27.jpg';
+import img28 from './assets/28.jpg';
 
 const imageMap = {
   "1": img1, "2": img2, "3": img3, "4": img4, "5": img5,
   "6": img6, "7": img7, "8": img8, "9": img9, "10": img10,
   "11": img11, "12": img12, "13": img13, "14": img14, "15": img15,
   "16": img16, "17": img17, "18": img18, "19": img19, "20": img20,
+  "21": img21, "22": img22, "23": img23, "24": img24, "25": img25,
+  "26": img26, "27": img27, "28": img28
 };
 
 function ProjectImage({ id, altText, className = "" }) {
@@ -197,7 +207,7 @@ const FLAGSHIP_2026_PROJECTS = [
       material: "Matte Polypropylene (PP) Copolymer + Anodized Aluminum Handle Rail",
       finish: "Mold-Tech MT-11020 Fine Grain on main housing; high-polish chamfers",
       tooling: "Single-pull straight-action core & cavity mold with minimal slide action",
-      software: "SolidWorks, KeyShot 2026, Flow Simulation CFD, Rapid 1:1 CNC Prototyping"
+      software: "SolidWorks, Blender (Rapid Form Ideation & Cycles Shading), KeyShot, Flow Simulation CFD"
     }
   },
   {
@@ -231,20 +241,20 @@ const FLAGSHIP_2026_PROJECTS = [
       },
       {
         step: "02",
-        title: "Haptic Detent Engineering",
-        content: "Engineered custom stepped rotary dials featuring ball-bearing spring detents that deliver crisp mechanical feedback."
+        title: "Haptic Detent Engineering & Blender Concepting",
+        content: "Used Blender for early digital surface clay sculpting before drafting mechanical SolidWorks assemblies with ball-bearing spring detents."
       }
     ],
     specs: {
       material: "Die-Cast Zamak 3 internal spine, brushed 304 Stainless Steel cladding",
       finish: "PVD Gunmetal and bead-blasted satin steel with turned knurled knobs",
       tooling: "Multi-slide zinc die casting and progressive die sheet metal stamping",
-      software: "SolidWorks Mechanical FEA, KeyShot Studio, Procreate Sketching"
+      software: "SolidWorks Mechanical FEA, Blender (Lighting & Photorealistic Renders), KeyShot Studio"
     }
   }
 ];
 
-/* 4 Foundation Projects Formatted Verbatim to Presentation Flow */
+/* 4 Foundation Projects */
 const ARCHIVE_PROJECTS = [
   {
     slug: "scotch",
@@ -255,12 +265,12 @@ const ARCHIVE_PROJECTS = [
     date: "2024",
     category: "Industrial Design",
     badge: "CONSUMER HARDWARE / KINEMATICS",
-    thumbId: "1",
-    heroId: "5",
+    thumbId: "3",
+    heroId: "7",
     gallery: [
-      { id: "9", caption: "Notch & Pull Kinematic Mechanism Layout" },
-      { id: "10", caption: "Tabletop vs Handheld Ergonomic Testing Models" },
-      { id: "11", caption: "2-Plate Injection Mould Core & Cavity Schematics" }
+      { id: "15", caption: "Notch & Pull Kinematic Mechanism Layout" },
+      { id: "16", caption: "Tabletop vs Handheld Ergonomic Testing Models" },
+      { id: "17", caption: "2-Plate Injection Mould Core & Cavity Schematics" }
     ],
     heroMetrics: [
       { label: "Operation", val: "1-Handed" },
@@ -310,7 +320,7 @@ const ARCHIVE_PROJECTS = [
       material: "Optical-grade Polycarbonate (PC) + Rubberised TPE Base Pad",
       finish: "SPI-A2 High Polish Shell with VDI 24 Textured Finger Grip",
       tooling: "2-plate injection mould with mechanical lifters for the inner spool hub",
-      software: "SolidWorks, KeyShot Studio, Rapid Physical Cardboard & FDM Mockups"
+      software: "SolidWorks, Blender (Form Concepting), KeyShot Studio, Rapid Physical Cardboard & FDM Mockups"
     }
   },
   {
@@ -322,12 +332,12 @@ const ARCHIVE_PROJECTS = [
     date: "2023",
     category: "Toy Design",
     badge: "TOY ARCHITECTURE / LOW-CAPEX DFM",
-    thumbId: "3",
-    heroId: "7",
+    thumbId: "4",
+    heroId: "8",
     gallery: [
-      { id: "15", caption: "Sheet Nesting Optimization & Friction Fit Joints" },
-      { id: "16", caption: "Kinematic Turret 180° Rotational Pivot Assembly" },
-      { id: "17", caption: "Physical Playtesting with 2D Cartesian Coordinate Dice" }
+      { id: "18", caption: "Sheet Nesting Optimization & Friction Fit Joints" },
+      { id: "19", caption: "Kinematic Turret 180° Rotational Pivot Assembly" },
+      { id: "20", caption: "Physical Playtesting with 2D Cartesian Coordinate Dice" }
     ],
     heroMetrics: [
       { label: "Target Cost", val: "< ₹1,000 (₹350)" },
@@ -373,7 +383,7 @@ const ARCHIVE_PROJECTS = [
       material: "Precision FSC MDF / Pine composite sheets + Low-friction Delrin bushings",
       finish: "Direct UV Screen Printed Graphics with clear matte protective coat",
       tooling: "High-yield CNC laser cutting and die nesting optimization (<6% scrap allowance)",
-      software: "Rhino 3D, SolidWorks, AutoCAD Nesting, Rapid Laser Prototyping"
+      software: "Rhino 3D, Blender (Product Stills & Assembly Views), SolidWorks, AutoCAD Nesting"
     }
   },
   {
@@ -385,12 +395,12 @@ const ARCHIVE_PROJECTS = [
     date: "2024",
     category: "Computational Design",
     badge: "COMPUTATIONAL ID / AM + INJECTION",
-    thumbId: "2",
-    heroId: "6",
+    thumbId: "21",
+    heroId: "22",
     gallery: [
-      { id: "12", caption: "Grasshopper Parametric Toolpath Computation" },
-      { id: "13", caption: "Non-Planar Curved Parting Line Enclosure CAD" },
-      { id: "14", caption: "Dual Potentiometer Arduino Breadboard & CCT Test" }
+      { id: "23", caption: "Grasshopper Parametric Toolpath Computation" },
+      { id: "24", caption: "Non-Planar Curved Parting Line Enclosure CAD" },
+      { id: "25", caption: "Dual Potentiometer Arduino Breadboard & CCT Test" }
     ],
     heroMetrics: [
       { label: "Print Mode", val: "Continuous Spiral" },
@@ -434,7 +444,7 @@ const ARCHIVE_PROJECTS = [
       material: "Lampshade: Translucent PETG (AM). Base: Matte ABS Injection Resins",
       finish: "Lampshade: Optical refractive ribs. Base: Mold-Tech MT-11010 Fine Matte",
       tooling: "Complex curved parting line eliminating internal slide undercuts for DC barrel jack and dual potentiometer bosses",
-      software: "Rhino, Grasshopper (GhPython), SolidWorks, Arduino IDE"
+      software: "Rhino, Grasshopper (GhPython), Blender (Procedural Optical Shaders), SolidWorks, Arduino IDE"
     }
   },
   {
@@ -446,12 +456,12 @@ const ARCHIVE_PROJECTS = [
     date: "2024",
     category: "Ergonomics & CMF",
     badge: "BRAND DNA / KINEMATICS",
-    thumbId: "4",
-    heroId: "8",
+    thumbId: "26",
+    heroId: "27",
     gallery: [
-      { id: "18", caption: "Chromatic Blocking & Material Breakdown" },
-      { id: "19", caption: "Twist-and-Lock Detent Articulation Joint" },
-      { id: "20", caption: "PTC Ceramic Heating Core & Anti-Drool Silicone Nozzle" }
+      { id: "28", caption: "Chromatic Blocking & Material Breakdown" },
+      { id: "10", caption: "Twist-and-Lock Detent Articulation Joint" },
+      { id: "13", caption: "PTC Ceramic Heating Core & Anti-Drool Silicone Nozzle" }
     ],
     heroMetrics: [
       { label: "Articulations", val: "Pencil & Pistol" },
@@ -488,7 +498,7 @@ const ARCHIVE_PROJECTS = [
       },
       {
         step: "05",
-        title: "Functional Hardware Refinement",
+        title: "Functional Hardware Refinement & Blender Cycles",
         content: "Integrated an internal PTC ceramic heating core with automatic timeout, analog-style rocker switch with distinct color dot feedback, internal USB-C fast charging, and an anti-drool food-grade silicone nozzle shroud."
       }
     ],
@@ -496,13 +506,12 @@ const ARCHIVE_PROJECTS = [
       material: "High-impact heat-resistant Polyamide (PA66-GF) + Food-grade Silicone Boot",
       finish: "Velvet Soft-touch Matte body with glossy functional highlight levers",
       tooling: "Internal central pivot joint with detent indexing and flexible silicone wire conduit",
-      software: "SolidWorks, KeyShot Studio, Procreate / SketchBook Pro, Clay Ergonomic Studies"
+      software: "SolidWorks, Blender (Crazy Lighting, Procedural Silicone & Cycles Renders), KeyShot Studio, Clay Ergonomics"
     }
   }
 ];
 
 const ALL_PROJECTS = [...FLAGSHIP_2026_PROJECTS, ...ARCHIVE_PROJECTS];
-const PROJECTS = ALL_PROJECTS;
 
 /* --- NAVIGATION --- */
 function Navbar() {
@@ -598,7 +607,6 @@ function HomePage() {
       {/* Hero Section */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pt-24 pb-32">
         <div className="max-w-4xl">
-          {/* Pulsating Indicator & Updated Status */}
           <div className="inline-flex items-center gap-3 mb-8">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
@@ -614,14 +622,13 @@ function HomePage() {
             <span className="text-neutral-400">the real world.</span>
           </h1>
           
-          {/* Subtext: Tool Maker Turned Designer + Design Sensibility & Technical Knowledge */}
           <p className="text-xl md:text-2xl text-neutral-500 max-w-3xl leading-relaxed font-light">
             Tool maker turned industrial designer with strong design sensibility and rigorous technical knowledge. Bringing 4 years of Tool & Die precision to human-centric product design—bridging shopfloor manufacturing reality with refined consumer aesthetics.
           </p>
         </div>
       </section>
 
-      {/* SECTION 1: 2026 FLAGSHIP PROJECTS (Large Thumbnails) */}
+      {/* SECTION 1: 2026 FLAGSHIP PROJECTS (Fixed Mobile Stack & Crisp Typography) */}
       <section id="work" className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
         <div className="flex items-center justify-between mb-12 border-b border-neutral-100 pb-6">
           <div className="flex items-center gap-3">
@@ -631,43 +638,50 @@ function HomePage() {
           <span className="text-xs font-mono text-neutral-400">Current Competency</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-20">
           {FLAGSHIP_2026_PROJECTS.map((proj) => (
             <Link 
               key={proj.slug} 
               to={`/project/${proj.slug}`}
               className="group flex flex-col"
             >
-              <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden mb-8 relative rounded-xl shadow-sm">
+              {/* Visual Thumbnail */}
+              <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden mb-6 md:mb-8 relative rounded-2xl shadow-xs border border-neutral-150">
                 <ProjectImage 
                   id={proj.thumbId} 
                   altText={proj.title}
                   className="group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm">
                   <ArrowUpRight className="w-4 h-4 text-neutral-900" />
                 </div>
               </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-2xl font-medium text-neutral-900 mb-2 group-hover:text-neutral-600 transition-colors">
-                    {proj.title}
-                  </h3>
-                  <p className="text-neutral-500 text-[15px] font-normal leading-relaxed max-w-sm">
-                    {proj.tagline}
-                  </p>
-                </div>
-                <div className="flex flex-col items-end gap-1">
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-400">{proj.category}</span>
-                  <span className="text-[11px] font-medium text-neutral-400 font-mono">{proj.date}</span>
-                </div>
+
+              {/* Mobile-Perfect Layout: Kicker Tag Bar on Top */}
+              <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[11px]">
+                <span className="font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2.5 py-0.5 rounded">
+                  {proj.category}
+                </span>
+                <span className="text-neutral-400 font-semibold">
+                  {proj.date}
+                </span>
+              </div>
+
+              {/* Title & Tagline with Full Width */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-2 group-hover:text-neutral-600 transition-colors leading-snug">
+                  {proj.title}
+                </h3>
+                <p className="text-neutral-500 text-sm md:text-[15px] font-normal leading-relaxed">
+                  {proj.tagline}
+                </p>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* SECTION 2: 4 PAST CASE STUDIES (Smaller Archive Thumbnails) */}
+      {/* SECTION 2: 4 PAST CASE STUDIES (Unique Non-Repeating Images 3, 4, 21, 26) */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
         <div className="flex items-center justify-between mb-8 border-t border-neutral-100 pt-16 pb-4">
           <div className="flex items-center gap-3">
@@ -677,14 +691,14 @@ function HomePage() {
           <span className="text-xs text-neutral-400">04 Case Studies</span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {ARCHIVE_PROJECTS.map((proj) => (
             <Link 
               key={proj.slug} 
               to={`/project/${proj.slug}`}
               className="group flex flex-col"
             >
-              <div className="w-full aspect-[16/10] bg-neutral-100 overflow-hidden mb-4 rounded-lg shadow-sm">
+              <div className="w-full aspect-[16/10] bg-neutral-100 overflow-hidden mb-4 rounded-xl shadow-xs border border-neutral-150">
                 <ProjectImage 
                   id={proj.thumbId} 
                   altText={proj.title}
@@ -692,8 +706,15 @@ function HomePage() {
                 />
               </div>
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-1">{proj.category}</span>
-                <h4 className="text-base font-medium text-neutral-900 mb-1 group-hover:text-neutral-600 transition-colors leading-snug">
+                <div className="flex items-center justify-between mb-1.5 font-mono text-[10px]">
+                  <span className="font-bold uppercase tracking-wider text-neutral-500">
+                    {proj.category}
+                  </span>
+                  <span className="text-neutral-400">
+                    {proj.date}
+                  </span>
+                </div>
+                <h4 className="text-base md:text-lg font-medium text-neutral-900 mb-1 group-hover:text-neutral-600 transition-colors leading-snug">
                   {proj.title}
                 </h4>
                 <p className="text-neutral-400 text-xs line-clamp-2 leading-relaxed">
@@ -735,7 +756,7 @@ function HomePage() {
             </div>
             <h4 className="text-xl font-medium text-neutral-900 mb-2">Design Playground</h4>
             <p className="text-neutral-500 text-xs leading-relaxed mb-6 font-light">
-              Compact vertical mosaic of unconstrained CAD experiments, clay models, and material explorations.
+              Compact vertical mosaic of unconstrained Blender CAD experiments, clay models, and material explorations.
             </p>
             <div className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-neutral-900">
               Explore Renders <ArrowUpRight className="w-3.5 h-3.5" />
@@ -752,7 +773,7 @@ function HomePage() {
             </div>
             <h4 className="text-xl font-medium text-white mb-2">About Sahitya</h4>
             <p className="text-neutral-400 text-xs leading-relaxed mb-6 font-light">
-              4-Year Tool & Die Making Diploma, DTU Design, CSWP Certified, and Future Factory experience.
+              4-Year Tool & Die Making Diploma, DTU Design, CSWP Certified, Blender 3D, and Future Factory experience.
             </p>
             <div className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-white">
               Read Experience <ArrowUpRight className="w-3.5 h-3.5" />
@@ -764,7 +785,7 @@ function HomePage() {
   );
 }
 
-/* --- PAGE 2: PROJECT DETAIL (Restructured per Presentation Flow) --- */
+/* --- PAGE 2: PROJECT DETAIL --- */
 function ProjectDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -835,13 +856,13 @@ function ProjectDetailPage() {
         />
       </div>
 
-      {/* Project Content — Structured strictly per presentation flow */}
+      {/* Project Content */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32">
           <div className="lg:col-span-8">
             <div className="space-y-24">
               
-              {/* The Brief & Success Criteria */}
+              {/* Brief & Objectives */}
               {project.brief && (
                 <section>
                   <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-6 flex items-center gap-4">
@@ -865,7 +886,7 @@ function ProjectDetailPage() {
                 </section>
               )}
 
-              {/* Step-by-Step Presentation Process Sections */}
+              {/* Step Sections */}
               {project.sections && project.sections.map((sec, idx) => (
                 <section key={idx}>
                   <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-6 flex items-center gap-4">
@@ -879,7 +900,7 @@ function ProjectDetailPage() {
             </div>
           </div>
           
-          {/* Sticky Technical Specifications */}
+          {/* Technical Specs */}
           {project.specs && (
             <div className="lg:col-span-4">
               <div className="sticky top-32 p-8 bg-neutral-50 rounded-2xl border border-neutral-100">
@@ -929,11 +950,10 @@ function ProjectDetailPage() {
   );
 }
 
-/* --- PAGE 3: COMMERCIAL (Sanitized Confidential Programs — No Brand Names) --- */
+/* --- PAGE 3: COMMERCIAL --- */
 function CommercialPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  // Strict Confidentiality: Brand names omitted per instructions
   const commercialPrograms = [
     {
       category: "High-Volume Consumer Utility Hardware",
@@ -943,7 +963,7 @@ function CommercialPage() {
         {
           title: "Dual-Function Utility Stool & Cleaning Bucket System",
           tag: "PP Copolymer Tooling & Anthropometric Seating",
-          desc: "Architected a dual-purpose sanitary domestic stool-cum-bucket meeting high-volume injection constraints. ",
+          desc: "Architected a dual-purpose sanitary domestic stool-cum-bucket meeting high-volume injection constraints.",
           specs: [
             "Total Plastic Weight: 674g – 693g",
             "Dual Water Chamber: 6L+6L / 6.4L+6.4L",
@@ -961,7 +981,7 @@ function CommercialPage() {
         {
           title: "High-Capacity Institutional Floor-Standing Purification Station",
           tag: "Industrial Canteen & Enterprise Architecture",
-          desc: "Engineered an industrial-scale standing RO purification station for high-footfall institutions, canteens, and enterprise workspaces. ",
+          desc: "Engineered an industrial-scale standing RO purification station for high-footfall institutions, canteens, and enterprise workspaces.",
           specs: [
             "Heavy-Duty 1.5mm CRCA Metal Enclosure",
             "Insulated Foam Infill Tank Enclosure",
@@ -1062,9 +1082,9 @@ function CommercialPage() {
       
       {/* Portfolio Walkthrough CTA */}
       <div className="mt-28 p-12 bg-neutral-900 rounded-3xl text-center flex flex-col items-center">
-        <h3 className="text-3xl font-medium text-white mb-6">Request full portfolio walk-through</h3>
+        <h3 className="text-3xl font-medium text-white mb-6">Request commercialized projects walk-through</h3>
         <p className="text-neutral-400 text-lg mb-10 max-w-xl font-light">
-          Available for private walk-throughs of sanitized CAD models, physical visual mockups, and production tooling drawings for verified teams.
+          Available for private walk-throughs of sanitized CAD models, physical visual mockups, and rend for verified teams.
         </p>
         <a 
           href="mailto:design.er.saahi@gmail.com?subject=Confidential%20Portfolio%20Review" 
@@ -1077,12 +1097,12 @@ function CommercialPage() {
   );
 }
 
-/* --- PAGE 4: PLAYGROUND (Dense, Non-Clickable Vertical Mosaic Grid) --- */
+/* --- PAGE 4: PLAYGROUND --- */
 function PlaygroundPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const playgroundRenders = [
-    { id: "1", tag: "KeyShot 2026", alt: "Refractive Optical Ribs & Light Bleed" },
+    { id: "1", tag: "Blender Cycles", alt: "Refractive Optical Ribs & Light Bleed" },
     { id: "2", tag: "Grasshopper", alt: "Continuous Wave Toolpath Modulation" },
     { id: "3", tag: "SolidWorks", alt: "Dual-Durometer Co-Injection Grip" },
     { id: "4", tag: "CMF Study", alt: "Analogous Palette & SPI Polish Blocking" },
@@ -1106,11 +1126,10 @@ function PlaygroundPage() {
           Renders, Form Studies <br />& Explorations
         </h1>
         <p className="text-xl text-neutral-500 leading-relaxed font-light">
-          A visual archive of unconstrained CAD experiments, clay models, rapid CMF studies, and Grasshopper iterations.
+          A visual archive of unconstrained CAD experiments, clay models, rapid CMF studies, Blender visual labs, and Grasshopper iterations.
         </p>
       </div>
 
-      {/* TIGHT VERTICAL IMAGE GRID */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-3 cursor-default select-none">
         {playgroundRenders.map((item, idx) => (
           <div 
@@ -1130,7 +1149,6 @@ function PlaygroundPage() {
         ))}
       </div>
 
-      {/* Under Construction Notice */}
       <div className="mt-16 bg-neutral-50 border border-neutral-200 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div className="max-w-2xl">
           <span className="text-xs font-mono uppercase tracking-widest text-orange-600 block mb-3 font-bold">
@@ -1157,12 +1175,11 @@ function PlaygroundPage() {
   );
 }
 
-/* --- PAGE 5: ABOUT ME --- */
+/* --- PAGE 5: ABOUT ME (Blender Added to Core Competencies & Software) --- */
 function AboutPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div>
-      {/* Header */}
       <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-20">
         <Link to="/" className="group inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-neutral-400 hover:text-neutral-900 mb-12 transition-colors uppercase">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to home
@@ -1175,8 +1192,8 @@ function AboutPage() {
             </p>
           </div>
           <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8">
-            Precision at the intersection of <br />
-            <span className="text-neutral-400">machining and design.</span>
+            Intersection of <br />
+            <span className="text-neutral-400">design and manufacturing.</span>
           </h1>
           <p className="text-2xl text-neutral-600 leading-relaxed font-light">
             With 4 years of intensive Tool & Die making training followed by formal Industrial Design at DTU, I bridge shopfloor manufacturing reality with clean, human-centered consumer hardware aesthetics.
@@ -1184,12 +1201,10 @@ function AboutPage() {
         </div>
       </header>
 
-      {/* Main Content Details */}
       <section className="bg-neutral-900 py-32 text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
-            {/* Left Column: Accolades, Education & Skills */}
             <div className="lg:col-span-5 space-y-12">
               <div>
                 <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Pedigree & Accolades</h2>
@@ -1227,23 +1242,27 @@ function AboutPage() {
                 </div>
               </div>
 
-              {/* Core Competencies */}
+              {/* Core Competencies Matrix */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
                   <WrenchIcon className="w-4 h-4 text-orange-400" /> Core Competencies
                 </div>
                 <div className="space-y-3 text-xs">
                   <div>
-                    <span className="text-neutral-400 block mb-1">3D CAD & Surface Modeling</span>
-                    <p className="text-neutral-200 font-medium">Rhino, Grasshopper, SolidWorks, Autodesk Inventor, Fusion 360</p>
+                    <span className="text-neutral-400 block mb-1">3D CAD & Computational Modeling</span>
+                    <p className="text-neutral-200 font-medium">Rhino, Grasshopper, SolidWorks (CSWP), Autodesk Inventor, Fusion 360</p>
+                  </div>
+                  <div className="border-t border-neutral-700/50 pt-2.5">
+                    <span className="text-orange-400 block mb-1 font-bold">⚡ Rapid Ideation & Advanced Visualization</span>
+                    <p className="text-white font-medium">Blender (Crazy Procedural Shading, Fast Silhouette Concepting & Cycles Renders), KeyShot Studio</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-2.5">
                     <span className="text-neutral-400 block mb-1">Manufacturing & Shopfloor</span>
                     <p className="text-neutral-200 font-medium">DFM / DFA, Conformal Cooling, GD&T, Metal AM, Press Tools, Injection Moulds, Welding</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-2.5">
-                    <span className="text-neutral-400 block mb-1">Visualization & Prototyping</span>
-                    <p className="text-neutral-200 font-medium">KeyShot, Illustrator, Photoshop, InDesign, SketchBook Pro, Rapid Laser & CNC</p>
+                    <span className="text-neutral-400 block mb-1">Prototyping & Documentation</span>
+                    <p className="text-neutral-200 font-medium">Illustrator, Photoshop, InDesign, SketchBook Pro, Rapid Laser & CNC Nesting</p>
                   </div>
                 </div>
               </div>
@@ -1312,7 +1331,7 @@ function AboutPage() {
 /* --- ROOT APP --- */
 export default function App() {
   useEffect(() => {
-    document.title = "Sahitya Kashyap Industrial Designer";
+    document.title = "Sahitya Kashyap | Industrial Designer";
   }, []);
 
   return (
@@ -1321,7 +1340,7 @@ export default function App() {
         <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col">
           <div className="bg-neutral-900 py-1.5 text-center">
             <span className="text-white font-mono text-[9px] font-bold uppercase tracking-[0.3em]">
-              Website under construction
+              Website under construction, Please visit my behance for now.
             </span>
           </div>
           <Navbar />
