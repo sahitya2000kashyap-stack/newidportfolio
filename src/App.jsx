@@ -1290,12 +1290,12 @@ function AboutPage() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
               </span>
               <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-                Industrial Designer & Design Strategist
+                Tool Maker Turned Industrial Designer
               </p>
             </div>
             <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8 leading-[1.08]">
-              Human-centric design, <br />
-              <span className="text-neutral-400">engineered to be built.</span>
+              Design Sensibility <br />
+              <span className="text-neutral-400"> With Technical Vigour</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-light">
               Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and category-defining hardware that manufacturers can produce without compromise.
