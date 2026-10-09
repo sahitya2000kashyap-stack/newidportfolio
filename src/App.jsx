@@ -11,7 +11,8 @@ import {
   ArrowUpRight, 
   ArrowLeft, 
   Lock, 
-  ImageIcon 
+  ImageIcon,
+  ArrowUp
 } from 'lucide-react';
 
 /* --- ERROR BOUNDARY --- */
@@ -45,6 +46,35 @@ class ErrorBoundary extends Component {
     }
     return this.props.children;
   }
+}
+
+/* --- SCROLL TO TOP FLOATING BUTTON --- */
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (!visible) return null;
+
+  return (
+    <button
+      onClick={scrollToTop}
+      aria-label="Scroll to top"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-neutral-900 text-white shadow-xl hover:bg-neutral-800 border border-neutral-700 active:scale-95 transition-all flex items-center justify-center"
+    >
+      <ArrowUp className="w-4 h-4" />
+    </button>
+  );
 }
 
 /* --- DIRECT STATIC IMPORTS (28 NON-REPEATING SLOTS) --- */
@@ -109,7 +139,7 @@ function ProjectImage({ id, altText, className = "" }) {
   );
 }
 
-/* --- INLINE ROBUST ICONS --- */
+/* --- INLINE ICONS --- */
 function GraduationCapIcon({ className = "w-4 h-4" }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -166,7 +196,6 @@ function BatteryChargingIcon({ className = "w-5 h-5" }) {
 }
 
 /* --- FULL DATA REPOSITORY --- */
-/* 2 Flagship Works (2026) */
 const FLAGSHIP_2026_PROJECTS = [
   {
     slug: "strata-purifier",
@@ -207,7 +236,7 @@ const FLAGSHIP_2026_PROJECTS = [
       material: "Matte Polypropylene (PP) Copolymer + Anodized Aluminum Handle Rail",
       finish: "Mold-Tech MT-11020 Fine Grain on main housing; high-polish chamfers",
       tooling: "Single-pull straight-action core & cavity mold with minimal slide action",
-      software: "SolidWorks, Blender (Rapid Form Ideation & Cycles Shading), KeyShot, Flow Simulation CFD"
+      software: "SolidWorks, Blender (Form Concepting & Cycles Shading), KeyShot, Flow Simulation CFD"
     }
   },
   {
@@ -241,20 +270,19 @@ const FLAGSHIP_2026_PROJECTS = [
       },
       {
         step: "02",
-        title: "Haptic Detent Engineering & Blender Concepting",
-        content: "Used Blender for early digital surface clay sculpting before drafting mechanical SolidWorks assemblies with ball-bearing spring detents."
+        title: "Haptic Detent Engineering & Digital Concepting",
+        content: "Utilized Blender for rapid digital surface sculpting prior to drafting mechanical SolidWorks assemblies with ball-bearing spring detents."
       }
     ],
     specs: {
       material: "Die-Cast Zamak 3 internal spine, brushed 304 Stainless Steel cladding",
       finish: "PVD Gunmetal and bead-blasted satin steel with turned knurled knobs",
       tooling: "Multi-slide zinc die casting and progressive die sheet metal stamping",
-      software: "SolidWorks Mechanical FEA, Blender (Lighting & Photorealistic Renders), KeyShot Studio"
+      software: "SolidWorks Mechanical FEA, Blender (Lighting & Renders), KeyShot Studio"
     }
   }
 ];
 
-/* 4 Foundation Projects */
 const ARCHIVE_PROJECTS = [
   {
     slug: "scotch",
@@ -498,7 +526,7 @@ const ARCHIVE_PROJECTS = [
       },
       {
         step: "05",
-        title: "Functional Hardware Refinement & Blender Cycles",
+        title: "Functional Hardware Refinement & Material Studies",
         content: "Integrated an internal PTC ceramic heating core with automatic timeout, analog-style rocker switch with distinct color dot feedback, internal USB-C fast charging, and an anti-drool food-grade silicone nozzle shroud."
       }
     ],
@@ -506,7 +534,7 @@ const ARCHIVE_PROJECTS = [
       material: "High-impact heat-resistant Polyamide (PA66-GF) + Food-grade Silicone Boot",
       finish: "Velvet Soft-touch Matte body with glossy functional highlight levers",
       tooling: "Internal central pivot joint with detent indexing and flexible silicone wire conduit",
-      software: "SolidWorks, Blender (Crazy Lighting, Procedural Silicone & Cycles Renders), KeyShot Studio, Clay Ergonomics"
+      software: "SolidWorks, Blender (Procedural Silicone & Cycles Renders), KeyShot Studio, Clay Ergonomics"
     }
   }
 ];
@@ -519,7 +547,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <Link to="/" className="text-xl font-medium tracking-tight text-neutral-900 hover:opacity-75 transition-opacity">
-          SAHITYA KASHYAP
+          SAHITYA
         </Link>
         
         <div className="flex items-center gap-8 md:gap-10">
@@ -604,7 +632,6 @@ function Footer() {
 function HomePage() {
   return (
     <div>
-      {/* Hero Section */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pt-24 pb-32">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-3 mb-8">
@@ -613,7 +640,7 @@ function HomePage() {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
             </span>
             <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-              Currently working at Future Factory, Mumbai
+              Currently working at Future Factory, Mumbai (June 2025 — Present)
             </p>
           </div>
           
@@ -628,7 +655,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 1: 2026 FLAGSHIP PROJECTS (Fixed Mobile Stack & Crisp Typography) */}
+      {/* SECTION 1: 2026 FLAGSHIP PROJECTS */}
       <section id="work" className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
         <div className="flex items-center justify-between mb-12 border-b border-neutral-100 pb-6">
           <div className="flex items-center gap-3">
@@ -645,7 +672,6 @@ function HomePage() {
               to={`/project/${proj.slug}`}
               className="group flex flex-col"
             >
-              {/* Visual Thumbnail */}
               <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden mb-6 md:mb-8 relative rounded-2xl shadow-xs border border-neutral-150">
                 <ProjectImage 
                   id={proj.thumbId} 
@@ -657,7 +683,6 @@ function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile-Perfect Layout: Kicker Tag Bar on Top */}
               <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[11px]">
                 <span className="font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2.5 py-0.5 rounded">
                   {proj.category}
@@ -667,7 +692,6 @@ function HomePage() {
                 </span>
               </div>
 
-              {/* Title & Tagline with Full Width */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-2 group-hover:text-neutral-600 transition-colors leading-snug">
                   {proj.title}
@@ -681,7 +705,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: 4 PAST CASE STUDIES (Unique Non-Repeating Images 3, 4, 21, 26) */}
+      {/* SECTION 2: 4 PAST CASE STUDIES */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
         <div className="flex items-center justify-between mb-8 border-t border-neutral-100 pt-16 pb-4">
           <div className="flex items-center gap-3">
@@ -751,7 +775,7 @@ function HomePage() {
             className="group block bg-white border border-neutral-200 rounded-2xl p-8 hover:border-neutral-900 transition-colors duration-300"
           >
             <div className="inline-flex items-center gap-2 mb-4">
-              <SparklesIcon className="w-4 h-4 text-orange-500" />
+              <SparklesIcon className="w-4 h-4 text-neutral-900" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-900">Visual Lab</span>
             </div>
             <h4 className="text-xl font-medium text-neutral-900 mb-2">Design Playground</h4>
@@ -768,7 +792,7 @@ function HomePage() {
             className="group block bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-neutral-700 transition-colors duration-300"
           >
             <div className="inline-flex items-center gap-2 mb-4">
-              <GraduationCapIcon className="w-4 h-4 text-orange-400" />
+              <GraduationCapIcon className="w-4 h-4 text-neutral-300" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300">Tool Maker Roots</span>
             </div>
             <h4 className="text-xl font-medium text-white mb-2">About Sahitya</h4>
@@ -847,7 +871,6 @@ function ProjectDetailPage() {
         )}
       </header>
 
-      {/* Hero Showcase Image */}
       <div className="w-full aspect-[21/9] bg-neutral-100 overflow-hidden mb-24">
         <ProjectImage 
           id={project.heroId} 
@@ -856,13 +879,11 @@ function ProjectDetailPage() {
         />
       </div>
 
-      {/* Project Content */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32">
           <div className="lg:col-span-8">
             <div className="space-y-24">
               
-              {/* Brief & Objectives */}
               {project.brief && (
                 <section>
                   <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-6 flex items-center gap-4">
@@ -886,7 +907,6 @@ function ProjectDetailPage() {
                 </section>
               )}
 
-              {/* Step Sections */}
               {project.sections && project.sections.map((sec, idx) => (
                 <section key={idx}>
                   <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-900 mb-6 flex items-center gap-4">
@@ -900,7 +920,6 @@ function ProjectDetailPage() {
             </div>
           </div>
           
-          {/* Technical Specs */}
           {project.specs && (
             <div className="lg:col-span-4">
               <div className="sticky top-32 p-8 bg-neutral-50 rounded-2xl border border-neutral-100">
@@ -928,7 +947,6 @@ function ProjectDetailPage() {
           )}
         </div>
 
-        {/* Gallery Grid */}
         {project.gallery && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 mb-32">
             {project.gallery.map((img, idx) => (
@@ -1080,11 +1098,10 @@ function CommercialPage() {
         ))}
       </div>
       
-      {/* Portfolio Walkthrough CTA */}
       <div className="mt-28 p-12 bg-neutral-900 rounded-3xl text-center flex flex-col items-center">
-        <h3 className="text-3xl font-medium text-white mb-6">Request commercialized projects walk-through</h3>
+        <h3 className="text-3xl font-medium text-white mb-6">Request full portfolio walk-through</h3>
         <p className="text-neutral-400 text-lg mb-10 max-w-xl font-light">
-          Available for private walk-throughs of sanitized CAD models, physical visual mockups, and rend for verified teams.
+          Available for private walk-throughs of sanitized CAD models, physical visual mockups, and production tooling drawings for verified teams.
         </p>
         <a 
           href="mailto:design.er.saahi@gmail.com?subject=Confidential%20Portfolio%20Review" 
@@ -1119,8 +1136,8 @@ function PlaygroundPage() {
       </Link>
       
       <div className="max-w-3xl mb-12">
-        <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-orange-600 bg-orange-50 border border-orange-200 px-3 py-1 rounded-full uppercase tracking-widest">
-          <SparklesIcon className="w-3 h-3 text-orange-600" /> Visual Lab & Playground
+        <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-neutral-900 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full uppercase tracking-widest">
+          <SparklesIcon className="w-3 h-3 text-neutral-900" /> Visual Lab & Playground
         </div>
         <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-6">
           Renders, Form Studies <br />& Explorations
@@ -1151,7 +1168,7 @@ function PlaygroundPage() {
 
       <div className="mt-16 bg-neutral-50 border border-neutral-200 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div className="max-w-2xl">
-          <span className="text-xs font-mono uppercase tracking-widest text-orange-600 block mb-3 font-bold">
+          <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-3 font-bold">
             Curating New High-Res Renders
           </span>
           <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-3">
@@ -1175,7 +1192,7 @@ function PlaygroundPage() {
   );
 }
 
-/* --- PAGE 5: ABOUT ME (Blender Added to Core Competencies & Software) --- */
+/* --- PAGE 5: ABOUT ME (Cleaned Up Competencies + Exact Month-to-Month Timeline) --- */
 function AboutPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
@@ -1192,8 +1209,8 @@ function AboutPage() {
             </p>
           </div>
           <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8">
-            Intersection of <br />
-            <span className="text-neutral-400">design and manufacturing.</span>
+            Precision at the intersection of <br />
+            <span className="text-neutral-400">machining and design.</span>
           </h1>
           <p className="text-2xl text-neutral-600 leading-relaxed font-light">
             With 4 years of intensive Tool & Die making training followed by formal Industrial Design at DTU, I bridge shopfloor manufacturing reality with clean, human-centered consumer hardware aesthetics.
@@ -1224,51 +1241,51 @@ function AboutPage() {
               {/* Education Card */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
-                  <GraduationCapIcon className="w-4 h-4 text-orange-400" /> Formal Education
+                  <GraduationCapIcon className="w-4 h-4 text-neutral-300" /> Formal Education
                 </div>
                 <div className="space-y-4 text-sm">
                   <div>
                     <h5 className="font-medium text-white">Offsite Pro 2024</h5>
-                    <p className="text-neutral-400 text-xs">Advanced Design • Chicago, Illinois (Jun – Aug 2024)</p>
+                    <p className="text-neutral-400 text-xs">Advanced Design • Chicago, Illinois (June 2024 – Aug 2024)</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <h5 className="font-medium text-white">Bachelors of Design (B.Des)</h5>
-                    <p className="text-neutral-400 text-xs">Delhi Technological University (DTU) • 2021 – 2025</p>
+                    <p className="text-neutral-400 text-xs">Delhi Technological University (DTU) • Aug 2021 – May 2025</p>
                   </div>
                   <div className="border-t border-neutral-700/50 pt-3">
                     <h5 className="font-medium text-white">Diploma in Tool & Die Making (4-Year Program)</h5>
-                    <p className="text-neutral-400 text-xs">Delhi Institute of Tool Engineering (DITE) • 2017 – 2021</p>
+                    <p className="text-neutral-400 text-xs">Delhi Institute of Tool Engineering (DITE) • Aug 2017 – July 2021</p>
                   </div>
                 </div>
               </div>
 
-              {/* Core Competencies Matrix */}
+              {/* Core Competencies (Harmonized, Cleaned-Up, No Distracting Highlights) */}
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
                 <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
-                  <WrenchIcon className="w-4 h-4 text-orange-400" /> Core Competencies
+                  <WrenchIcon className="w-4 h-4 text-neutral-300" /> Core Competencies
                 </div>
-                <div className="space-y-3 text-xs">
+                <div className="space-y-4 text-xs">
                   <div>
                     <span className="text-neutral-400 block mb-1">3D CAD & Computational Modeling</span>
-                    <p className="text-neutral-200 font-medium">Rhino, Grasshopper, SolidWorks (CSWP), Autodesk Inventor, Fusion 360</p>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Rhino, Grasshopper, SolidWorks (CSWP), Autodesk Inventor, Fusion 360</p>
                   </div>
-                  <div className="border-t border-neutral-700/50 pt-2.5">
-                    <span className="text-orange-400 block mb-1 font-bold">⚡ Rapid Ideation & Advanced Visualization</span>
-                    <p className="text-white font-medium">Blender (Crazy Procedural Shading, Fast Silhouette Concepting & Cycles Renders), KeyShot Studio</p>
+                  <div className="border-t border-neutral-700/50 pt-3">
+                    <span className="text-neutral-400 block mb-1">Rapid Ideation & Advanced Visualization</span>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Blender (Procedural Material Shading, Fast Form Ideation & Cycles Rendering), KeyShot Studio</p>
                   </div>
-                  <div className="border-t border-neutral-700/50 pt-2.5">
-                    <span className="text-neutral-400 block mb-1">Manufacturing & Shopfloor</span>
-                    <p className="text-neutral-200 font-medium">DFM / DFA, Conformal Cooling, GD&T, Metal AM, Press Tools, Injection Moulds, Welding</p>
+                  <div className="border-t border-neutral-700/50 pt-3">
+                    <span className="text-neutral-400 block mb-1">Manufacturing & Shopfloor DFM</span>
+                    <p className="text-neutral-200 font-medium leading-relaxed">DFM / DFA, Conformal Cooling, GD&T, Metal AM, Press Tools, Injection Moulds, Welding</p>
                   </div>
-                  <div className="border-t border-neutral-700/50 pt-2.5">
+                  <div className="border-t border-neutral-700/50 pt-3">
                     <span className="text-neutral-400 block mb-1">Prototyping & Documentation</span>
-                    <p className="text-neutral-200 font-medium">Illustrator, Photoshop, InDesign, SketchBook Pro, Rapid Laser & CNC Nesting</p>
+                    <p className="text-neutral-200 font-medium leading-relaxed">Illustrator, Photoshop, InDesign, SketchBook Pro, Rapid Laser & CNC Nesting</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Right Column: Work Experience Timeline */}
+            {/* Right Column: Work Experience Timeline with Explicit Month-to-Month Dates */}
             <div className="lg:col-span-7">
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-8">Work Experience</h3>
               <div className="space-y-8">
@@ -1276,31 +1293,36 @@ function AboutPage() {
                   {
                     role: "Industrial Designer",
                     company: "Future Factory, Mumbai",
-                    period: "2025 — Present",
+                    period: "June 2025 — Present",
+                    duration: "Ongoing",
                     desc: "Developing mass-market appliances and structural mechanism systems for leading global consumer brands."
                   },
                   {
                     role: "CMF Design Intern",
                     company: "Maruti Suzuki India, Gurgaon",
-                    period: "2025",
-                    desc: "User research, trends research, and 3D texture & illumination pattern generation with Grasshopper."
+                    period: "Jan 2025 — May 2025",
+                    duration: "5 Months",
+                    desc: "User research, trends research, and 3D texture & illumination pattern generation with Grasshopper for passenger cabin interiors."
                   },
                   {
                     role: "Product Design Intern",
-                    company: "Webby Toys Pvt Ltd",
-                    period: "2023",
+                    company: "Webby Toys Pvt Ltd, Delhi",
+                    period: "June 2023 — Aug 2023",
+                    duration: "3 Months",
                     desc: "Designed interactive tabletop games under target price thresholds; DFM optimization for high-yield sheet nesting & injection moulding."
                   },
                   {
                     role: "Product Design Intern",
-                    company: "Webby Toys Pvt Ltd",
-                    period: "2022",
+                    company: "Webby Toys Pvt Ltd, Delhi",
+                    period: "June 2022 — July 2022",
+                    duration: "2 Months",
                     desc: "Design research, ideation, competitor analysis, prototyping, and CAD modeling for children aged 6 to 14. Pine wood workflow optimization."
                   },
                   {
                     role: "Application Engineer Trainee",
-                    company: "Objectify Technologies Pvt Ltd",
-                    period: "2021",
+                    company: "Objectify Technologies Pvt Ltd, NOIDA",
+                    period: "Jan 2021 — June 2021",
+                    duration: "6 Months",
                     desc: "Design for Additive Manufacturing (DFAM), conformal cooling channel architecture for injection moulds, and RFQ technical client quotation."
                   }
                 ].map((item, idx) => (
@@ -1313,8 +1335,9 @@ function AboutPage() {
                       <p className="text-neutral-400 text-sm mt-1">{item.company}</p>
                     </div>
                     <div className="md:text-right flex flex-col md:items-end gap-1">
-                      <span className="text-neutral-500 text-sm font-mono">{item.period}</span>
-                      <p className="text-neutral-400 text-sm max-w-sm md:text-right font-light">{item.desc}</p>
+                      <span className="text-neutral-300 text-sm font-mono font-medium">{item.period}</span>
+                      <span className="text-neutral-500 text-xs font-mono">{item.duration}</span>
+                      <p className="text-neutral-400 text-sm max-w-sm md:text-right font-light mt-1">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -1340,7 +1363,7 @@ export default function App() {
         <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col">
           <div className="bg-neutral-900 py-1.5 text-center">
             <span className="text-white font-mono text-[9px] font-bold uppercase tracking-[0.3em]">
-              Website under construction, Please visit my behance for now.
+              Website under construction, PLease visit my behance for my portfolio.
             </span>
           </div>
           <Navbar />
@@ -1356,6 +1379,7 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
+          <ScrollToTopButton />
         </div>
       </Router>
     </ErrorBoundary>
