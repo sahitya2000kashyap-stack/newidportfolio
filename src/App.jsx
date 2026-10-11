@@ -21,7 +21,8 @@ import {
   Wrench,
   ShieldCheck,
   EyeOff,
-  Quote
+  Quote,
+  Play
 } from 'lucide-react';
 
 /* --- ERROR BOUNDARY --- */
@@ -86,115 +87,20 @@ function ScrollToTopButton() {
   );
 }
 
-/* --- DIRECT STATIC IMPORTS (PRESERVING 1-70 EXACTLY & EXPANDED TO 85) --- */
-import img1 from './assets/1.png';
-import img2 from './assets/2.png';
-import img3 from './assets/3.png';
-import img4 from './assets/4.png';
-import img5 from './assets/5.png';
-import img6 from './assets/6.png';
-import img7 from './assets/7.png';
-import img8 from './assets/8.png';
-import img9 from './assets/9.png';
-import img10 from './assets/10.png';
-import img11 from './assets/11.png';
-import img12 from './assets/12.png';
-import img13 from './assets/13.png';
-import img14 from './assets/14.png';
-import img15 from './assets/15.png';
-import img16 from './assets/16.png';
-import img17 from './assets/17.png';
-import img18 from './assets/18.png';
-import img19 from './assets/19.png';
-import img20 from './assets/20.png';
-import img21 from './assets/21.png';
-import img22 from './assets/22.png';
-import img23 from './assets/23.png';
-import img24 from './assets/24.png';
-import img25 from './assets/25.png';
-import img26 from './assets/26.png';
-import img27 from './assets/27.png';
-import img28 from './assets/28.png';
-import img29 from './assets/29.png';
-import img30 from './assets/30.png';
-import img31 from './assets/31.png';
-import img32 from './assets/32.png';
-import img33 from './assets/33.png';
-import img34 from './assets/34.png';
-import img35 from './assets/35.png';
-import img36 from './assets/36.png';
-import img37 from './assets/37.png';
-import img38 from './assets/38.png';
-import img39 from './assets/39.png';
-import img40 from './assets/40.png';
-import img41 from './assets/41.png';
-import img42 from './assets/42.png';
-import img43 from './assets/43.png';
-import img44 from './assets/44.png';
-import img45 from './assets/45.png';
-import img46 from './assets/46.png';
-import img47 from './assets/47.png';
-import img48 from './assets/48.png';
-import img49 from './assets/49.png';
-import img50 from './assets/50.png';
-import img51 from './assets/51.png';
-import img52 from './assets/52.png';
-import img53 from './assets/53.png';
-import img54 from './assets/54.png';
-import img55 from './assets/55.png';
-import img56 from './assets/56.png';
-import img57 from './assets/57.png';
-import img58 from './assets/58.png';
-import img59 from './assets/59.png';
-import img60 from './assets/60.png';
-import img61 from './assets/61.png';
-import img62 from './assets/62.png';
-import img63 from './assets/63.png';
-import img64 from './assets/64.png';
-import img65 from './assets/65.png';
-import img66 from './assets/66.png';
-import img67 from './assets/67.png';
-import img68 from './assets/68.png';
-import img69 from './assets/69.png';
-import img70 from './assets/70.png';
-import img71 from './assets/71.png';
-import img72 from './assets/72.png';
-import img73 from './assets/73.png';
-import img74 from './assets/74.png';
-import img75 from './assets/75.png';
-import img76 from './assets/76.png';
-import img77 from './assets/77.png';
-import img78 from './assets/78.png';
-import img79 from './assets/79.png';
-import img80 from './assets/80.png';
-import img81 from './assets/81.png';
-import img82 from './assets/82.png';
-import img83 from './assets/83.png';
-import img84 from './assets/84.png';
-import img85 from './assets/85.png';
+/* --- DYNAMIC ASSET REGISTRY --- */
+const assetFiles = import.meta.glob('./assets/*.png', { eager: true });
 
-const imageMap = {
-  "1": img1, "2": img2, "3": img3, "4": img4, "5": img5,
-  "6": img6, "7": img7, "8": img8, "9": img9, "10": img10,
-  "11": img11, "12": img12, "13": img13, "14": img14, "15": img15,
-  "16": img16, "17": img17, "18": img18, "19": img19, "20": img20,
-  "21": img21, "22": img22, "23": img23, "24": img24, "25": img25,
-  "26": img26, "27": img27, "28": img28, "29": img29, "30": img30,
-  "31": img31, "32": img32, "33": img33, "34": img34, "35": img35,
-  "36": img36, "37": img37, "38": img38, "39": img39, "40": img40,
-  "41": img41, "42": img42, "43": img43, "44": img44, "45": img45,
-  "46": img46, "47": img47, "48": img48, "49": img49, "50": img50,
-  "51": img51, "52": img52, "53": img53, "54": img54, "55": img55,
-  "56": img56, "57": img57, "58": img58, "59": img59, "60": img60,
-  "61": img61, "62": img62, "63": img63, "64": img64, "65": img65,
-  "66": img66, "67": img67, "68": img68, "69": img69, "70": img70,
-  "71": img71, "72": img72, "73": img73, "74": img74, "75": img75,
-  "76": img76, "77": img77, "78": img78, "79": img79, "80": img80,
-  "81": img81, "82": img82, "83": img83, "84": img84, "85": img85
-};
+function getAssetUrl(id) {
+  if (!id) return null;
+  const matchKey = Object.keys(assetFiles).find(key => {
+    const filename = key.split('/').pop().replace(/\.png$/i, '');
+    return filename === String(id);
+  });
+  return matchKey ? assetFiles[matchKey].default : null;
+}
 
 function ProjectImage({ id, altText, className = "", fitMode = "object-cover" }) {
-  const src = imageMap[String(id)];
+  const src = getAssetUrl(id);
 
   if (!src) {
     return (
@@ -203,7 +109,7 @@ function ProjectImage({ id, altText, className = "", fitMode = "object-cover" })
         <span className="font-mono text-[11px] text-neutral-600 font-bold tracking-wider">
           {id ? `${id}.png` : "Render Preview"}
         </span>
-        <span className="font-mono text-[9px] text-neutral-400 mt-0.5">src/assets/{id}.png</span>
+        <span className="font-mono text-[9px] text-neutral-400 mt-0.5">Missing: src/assets/{id}.png</span>
       </div>
     );
   }
@@ -484,6 +390,20 @@ const ARCHIVE_PROJECTS = [
         fitMode: "object-cover"
       },
       {
+        type: "pure_render_spread",
+        imageId: "23",
+        caption: "Exploded CMF & Internal Spool Fitment Render",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "24",
+        caption: "High-Gloss Studio Perspective View",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
         type: "success_verification",
         tag: "EVALUATION",
         title: "Did I hit the mark?",
@@ -507,7 +427,7 @@ const ARCHIVE_PROJECTS = [
     tagline: "Interactive STEAM tabletop educational toy teaching 2D Cartesian coordinate indexing.",
     client: "Webby Toys Pvt Ltd (Design Internship)",
     timeline: "2 Months",
-    date: "2023",
+    date: "2022",
     category: "Toy Design",
     badge: "TOY ARCHITECTURE / LOW-CAPEX DFM",
     thumbId: "4",
@@ -586,6 +506,27 @@ const ARCHIVE_PROJECTS = [
         caption: "Slide 28: Interactive Gameplay Flow & Tactile Scoring Steps",
         aspectClass: "aspect-[16/9] md:aspect-[21/9]",
         fitMode: "object-contain bg-white"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "35",
+        caption: "Kinematic Turret Pivot Detailing & Pinion Teeth Fitment",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "37",
+        caption: "Die-Cut Flat Packaging Nesting Simulation",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "video_embed",
+        tag: "PHYSICAL PLAYTESTING DEMO",
+        title: "Working Toy Mechanics & Marble Launch Demonstration",
+        desc: "Watch the live demonstration of the 180° rotary aiming turret, 2D Cartesian coordinate indexing, and marble launch feedback.",
+        youtubeId: "TGUaLafrzao"
       }
     ],
     specs: {
@@ -708,6 +649,20 @@ const ARCHIVE_PROJECTS = [
         caption: "Slide 44: Final Working Model in Illuminated Domestic Setting",
         aspectClass: "aspect-[16/9] md:aspect-[21/9]",
         fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "51",
+        caption: "Warm CCT Illumination Detail & Translucent Optical Ripple",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "52",
+        caption: "Turned Knurled Potentiometer Detailing & Undercut-Free Split Base",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
       }
     ],
     specs: {
@@ -799,7 +754,7 @@ const ARCHIVE_PROJECTS = [
         tag: "CONCEPT REFINEMENT",
         title: "Haptic Detents, Rocker Switches & USB-C",
         desc: "Integrated an internal PTC ceramic heating core, analog rocker switch with color dot feedback, internal USB-C fast charging, and an anti-drool food-grade silicone nozzle shroud.",
-        imageId: "74", // Now properly imported & mapped
+        imageId: "74",
         caption: "Slide 59: CMF Detailing: Soft-Touch Chassis, High-Gloss Actuators & Rocker Switches",
         aspectClass: "aspect-[16/10] md:aspect-[16/9]",
         fitMode: "object-contain bg-white"
@@ -809,6 +764,20 @@ const ARCHIVE_PROJECTS = [
         imageId: "75",
         caption: "Slide 60: Hero Render: Articulating Craft Adhesive Tool in Pencil Grip Mode",
         aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "76",
+        caption: "Internal Mechanical Packaging & PTC Heating Cartridge Assembly",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "77",
+        caption: "Detent Articulation Joint Exploded View",
+        aspectClass: "aspect-[16/9]",
         fitMode: "object-cover"
       },
       {
@@ -996,12 +965,18 @@ function HomePage() {
 
       {/* SECTION 1: 2026 FLAGSHIP PROJECTS */}
       <section id="work" className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
-        <div className="flex items-center justify-between mb-12 border-b border-neutral-100 pb-6">
-          <div className="flex items-center gap-3">
-            <span className="px-2.5 py-0.5 bg-neutral-900 text-white font-mono text-[10px] font-bold uppercase rounded">2026</span>
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">Featured Flagship Works</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-12 border-b border-neutral-100 pb-6 w-full">
+          <div className="flex items-center gap-2.5">
+            <span className="px-2.5 py-0.5 bg-neutral-900 text-white font-mono text-[10px] font-bold uppercase rounded shrink-0">
+              2026
+            </span>
+            <h2 className="text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-900">
+              Featured Flagship Works
+            </h2>
           </div>
-          <span className="text-xs font-mono text-neutral-400">In Active Development</span>
+          <span className="text-[11px] sm:text-xs font-mono text-neutral-400 self-end sm:self-auto shrink-0">
+            Current Competency
+          </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-20">
@@ -1052,12 +1027,18 @@ function HomePage() {
 
       {/* SECTION 2: 4 PAST CASE STUDIES */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
-        <div className="flex items-center justify-between mb-8 border-t border-neutral-100 pt-16 pb-4">
-          <div className="flex items-center gap-3">
-            <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 font-mono text-[10px] font-bold uppercase rounded">2023 — 2024</span>
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">Foundation & Archive Projects</h3>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8 border-t border-neutral-100 pt-16 pb-4 w-full">
+          <div className="flex items-center gap-2.5">
+            <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 font-mono text-[10px] font-bold uppercase rounded shrink-0">
+              2022 — 2024
+            </span>
+            <h3 className="text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500">
+              Foundation & Archive Projects
+            </h3>
           </div>
-          <span className="text-xs text-neutral-400">04 Case Studies</span>
+          <span className="text-[11px] sm:text-xs font-mono text-neutral-400 self-end sm:self-auto shrink-0">
+            04 Case Studies
+          </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
@@ -1231,10 +1212,44 @@ function ProjectDetailPage() {
         </div>
       </div>
 
-      {/* Dynamic Slide Blocks Engine with Tailored Proportions */}
+      {/* Dynamic Slide Blocks Engine */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-28">
         {project.deckBlocks && project.deckBlocks.map((block, idx) => {
           
+          /* LAYOUT: Video Embed (YouTube Privacy-Enhanced Player) */
+          if (block.type === 'video_embed') {
+            return (
+              <section key={idx} className="border-t border-neutral-200 pt-16">
+                <div className="max-w-3xl mb-8">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-2">
+                    // {block.tag}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-3">
+                    {block.title}
+                  </h3>
+                  {block.desc && (
+                    <p className="text-base text-neutral-600 font-light leading-relaxed">
+                      {block.desc}
+                    </p>
+                  )}
+                </div>
+                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-neutral-200 bg-black shadow-sm">
+                  <iframe 
+                    className="w-full h-full"
+                    src={`https://www.youtube-nocookie.com/embed/${block.youtubeId}?rel=0&modestbranding=1`}
+                    title={block.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-3 text-center">
+                  Live Mechanism Demo Video
+                </span>
+              </section>
+            );
+          }
+
           /* LAYOUT: Thin Horizontal Strip */
           if (block.type === 'thin_horizontal_strip') {
             return (
