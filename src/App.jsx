@@ -1023,7 +1023,7 @@ function HomePage() {
                     <span>In Active Development</span>
                   </div>
                   <span className="font-mono text-[9px] text-neutral-700 font-semibold tracking-wider">
-                    Unreleased Flagship Program
+                    Unreleased Flagship Project
                   </span>
                 </div>
               </div>
@@ -1055,9 +1055,9 @@ function HomePage() {
         <div className="flex items-center justify-between mb-8 border-t border-neutral-100 pt-16 pb-4">
           <div className="flex items-center gap-3">
             <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 font-mono text-[10px] font-bold uppercase rounded">2023 — 2024</span>
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">Foundation Projects & Archive Studies</h3>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">Foundation & Archive Projects</h3>
           </div>
-          <span className="text-xs text-neutral-400">04 Presentation Case Studies</span>
+          <span className="text-xs text-neutral-400">04 Case Studies</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
