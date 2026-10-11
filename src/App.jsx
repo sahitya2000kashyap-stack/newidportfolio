@@ -104,7 +104,7 @@ function ProjectImage({ id, altText, className = "", fitMode = "object-cover" })
 
   if (!src) {
     return (
-      <div className={`bg-neutral-100 flex flex-col items-center justify-center text-center p-6 w-full h-full ${className}`}>
+      <div className={`bg-neutral-100 flex flex-col items-center justify-center text-center p-6 w-full h-full min-h-[160px] border border-dashed border-neutral-300 rounded-xl ${className}`}>
         <ImageIcon className="w-8 h-8 text-neutral-300 mb-2 stroke-1" />
         <span className="font-mono text-[11px] text-neutral-600 font-bold tracking-wider">
           {id ? `${id}.png` : "Render Preview"}
@@ -170,7 +170,7 @@ function BatteryChargingIcon({ className = "w-5 h-5" }) {
   );
 }
 
-/* --- FULL DATA REPOSITORY --- */
+/* --- FULL DATA REPOSITORY (GAPLESS 1 TO 78 MAPPING) --- */
 const FLAGSHIP_2026_PROJECTS = [
   {
     slug: "strata-purifier",
@@ -290,7 +290,7 @@ const ARCHIVE_PROJECTS = [
         title: "The Two-Hand Bottleneck",
         desc: "The current Scotch Magic Tape dispenser requires two hands to use, forcing the user to take both hands off of their project which needs holding down.",
         steps: ["Release the tape", "Pull the tape", "Cut the tape"],
-        imageId: "10",
+        imageId: "11",
         caption: "Slide 04: The Two-Hand Frustration & Interaction Breakdown",
         aspectClass: "aspect-[16/9] md:aspect-[21/9]",
         fitMode: "object-cover"
@@ -310,7 +310,7 @@ const ARCHIVE_PROJECTS = [
         tag: "BENCHMARKING",
         title: "Competitor & Analogous Products",
         desc: "Studied existing market tape tools alongside analogous single-hand products (jar openers, hole punchers, pizza cutting wheels, and paint rollers) to isolate intuitive tactile cues.",
-        imageId: "14",
+        imageId: "13",
         caption: "Slide 06: Benchmarking Existing & Analogous Physical Mechanisms",
         aspectClass: "aspect-[16/10]",
         fitMode: "object-contain bg-white"
@@ -384,7 +384,7 @@ const ARCHIVE_PROJECTS = [
       },
       {
         type: "pure_render_spread",
-        imageId: "7",
+        imageId: "39", // Formerly gap 39
         caption: "Slide 16: Final Production Model in Translucent Optical Finish",
         aspectClass: "aspect-[16/9] md:aspect-[21/9]",
         fitMode: "object-cover"
@@ -398,7 +398,7 @@ const ARCHIVE_PROJECTS = [
       },
       {
         type: "pure_render_spread",
-        imageId: "24",
+        imageId: "40", // Formerly gap 40
         caption: "High-Gloss Studio Perspective View",
         aspectClass: "aspect-[16/9]",
         fitMode: "object-cover"
@@ -427,7 +427,7 @@ const ARCHIVE_PROJECTS = [
     tagline: "Interactive STEAM tabletop educational toy teaching 2D Cartesian coordinate indexing.",
     client: "Webby Toys Pvt Ltd (Design Internship)",
     timeline: "2 Months",
-    date: "2022",
+    date: "2023",
     category: "Toy Design",
     badge: "TOY ARCHITECTURE / LOW-CAPEX DFM",
     thumbId: "4",
@@ -518,6 +518,20 @@ const ARCHIVE_PROJECTS = [
         type: "pure_render_spread",
         imageId: "37",
         caption: "Die-Cut Flat Packaging Nesting Simulation",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "41", // Formerly gap 41
+        caption: "Elevation View Assembly & Marble Feed Clearance",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "48", // Formerly gap 48
+        caption: "Laser Sheet Stock High-Yield Nesting Layout",
         aspectClass: "aspect-[16/9]",
         fitMode: "object-cover"
       },
@@ -663,6 +677,20 @@ const ARCHIVE_PROJECTS = [
         caption: "Turned Knurled Potentiometer Detailing & Undercut-Free Split Base",
         aspectClass: "aspect-[16/9]",
         fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "53", // Formerly gap 53
+        caption: "Diffuser Optical Caustic Shadow Cast Simulation",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "55", // Formerly gap 55
+        caption: "Exploded Internal Electronics Bay & Soldered Potentiometer Wire Loom",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
       }
     ],
     specs: {
@@ -785,6 +813,20 @@ const ARCHIVE_PROJECTS = [
         imageId: "78",
         caption: "Slide 62: CMF Product Still: Balanced Dual-Tone Ergonomics and Silicone Shroud",
         aspectClass: "aspect-[16/9] md:aspect-[21/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "56", // Formerly gap 56
+        caption: "Dual-Tone Analogous CMF Colorway Study",
+        aspectClass: "aspect-[16/9]",
+        fitMode: "object-cover"
+      },
+      {
+        type: "pure_render_spread",
+        imageId: "57", // Formerly gap 57
+        caption: "Pistol Grip High-Pressure Adhesive Extrusion View",
+        aspectClass: "aspect-[16/9]",
         fitMode: "object-cover"
       }
     ],
@@ -975,7 +1017,7 @@ function HomePage() {
             </h2>
           </div>
           <span className="text-[11px] sm:text-xs font-mono text-neutral-400 self-end sm:self-auto shrink-0">
-            Current Competency
+            In Active Development
           </span>
         </div>
 
@@ -1030,7 +1072,7 @@ function HomePage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8 border-t border-neutral-100 pt-16 pb-4 w-full">
           <div className="flex items-center gap-2.5">
             <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 font-mono text-[10px] font-bold uppercase rounded shrink-0">
-              2022 — 2024
+              2023 — 2024
             </span>
             <h3 className="text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500">
               Foundation & Archive Projects
@@ -1102,10 +1144,10 @@ function HomePage() {
             </div>
             <h4 className="text-xl font-medium text-neutral-900 mb-2">Design Playground</h4>
             <p className="text-neutral-500 text-xs leading-relaxed mb-6 font-light">
-              Compact vertical mosaic of unconstrained Blender CAD experiments, clay models, and material explorations.
+              Dynamic multi-aspect mosaic of unconstrained Blender CAD experiments, physical mockups, and material explorations.
             </p>
             <div className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-neutral-900">
-              Explore Renders <ArrowUpRight className="w-3.5 h-3.5" />
+              Explore Visual Lab <ArrowUpRight className="w-3.5 h-3.5" />
             </div>
           </Link>
 
@@ -1617,7 +1659,7 @@ function CommercialPage() {
           title: "Architectural Wall-Mounted Domestic Purifier Unit",
           tag: "Compact Kitchen Integration & Tool-Free Servicing",
           desc: "Designed an architectural wall-mounted domestic purifier unit with a compact footprint, tool-free filter replacement, and ambient status readouts.",
-          imageId: "30",
+          imageId: "58", // Formerly gap 58
           specs: [
             "Internal Booster Pump Packaging",
             "Kinematic Drop-Down Service Door",
@@ -1739,19 +1781,28 @@ function CommercialPage() {
   );
 }
 
-/* --- PAGE 4: PLAYGROUND --- */
+/* --- PAGE 4: PLAYGROUND (16 CONSECUTIVE NON-REPEATING SLOTS: 59 TO 78) --- */
 function PlaygroundPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
+  // Consecutive slots filling all previously skipped gaps without exceeding 78
   const playgroundRenders = [
-    { id: "1", tag: "Studio Portrait", alt: "Sahitya Kashyap CAD & Prototyping Workshop" },
-    { id: "2", tag: "Grasshopper", alt: "Continuous Wave Toolpath Modulation" },
-    { id: "3", tag: "SolidWorks", alt: "Dual-Durometer Co-Injection Grip" },
-    { id: "4", tag: "CMF Study", alt: "Analogous Palette & SPI Polish Blocking" },
-    { id: "7", tag: "CNC Sheet", alt: "Zero-CAPEX Sheet Nesting Slot Geometry" },
-    { id: "8", tag: "Kinematics", alt: "Twist-and-Lock Detent Articulation" },
-    { id: "13", tag: "Tooling DFM", alt: "Curved Parting Line Demold Analysis" },
-    { id: "17", tag: "Physical Test", alt: "Kinematic Marble Trajectory Release" },
+    { id: "59", alt: "Physical Form & Ergonomic Clay Mockup" },
+    { id: "60", alt: "Procedural Shading & Optical Refraction Study" },
+    { id: "63", alt: "Grasshopper Parametric Fluting Toolpath" },
+    { id: "66", alt: "High-Gloss CMF Study with SPI-A1 Specularity" },
+    { id: "69", alt: "Kinematic Detent Joint Exploration" },
+    { id: "70", alt: "Exploded Mechanism Packaging Study" },
+    { id: "71", alt: "Continuous 3D Print Toolpath Iteration" },
+    { id: "72", alt: "Sheet Metal Stamping Progressive Layout" },
+    { id: "73", alt: "Hard Surface Blender Subdivision Study" },
+    { id: "81", alt: "Tactile Button Affordance & Travel Clearance" },
+    { id: "82", alt: "Die-Cast Heat Sink Fin Simulation" },
+    { id: "83", alt: "Dual-Durometer Overmold Texture Sample" },
+    { id: "84", alt: "Minimalist Ambient Lighting Render" },
+    { id: "85", alt: "Workshop Prototyping Assembly Still" },
+    { id: "79", alt: "Fine Mold-Tech Texture CMF Palette" },
+    { id: "80", alt: "Curved Parting Line Engineering Section" }
   ];
 
   return (
@@ -1760,7 +1811,7 @@ function PlaygroundPage() {
         <ArrowLeft className="w-3.5 h-3.5" /> Back to home
       </Link>
       
-      <div className="max-w-3xl mb-12">
+      <div className="max-w-3xl mb-14">
         <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-neutral-900 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full uppercase tracking-widest">
           <Sparkles className="w-3 h-3 text-neutral-900" /> Visual Lab & Playground
         </div>
@@ -1772,26 +1823,24 @@ function PlaygroundPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-3 cursor-default select-none">
+      {/* Dynamic Multi-Aspect Masonry (Accommodates Wide, Square & Tall Renders with Zero Underlay Text) */}
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
         {playgroundRenders.map((item, idx) => (
           <div 
             key={idx} 
-            className="w-full aspect-square bg-neutral-100 overflow-hidden relative group rounded-md"
+            className="break-inside-avoid rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-xs hover:border-neutral-400 transition-all duration-300 group"
           >
             <ProjectImage 
               id={item.id} 
               altText={item.alt} 
-              className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              fitMode="object-cover"
+              className="w-full h-auto transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             />
-            <div className="absolute inset-0 bg-neutral-950/0 group-hover:bg-neutral-950/20 transition-colors pointer-events-none" />
-            <span className="absolute bottom-2 left-2 bg-neutral-900/80 backdrop-blur-xs text-white text-[9px] font-mono uppercase px-2 py-0.5 rounded pointer-events-none">
-              {item.tag}
-            </span>
           </div>
         ))}
       </div>
 
-      <div className="mt-16 bg-neutral-50 border border-neutral-200 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div className="mt-20 bg-neutral-50 border border-neutral-200 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div className="max-w-2xl">
           <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-3 font-bold">
             Curating New High-Res Renders
