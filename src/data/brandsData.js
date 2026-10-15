@@ -1,53 +1,67 @@
-import futureFactoryLogo from '../assets/akanksha/logo-futurefactory.svg';
-import frogLogo from '../assets/akanksha/logo-frog.jpg';
-import studio701Logo from '../assets/akanksha/logo-studio701.jpg';
-import mapedLogo from '../assets/akanksha/logo-maped.jpg';
-import vibaLogo from '../assets/akanksha/logo-viba.jpg';
+import galaLogo from '../assets/brands/gala.png';
+import eurekaForbesLogo from '../assets/brands/eureka-forbes.svg';
+import marutiSuzukiLogo from '../assets/brands/maruti-suzuki.svg';
+import luminousLogo from '../assets/brands/luminous.png';
+import drdoLogo from '../assets/brands/drdo.png';
+import webbyToysLogo from '../assets/brands/webby-toys.png';
+import objectifyLogo from '../assets/brands/objectify.png';
+import tataLogo from '../assets/brands/tata.svg';
 
 export const BRANDS = [
   {
-    id: "future-factory",
-    name: "Future Factory",
-    role: "Industrial Design Fellow",
-    period: "Current",
-    focus: "UTC Water Purifiers (Patent Architecture) & Appliance CMF",
-    logo: futureFactoryLogo,
-    sizeClass: "h-[38px] md:h-[44px] max-w-[130px]"
+    id: "gala",
+    name: "Gala",
+    fullName: "Gala (Freudenberg Group)",
+    logo: galaLogo,
+    sizeClass: "h-[36px] md:h-[46px] max-w-[130px]"
   },
   {
-    id: "frog-design",
-    name: "frog Design",
-    role: "Product & UX Design Intern",
-    period: "2025",
-    focus: "Consumer Hardware & Gig Worker Ecosystem (Airlert)",
-    logo: frogLogo,
-    sizeClass: "h-[40px] md:h-[46px] max-w-[120px]"
+    id: "eureka-forbes",
+    name: "Eureka Forbes Aquaguard",
+    fullName: "Eureka Forbes Aquaguard",
+    logo: eurekaForbesLogo,
+    sizeClass: "h-[26px] md:h-[30px] max-w-[180px] md:max-w-[200px]"
   },
   {
-    id: "studio-701",
-    name: "Studio701",
-    role: "Product Design Intern",
-    period: "2026",
-    focus: "Watch Winders, Luxury Furniture & Desk Goods",
-    logo: studio701Logo,
-    sizeClass: "h-[38px] md:h-[44px] max-w-[110px]"
+    id: "maruti-suzuki",
+    name: "Maruti Suzuki",
+    fullName: "Maruti Suzuki India",
+    logo: marutiSuzukiLogo,
+    sizeClass: "h-[46px] md:h-[54px] max-w-[90px]"
   },
   {
-    id: "maped-india",
-    name: "Maped India",
-    role: "Product Design Intern",
-    period: "2024-25",
-    focus: "DIY Craft Product Line & Market Research",
-    logo: mapedLogo,
-    sizeClass: "h-[40px] md:h-[46px] max-w-[120px]"
+    id: "luminous",
+    name: "Luminous",
+    fullName: "Luminous Power Technologies",
+    logo: luminousLogo,
+    sizeClass: "h-[28px] md:h-[34px] max-w-[150px] md:max-w-[165px]"
   },
   {
-    id: "viba-fluid",
-    name: "Viba Fluid Control",
-    role: "Product Design Intern",
-    period: "2024",
-    focus: "Industrial Valves, Value Engineering & DFMA",
-    logo: vibaLogo,
-    sizeClass: "h-[40px] md:h-[46px] max-w-[120px]"
+    id: "drdo",
+    name: "DRDO",
+    fullName: "Defence Research and Development Organisation",
+    logo: drdoLogo,
+    sizeClass: "h-[54px] md:h-[66px] max-w-[70px] md:max-w-[80px]"
+  },
+  {
+    id: "webby-toys",
+    name: "Webby Toys",
+    fullName: "Webby Toys Pvt Ltd",
+    logo: webbyToysLogo,
+    sizeClass: "h-[48px] md:h-[75px] max-w-[125px]"
+  },
+  {
+    id: "objectify",
+    name: "Objectify Technologies",
+    fullName: "Objectify Technologies Pvt Ltd",
+    logo: objectifyLogo,
+    sizeClass: "h-[30px] md:h-[45px] max-w-[150px] md:max-w-[165px]"
+  },
+  {
+    id: "tata",
+    name: "TATA",
+    fullName: "Tata Motors / Tata Group",
+    logo: tataLogo,
+    sizeClass: "h-[42px] md:h-[52px] max-w-[100px]"
   }
 ];

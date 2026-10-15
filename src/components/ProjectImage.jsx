@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ImageIcon } from 'lucide-react';
 
 /* --- RECURSIVE SUBFOLDER DYNAMIC ASSET REGISTRY --- */
-const assetFiles = import.meta.glob('../assets/**/*.{png,webp,jpg,jpeg,svg,PNG,WEBP,JPG,JPEG,SVG}', { eager: true });
+const assetFiles = import.meta.glob('../assets/**/*.{png,webp}', { eager: true });
 
 export function getAssetUrl(id) {
   if (!id) return null;
@@ -11,7 +11,7 @@ export function getAssetUrl(id) {
   // Find exact filename without extension
   const matchKey = Object.keys(assetFiles).find(key => {
     const fileNameWithExt = key.split('/').pop() || '';
-    const baseName = fileNameWithExt.replace(/\.(png|webp|jpg|jpeg|svg)$/i, '').trim().toLowerCase();
+    const baseName = fileNameWithExt.replace(/\.(png|webp)$/i, '').trim().toLowerCase();
     return baseName === searchId;
   });
 

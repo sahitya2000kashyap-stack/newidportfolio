@@ -1,42 +1,40 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
-import ConstructionBanner from './components/ConstructionBanner';
 
 import HomePage from './pages/HomePage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import CommercialPage from './pages/CommercialPage';
+import PlaygroundPage from './pages/PlaygroundPage';
+import ExperimentsPage from './pages/ExperimentsPage';
 import AboutPage from './pages/AboutPage';
 
 /* --- ROOT APP --- */
 export default function App() {
   useEffect(() => {
-    document.title = "Akanksha Kochrekar — Industrial & Product Designer";
+    document.title = "Sahitya Kashyap | Industrial Designer";
   }, []);
 
   return (
     <ErrorBoundary>
       <Router>
-        <div className="min-h-screen bg-[#faf8f5] text-[#17191d] font-sans selection:bg-[#cf1830] selection:text-white flex flex-col antialiased">
+        <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col">
           <CustomCursor />
-          <ConstructionBanner />
           <Navbar />
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/project/:slug" element={<ProjectDetailPage />} />
+              <Route path="/commercial" element={<CommercialPage />} />
+              <Route path="/commercial-nda" element={<CommercialPage />} />
+              <Route path="/playground" element={<PlaygroundPage />} />
+              <Route path="/personal" element={<PlaygroundPage />} />
+              <Route path="/experiments" element={<ExperimentsPage />} />
               <Route path="/about" element={<AboutPage />} />
-
-              {/* Redirect removed sections cleanly to Home */}
-              <Route path="/commercial" element={<Navigate to="/" replace />} />
-              <Route path="/commercial-nda" element={<Navigate to="/" replace />} />
-              <Route path="/playground" element={<Navigate to="/" replace />} />
-              <Route path="/personal" element={<Navigate to="/" replace />} />
-              <Route path="/experiments" element={<Navigate to="/" replace />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           <Footer />
