@@ -13,7 +13,10 @@ import {
   Eye, 
   ShieldCheck,
   Zap,
-  Sparkles
+  Sparkles,
+  Sun,
+  Palette,
+  Lock
 } from 'lucide-react';
 import PlaygroundHeaderNav from '../components/PlaygroundHeaderNav';
 import renderFloIcon from '../assets/id-renderflo-icon.png';
@@ -26,7 +29,7 @@ export default function ExperimentsPage() {
   }, []);
 
   const handleCopyInstall = () => {
-    navigator.clipboard.writeText('Edit > Preferences > Add-ons > Install from Disk... > ID_RenderFlo.zip');
+    navigator.clipboard.writeText('Edit > Preferences > Get Extensions (4.2+) or Add-ons (3.6-4.1) > Install from Disk... > ID_RenderFlo.zip');
     setCopiedInstall(true);
     setTimeout(() => setCopiedInstall(false), 2000);
   };
@@ -119,17 +122,20 @@ export default function ExperimentsPage() {
           {/* Header Metadata */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-8 border-b border-neutral-800/80">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="bg-orange-500 text-black px-3 py-1 rounded-full font-mono text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5">
+              <span className="bg-orange-500 text-black px-3.5 py-1 rounded-full font-mono text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-black" />
-                <span>v2.3.1 Released</span>
+                <span>v2.4.0 Major Release</span>
               </span>
-              <span className="text-neutral-400 font-mono text-xs">
-                Blender 3.6 LTS – 5.2.2+ Compatible
+              <span className="text-neutral-300 font-mono text-xs bg-neutral-900 border border-neutral-800 px-3 py-1 rounded-full">
+                Blender 3.6 LTS – 5.2.2+ (Add-on & Extension)
+              </span>
+              <span className="text-neutral-400 font-mono text-xs hidden sm:inline-block">
+                Windows · macOS (Apple Silicon / Intel) · Linux
               </span>
             </div>
             <div className="flex items-center gap-2 font-mono text-xs text-neutral-400">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>MIT Licensed · Free for Personal & Studio Use</span>
+              <span>MIT Licensed · Free for Studio, Personal & Commercial Use</span>
             </div>
           </div>
 
@@ -144,10 +150,10 @@ export default function ExperimentsPage() {
             </div>
             <div className="max-w-3xl">
               <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-4 leading-tight">
-                ID RenderFlo — Blender Studio & Matrix Render Pipeline
+                ID RenderFlo — Universal Industrial Design Studio & Parametric CAD Pipeline
               </h2>
               <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-light">
-                A dedicated product visualization pipeline built directly into Blender's 3D Viewport. Brings a fast, KeyShot-style workflow to Cycles: multi-camera studios, interactive specular highlight targeting, CMF colorway management, and an unattended GPU matrix queue that crosses every camera with every material variation without freezing your machine.
+                A dedicated product visualization pipeline built directly into Blender's 3D Viewport. Brings a fast, KeyShot-style workflow to Cycles and EEVEE: native Rhino (.3dm) & STEP/IGES CAD ingestion with custom split normals, interactive 2D HDRI dome & pin canvas, simultaneous dual-lighting rigs, CMF matrix colorways, and headless GPU matrix render queues.
               </p>
             </div>
           </div>
@@ -165,10 +171,10 @@ export default function ExperimentsPage() {
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-white font-mono text-sm font-semibold">
                   <span>ID_RenderFlo.zip</span>
-                  <span className="text-xs text-neutral-400 font-normal">(v2.3.1 Production Bundle)</span>
+                  <span className="text-xs text-orange-400 font-normal">(v2.4.0 Production Bundle)</span>
                 </div>
                 <p className="text-neutral-400 text-xs font-mono">
-                  Includes: <code className="text-neutral-200">ID_RenderFlo/__init__.py</code>, <code className="text-neutral-200">blender_manifest.toml</code>, <code className="text-neutral-200">HOW_TO_USE.txt</code>, and <code className="text-neutral-200">LICENSE.txt</code>
+                  Includes: <code className="text-neutral-200">ID_RenderFlo/__init__.py</code>, <code className="text-neutral-200">blender_manifest.toml</code>, <code className="text-neutral-200">HOW_TO_USE.txt</code>, <code className="text-neutral-200">RELEASE_NOTES.md</code>, <code className="text-neutral-200">LICENSE.txt</code>
                 </p>
               </div>
             </div>
@@ -180,8 +186,8 @@ export default function ExperimentsPage() {
                 className="inline-flex items-center gap-2.5 bg-white text-neutral-900 hover:bg-neutral-100 active:scale-95 px-6 py-3.5 rounded-full font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-md group"
               >
                 <Download className="w-4 h-4 text-neutral-900 group-hover:translate-y-0.5 transition-transform" />
-                <span>Download v2.3.1 (.zip)</span>
-                <span className="text-[10px] text-neutral-500 font-normal">23.7 KB</span>
+                <span>Download v2.4.0 (.zip)</span>
+                <span className="text-[10px] text-neutral-500 font-normal">64.5 KB</span>
               </a>
 
               <button
@@ -204,71 +210,94 @@ export default function ExperimentsPage() {
             </div>
           </div>
 
-          {/* WHAT'S NEW IN V2.3.1 (RELEASE NOTES) */}
+          {/* WHAT'S NEW IN V2.4.0 (RELEASE NOTES) */}
           <div className="mb-14 p-6 md:p-8 bg-neutral-900/70 rounded-2xl border border-neutral-800/90">
-            <div className="flex items-center justify-between flex-wrap gap-3 mb-6 pb-4 border-b border-neutral-800">
-              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-orange-400">
+            <div className="flex items-center justify-between flex-wrap gap-3 mb-8 pb-4 border-b border-neutral-800">
+              <div className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-orange-400">
                 <Zap className="w-4 h-4 text-orange-400" />
-                <span>What's New in v2.3.1 — Studio Workflow & Matrix Overhaul</span>
+                <span>What's New in v2.4.0 — Studio Workflow & Parametric CAD Overhaul</span>
               </div>
-              <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
-                Release Notes // v2.3.1
+              <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-wider bg-neutral-800 px-2.5 py-1 rounded">
+                Official Release Notes // v2.4.0
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Note 1 */}
-              <div className="p-5 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                  <h4 className="text-sm font-medium text-white">Live Auto-Save Engine</h4>
+              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
+                    01
+                  </div>
+                  <h4 className="text-base font-medium text-white">🦏 Native Rhino .3DM CAD Importer</h4>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Camera angles, focal lengths, and studio lighting adjustments now save continuously in real time via a targeted depsgraph handler (<code className="text-neutral-300">depsgraph_update_post</code>), plus automatically before switching studios or starting a batch render. No more needing to click manual refresh after every tweak.
+                  Direct extraction of Rhino <code className="text-neutral-300">Mesh</code>, <code className="text-neutral-300">Brep</code>, <code className="text-neutral-300">Extrusion</code>, and <code className="text-neutral-300">SubD</code> objects with cached render meshes. Generates true custom split vertex normals (<code className="text-neutral-300">normals_split_custom_set_from_vertices</code>) for razor-sharp fillets and zero black edge clipping. Automatically maps Rhino layers into Principled BSDF materials (<code className="text-neutral-300">Rhino_&lt;LayerName&gt;</code>) and scales model units (mm, cm, in, m) cleanly to Blender.
                 </p>
               </div>
 
               {/* Note 2 */}
-              <div className="p-5 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                  <h4 className="text-sm font-medium text-white">Studio Lock (LOCKED / UNLOCKED)</h4>
+              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
+                    02
+                  </div>
+                  <h4 className="text-base font-medium text-white">💡 Procedural HDRI Dome & Interactive 2D Pin Canvas</h4>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Added a per-studio padlock toggle in the studio list. Locking a studio freezes its camera and light transforms directly in the 3D viewport (<code className="text-neutral-300">lock_location</code>, <code className="text-neutral-300">lock_rotation</code>, <code className="text-neutral-300">lock_scale</code>) and protects its saved state against accidental overwrites.
+                  KeyShot-style studio lighting directly in Blender. Launches a real-time 2D panoramic canvas inside the 3D Viewport with viewport isolation. Supports specular spotlight pins (<code className="text-neutral-300">CIRCLE</code>), rectangular softbox strips (<code className="text-neutral-300">RECT</code>) with 2D tilt, and an interactive Eyedropper Normal Raycaster that reflects highlights directly where you click on your CAD model. Also supports external <code className="text-neutral-300">.hdr</code> / <code className="text-neutral-300">.exr</code> maps.
                 </p>
               </div>
 
               {/* Note 3 */}
-              <div className="p-5 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                  <h4 className="text-sm font-medium text-white">Independent Per-Studio CMF Matrix Selection</h4>
+              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
+                    03
+                  </div>
+                  <h4 className="text-base font-medium text-white">🔦 Simultaneous Dual-Lighting Pipeline</h4>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Colorway batch toggles are now decoupled from global presets and stored per studio. You can select specific CMF combinations for each individual studio (e.g., render 2 colorways for Hero Studio and all 5 colorways for Detail Studio).
+                  Run both Procedural HDRI Dome & Pins and Physical Studio Lamps concurrently in the same scene without conflict. Cycles and EEVEE evaluate both lighting sources simultaneously. Segmented UI tabs (<code className="text-neutral-300">[ HDRI Dome &amp; Pins ]</code> | <code className="text-neutral-300">[ Physical Lights ]</code>) provide a clean filter, paired with 1-click dedicated <code className="text-neutral-300">[ X ]</code> lamp deletion directly from the N-panel.
                 </p>
               </div>
 
               {/* Note 4 */}
-              <div className="p-5 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                  <h4 className="text-sm font-medium text-white">Smart Default Material Fallback in Matrix Mode</h4>
+              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
+                    04
+                  </div>
+                  <h4 className="text-base font-medium text-white">🎨 Color Management Look &amp; Contrast Selector</h4>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Unchecking the CMF module (or unchecking all individual colorway boxes) on a studio no longer skips that studio during a Matrix Render—instead, it multiplies cleanly as 1 render pass using that studio's default materials.
+                  Added a dedicated Contrast selector right beside Exposure in Section 5 (Environment &amp; Backdrop). Instantly audition all 8 standard Blender color management looks (<em className="text-neutral-300">None, Very Low, Low, Medium Low, Medium, Medium High, High, and Very High Contrast</em>) without opening project render settings.
                 </p>
               </div>
 
               {/* Note 5 */}
-              <div className="p-5 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-2 md:col-span-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                  <h4 className="text-sm font-medium text-white">UI & Context Crash Fix</h4>
+              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
+                    05
+                  </div>
+                  <h4 className="text-base font-medium text-white">📐 HardOps-Inspired Collapsible UI Navigation</h4>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Resolved a Blender <code className="text-neutral-300">draw()</code> context restriction that caused UI panels below the CMF section to disappear when toggling colorway options. Added a dedicated sync operator (<code className="text-neutral-300">renderflo.sync_cmf_matrix</code>) and automatic property callbacks.
+                  Eliminates vertical N-panel scroll clutter with streamlined collapsible module headers (<code className="text-neutral-300">▼</code> / <code className="text-neutral-300">▶</code>) across all 8 pipeline sections: CAD Engine &amp; Import, New Studio Defaults, Format &amp; Aspect Ratio, Studio Camera &amp; Framing, CMF Variations, Lighting Rig, Environment, and GPU Fast Render Queue.
+                </p>
+              </div>
+
+              {/* Note 6 */}
+              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
+                    06
+                  </div>
+                  <h4 className="text-base font-medium text-white">🔒 Studio Padlock &amp; Live Auto-Save Integrity</h4>
+                </div>
+                <p className="text-neutral-400 text-xs font-light leading-relaxed">
+                  Per-studio padlock toggle in the studio list freezes camera and light transforms (<code className="text-neutral-300">lock_location</code>, <code className="text-neutral-300">lock_rotation</code>, <code className="text-neutral-300">lock_scale</code>) to protect saved states against accidental auto-save overwrites. Lighting and HDRI pin adjustments remain fully interactive while locked, accompanied by a 1-click Unlock Padlock Banner.
                 </p>
               </div>
             </div>
@@ -278,7 +307,7 @@ export default function ExperimentsPage() {
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-6 font-mono text-xs uppercase tracking-widest text-neutral-400">
               <Cpu className="w-4 h-4 text-orange-400" />
-              <span>Full Feature Summary (For GitHub / First-Time Users)</span>
+              <span>Full Feature Summary (For GitHub &amp; Studio Teams)</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -289,7 +318,7 @@ export default function ExperimentsPage() {
                 </div>
                 <h4 className="text-base font-medium text-white mb-2">Universal Isolated CAD Bridge</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Self-bootstraps an OpenCASCADE (<code className="text-neutral-300">cascadio</code> / <code className="text-neutral-300">gmsh</code>) kernel in an isolated environment to import <code className="text-neutral-300">.STEP</code>, <code className="text-neutral-300">.STP</code>, <code className="text-neutral-300">.IGES</code>, and <code className="text-neutral-300">.STL</code> assemblies cleanly across Blender 3.6 through 5.2.2+.
+                  Self-bootstraps an OpenCASCADE (<code className="text-neutral-300">cascadio</code> / <code className="text-neutral-300">gmsh</code>) &amp; <code className="text-neutral-300">rhino3dm</code> kernel in an isolated user directory (<code className="text-neutral-300">id_renderflo_engine/</code>) to import <code className="text-neutral-300">.3DM</code>, <code className="text-neutral-300">.STEP</code>, <code className="text-neutral-300">.STP</code>, <code className="text-neutral-300">.IGES</code>, and <code className="text-neutral-300">.STL</code> assemblies without host Python contamination.
                 </p>
               </div>
 
@@ -298,7 +327,7 @@ export default function ExperimentsPage() {
                 <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
                   <Camera className="w-4 h-4" />
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Multi-Studio Camera & Format Manager</h4>
+                <h4 className="text-base font-medium text-white mb-2">Multi-Studio Camera &amp; Format Manager</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
                   Switch between independent cameras, focal lengths, and aspect ratios (16:9, 1:1, 4:5, 9:16, 21:9) with automatic sensor fitting, preventing products from getting clipped during aspect switching.
                 </p>
@@ -309,7 +338,7 @@ export default function ExperimentsPage() {
                 <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
                   <Layers className="w-4 h-4" />
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Model Sets & Exploded Views</h4>
+                <h4 className="text-base font-medium text-white mb-2">Model Sets &amp; Exploded Views</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
                   Record and restore per-studio part positions, rotations, and collection visibility to effortlessly toggle between assembled hero shots and exploded technical views without duplicating geometry.
                 </p>
@@ -320,9 +349,9 @@ export default function ExperimentsPage() {
                 <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
                   <Eye className="w-4 h-4" />
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">In-Panel CMF Cloner & Highlight Pinning</h4>
+                <h4 className="text-base font-medium text-white mb-2">In-Panel CMF Cloner &amp; Highlight Pinning</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Clone materials on the fly, manage multi-part colorways, and use the interactive eyedropper to pin area light reflections directly onto product chamfers and curved surfaces without 3D gizmo friction.
+                  Clone materials on the fly, manage multi-part colorways, and use the interactive eyedropper to pin area light reflections or HDRI dome pins directly onto product chamfers and curved surfaces without 3D gizmo friction.
                 </p>
               </div>
 
@@ -331,9 +360,9 @@ export default function ExperimentsPage() {
                 <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
                   <Cpu className="w-4 h-4" />
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Non-Blocking GPU Batch & Matrix Queue</h4>
+                <h4 className="text-base font-medium text-white mb-2">Non-Blocking GPU Batch &amp; Matrix Queue</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Render checked studios or full cross-product Studios x CMFs matrices sequentially on your GPU (OptiX, CUDA, HIP, Metal, oneAPI) with live progress tracking and ESC cancel support.
+                  Render checked studios or full cross-product Studios x CMFs matrices sequentially on your GPU (OptiX, CUDA, HIP, Metal, oneAPI) with live progress tracking, smart default material fallback, and ESC cancel support.
                 </p>
               </div>
 
@@ -342,7 +371,7 @@ export default function ExperimentsPage() {
                 <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
                   <Sliders className="w-4 h-4" />
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Floor Shadow Catcher & Cyclorama</h4>
+                <h4 className="text-base font-medium text-white mb-2">Floor Shadow Catcher &amp; Cyclorama</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
                   One-click infinite sweep cycloramas and invisible ground shadow catchers that isolate clean alpha contact occlusion shadows for transparent presentation boards and client pitch decks.
                 </p>
@@ -350,23 +379,44 @@ export default function ExperimentsPage() {
             </div>
           </div>
 
-          {/* 3-Step Setup Guide */}
-          <div className="p-6 md:p-8 bg-neutral-900/40 rounded-2xl border border-neutral-800">
-            <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-4">
-              // Setup in 60 Seconds
-            </span>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-              <div className="space-y-1.5">
-                <span className="text-orange-400 font-bold block">STEP 01</span>
-                <p className="text-neutral-300 font-sans text-sm">Download <code className="text-xs font-mono text-neutral-200">ID_RenderFlo.zip</code> (v2.3.1) using the direct button above.</p>
+          {/* INSTALLATION INSTRUCTIONS (DUAL BLENDER SUPPORT) */}
+          <div className="p-6 md:p-8 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+            <div className="flex items-center justify-between flex-wrap gap-2 mb-6 pb-3 border-b border-neutral-800">
+              <span className="font-mono text-xs uppercase tracking-widest text-neutral-300 font-bold">
+                // Installation Instructions (Cross-Version Setup)
+              </span>
+              <span className="font-mono text-[10px] text-neutral-400">
+                Backward &amp; Forward Compatible: 3.6 LTS – 5.2.2+
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-xs">
+              {/* Method A: Blender 4.2+ Extensions */}
+              <div className="p-5 bg-neutral-950/80 rounded-xl border border-neutral-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-orange-400 font-bold">BLENDER 4.2+ (EXTENSION PACKAGE)</span>
+                  <span className="text-[10px] text-neutral-500 uppercase">Recommended</span>
+                </div>
+                <ol className="list-decimal list-inside space-y-1.5 text-neutral-300 font-sans text-xs font-light leading-relaxed">
+                  <li>In Blender, go to <strong className="text-white">Edit &gt; Preferences &gt; Get Extensions</strong>.</li>
+                  <li>Click the top-right menu icon (down arrow) and select <strong className="text-white">Install from Disk...</strong></li>
+                  <li>Select <code className="text-neutral-200 font-mono bg-neutral-900 px-1 py-0.5 rounded">ID_RenderFlo.zip</code> and enable the extension.</li>
+                  <li>Press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd> in any 3D Viewport to open the <strong className="text-white">ID RenderFlo</strong> panel.</li>
+                </ol>
               </div>
-              <div className="space-y-1.5">
-                <span className="text-orange-400 font-bold block">STEP 02</span>
-                <p className="text-neutral-300 font-sans text-sm">In Blender: <code className="text-xs font-mono text-neutral-200">Edit &gt; Preferences &gt; Add-ons &gt; Install from Disk...</code> and check the box.</p>
-              </div>
-              <div className="space-y-1.5">
-                <span className="text-orange-400 font-bold block">STEP 03</span>
-                <p className="text-neutral-300 font-sans text-sm">Open 3D Viewport, press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd>, click the <strong className="text-white">ID RenderFlo</strong> tab, and import your CAD.</p>
+
+              {/* Method B: Blender 3.6 - 4.1 Classic Add-on */}
+              <div className="p-5 bg-neutral-950/80 rounded-xl border border-neutral-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-neutral-300 font-bold">BLENDER 3.6 LTS – 4.1 (CLASSIC ADD-ON)</span>
+                  <span className="text-[10px] text-neutral-500 uppercase">Legacy LTS</span>
+                </div>
+                <ol className="list-decimal list-inside space-y-1.5 text-neutral-300 font-sans text-xs font-light leading-relaxed">
+                  <li>In Blender, go to <strong className="text-white">Edit &gt; Preferences &gt; Add-ons</strong>.</li>
+                  <li>Click <strong className="text-white">Install...</strong> at the top right.</li>
+                  <li>Select <code className="text-neutral-200 font-mono bg-neutral-900 px-1 py-0.5 rounded">ID_RenderFlo.zip</code> and check the box to activate.</li>
+                  <li>Press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd> in any 3D Viewport to access the studio manager.</li>
+                </ol>
               </div>
             </div>
           </div>
