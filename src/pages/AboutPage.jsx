@@ -40,7 +40,7 @@ export default function AboutPage() {
               <span className="text-neutral-400">With Technical Vigour.</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-light">
-              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and category-defining hardware that manufacturers can produce without compromise.
+              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and hardware that manufacturers can produce without compromise.
             </p>
           </div>
 
