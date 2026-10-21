@@ -159,7 +159,7 @@ export default function ExperimentsPage() {
                 ID RenderFlo — Universal Industrial Design Studio &amp; Parametric CAD Pipeline
               </h2>
               <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-light">
-                A dedicated product visualization pipeline built directly into Blender's 3D Viewport. Reorganized into a continuous 6-stage industrial design lifecycle dock and persistent topbar ribbon: native Rhino (.3dm) &amp; STEP CAD ingestion with millimeter true-scale calibration and 1-click hot-reload, multi-shot studio cameras with custom sample overrides, procedural HDRI dome with 2D interactive pin canvas, CMF matrix colorways with VDI 3400 textures, raycast surface decals with zero Z-fighting, live boolean section cutaways, and non-blocking GPU batch render queues with 1-click DXF export.
+                A dedicated product visualization pipeline built directly into Blender's 3D Viewport. Reorganized into a continuous 6-stage industrial design lifecycle dock and persistent topbar ribbon: native Rhino (.3dm) &amp; STEP CAD ingestion with millimeter true-scale calibration and 1-click hot-reload, multi-shot studio cameras with custom sample overrides, per-studio model sets &amp; parametric exploded views with automatic rest-position restoration, procedural HDRI dome with 2D interactive pin canvas, CMF matrix colorways with VDI 3400 textures, raycast surface decals with zero Z-fighting, live boolean section cutaways, and non-blocking GPU batch render queues with 1-click DXF export.
               </p>
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function ExperimentsPage() {
                 </p>
                 <ul className="text-neutral-300 text-xs space-y-1.5 list-disc list-inside font-light">
                   <li><strong className="text-white">1. CAD Bridge:</strong> STEP &amp; Rhino <code className="text-neutral-300">.3dm</code> import, unit calibration, origin centering, and 1-Click Hot-Reload.</li>
-                  <li><strong className="text-white">2. Studios:</strong> Multi-shot camera framing, focal length presets, padlock protection, and custom render samples.</li>
+                  <li><strong className="text-white">2. Studios:</strong> Multi-shot camera framing, model sets &amp; exploded part transforms (<code className="text-neutral-300">use_transforms</code>), padlock protection, and custom render samples.</li>
                   <li><strong className="text-white">3. Lighting:</strong> Procedural HDRI dome, interactive 2D pin canvas, and physical studio softboxes.</li>
                   <li><strong className="text-white">4. CMF Matrix:</strong> Color, Material &amp; Finish variants, VDI 3400 mold-tech textures, and anodized/brushed metals.</li>
                   <li><strong className="text-white">5. Decals &amp; FX:</strong> Raycast surface sticker dropper, conformal shrinkwrap with zero Z-fighting, and live section cutaways.</li>
@@ -263,7 +263,7 @@ export default function ExperimentsPage() {
                 </p>
                 <ul className="text-neutral-300 text-xs space-y-1.5 list-disc list-inside font-light">
                   <li><strong className="text-white">CAD Quick Actions:</strong> <code className="text-neutral-300">Import CAD (.STEP/.3DM)</code> and <code className="text-neutral-300">Hot-Reload CAD</code> buttons.</li>
-                  <li><strong className="text-white">Studio Selector:</strong> Active studio dropdown, camera padlock toggle, camera settings popover, and <code className="text-neutral-300">+ Add Studio</code>.</li>
+                  <li><strong className="text-white">Studio Selector:</strong> Active studio dropdown, camera padlock toggle, 1-click <code className="text-neutral-300">Exploded / Part Pos</code> switcher, and <code className="text-neutral-300">+ Add Studio</code>.</li>
                   <li><strong className="text-white">CMF Quick Matrix:</strong> Active CMF variant selector, <code className="text-neutral-300">Rename Variant</code>, and <code className="text-neutral-300">Duplicate Colorway</code>.</li>
                   <li><strong className="text-white">Aspect Ratio Selector:</strong> 1-Click format presets (<code className="text-neutral-300">1:1</code>, <code className="text-neutral-300">4:5</code>, <code className="text-neutral-300">16:9</code>, <code className="text-neutral-300">9:16</code>, <code className="text-neutral-300">2.39:1</code>).</li>
                 </ul>
@@ -438,6 +438,17 @@ export default function ExperimentsPage() {
                 <h4 className="text-base font-medium text-white mb-2">Multi-Studio Camera &amp; Topbar Ribbon</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
                   Persistent Blender topbar access with aspect ratio presets (1:1, 4:5, 16:9, 9:16, 2.39:1), padlock protection against accidental edits, and per-studio custom render sample limits.
+                </p>
+              </div>
+
+              {/* Feature: Model Sets & Exploded Views */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
+                  <Layers className="w-4 h-4" />
+                </div>
+                <h4 className="text-base font-medium text-white mb-2">Model Sets &amp; Exploded Views</h4>
+                <p className="text-neutral-400 text-xs font-light leading-relaxed">
+                  Record and restore per-studio part positions, rotations, and collection visibility (<code className="text-neutral-300">use_transforms</code>). Features a non-destructive parametric explosion slider to smoothly explode CAD assemblies for technical views, with automatic rest-position restoration when returning to hero studios.
                 </p>
               </div>
 
