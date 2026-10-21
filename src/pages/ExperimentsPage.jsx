@@ -193,7 +193,7 @@ export default function ExperimentsPage() {
               >
                 <Download className="w-4 h-4 text-neutral-900 group-hover:translate-y-0.5 transition-transform" />
                 <span>Download v3.0.0 (.zip)</span>
-                <span className="text-[10px] text-neutral-500 font-normal">94.8 KB</span>
+                <span className="text-[10px] text-neutral-500 font-normal">310 KB</span>
               </a>
 
               <button
