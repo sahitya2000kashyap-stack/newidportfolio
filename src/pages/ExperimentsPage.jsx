@@ -10,17 +10,12 @@ import {
   Check, 
   Sliders, 
   Eye, 
-  ShieldCheck,
-  Zap,
-  Sparkles,
-  FolderOpen,
-  Ruler,
-  Maximize2,
-  Sticker,
-  Scissors,
-  Share2,
-  ChevronDown,
-  ChevronUp,
+  ShieldCheck, 
+  Sparkles, 
+  Sticker, 
+  ExternalLink,
+  ChevronRight,
+  Flame,
   CheckCircle2
 } from 'lucide-react';
 import PlaygroundHeaderNav from '../components/PlaygroundHeaderNav';
@@ -28,14 +23,13 @@ import renderFloIcon from '../assets/id-renderflo-icon.png';
 
 export default function ExperimentsPage() {
   const [copiedInstall, setCopiedInstall] = useState(false);
-  const [showOlderNotes, setShowOlderNotes] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleCopyInstall = () => {
-    navigator.clipboard.writeText('Edit > Preferences > Get Extensions (4.2+) or Add-ons (3.6-4.1) > Install from Disk... > id_renderflo-3.0.0-website-standalone.zip');
+    navigator.clipboard.writeText('Edit > Preferences > Get Extensions (4.2+) or Add-ons (3.6-4.1) > Install from Disk... > id_renderflo-3.2.0-website-standalone.zip');
     setCopiedInstall(true);
     setTimeout(() => setCopiedInstall(false), 2000);
   };
@@ -67,7 +61,7 @@ export default function ExperimentsPage() {
       </div>
 
       {/* 3 Philosophy Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
         <div className="p-8 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
           <div>
             <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-4">
@@ -121,33 +115,39 @@ export default function ExperimentsPage() {
       </div>
 
       {/* FEATURED WORKFLOW ASSET: ID RENDERFLO */}
-      <section className="bg-neutral-950 text-white rounded-3xl border border-neutral-800 p-8 md:p-14 mb-24 relative overflow-hidden shadow-xl">
+      <section className="bg-neutral-950 text-white rounded-3xl border border-neutral-800 p-8 md:p-12 mb-20 relative overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10">
-          {/* Header Metadata */}
+          {/* Header Metadata Badges */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-8 border-b border-neutral-800/80">
             <div className="flex flex-wrap items-center gap-3">
               <span className="bg-orange-500 text-black px-3.5 py-1 rounded-full font-mono text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-black" />
-                <span>v3.0.0 Major Release</span>
+                <span>v3.2.0 Production Release</span>
               </span>
-              <span className="text-neutral-300 font-mono text-xs bg-neutral-900 border border-neutral-800 px-3 py-1 rounded-full">
-                Blender 3.6 LTS – 5.2.2+ (Add-on &amp; Extension)
-              </span>
-              <span className="text-neutral-400 font-mono text-xs hidden sm:inline-block">
-                Windows · macOS (Apple Silicon / Intel) · Linux
+              <a 
+                href="https://extensions.blender.org/add-ons/id-renderflo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-orange-400 hover:text-orange-300 font-mono text-xs bg-orange-950/40 hover:bg-orange-950/70 border border-orange-500/30 px-3 py-1 rounded-full transition-colors"
+              >
+                <span>Official Blender Extension</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <span className="text-neutral-400 font-mono text-xs bg-neutral-900 border border-neutral-800 px-3 py-1 rounded-full hidden sm:inline-block">
+                Blender 3.6 LTS – 5.2+
               </span>
             </div>
             <div className="flex items-center gap-2 font-mono text-xs text-neutral-400">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>MIT Licensed · Free for Studio, Personal &amp; Commercial Use</span>
+              <span>GPL-3.0 / MIT · Free for Studio, Personal & Commercial Use</span>
             </div>
           </div>
 
-          {/* Main Title, Plugin Icon & Pitch */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 md:gap-8 mb-12">
-            <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-neutral-700/80 bg-neutral-900 shrink-0 transform hover:scale-105 transition-all duration-300">
+          {/* Main Title, Icon & Pitch */}
+          <div className="flex flex-col sm:flex-row items-start gap-6 md:gap-8 mb-10">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden shadow-2xl border border-neutral-700/80 bg-neutral-900 shrink-0 transform hover:scale-105 transition-all duration-300">
               <img 
                 src={renderFloIcon} 
                 alt="ID RenderFlo Plugin Icon" 
@@ -155,386 +155,260 @@ export default function ExperimentsPage() {
               />
             </div>
             <div className="max-w-3xl">
-              <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-4 leading-tight">
-                ID RenderFlo — Universal Industrial Design Studio &amp; Parametric CAD Pipeline
+              <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-3 leading-tight">
+                ID RenderFlo — Universal Industrial Design Studio & Parametric CAD Pipeline
               </h2>
               <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-light">
-                A dedicated product visualization pipeline built directly into Blender's 3D Viewport. Reorganized into a continuous 6-stage industrial design lifecycle dock and persistent topbar ribbon: native Rhino (.3dm) &amp; STEP CAD ingestion with millimeter true-scale calibration and 1-click hot-reload, multi-shot studio cameras with custom sample overrides, per-studio model sets &amp; parametric exploded views with automatic rest-position restoration, procedural HDRI dome with 2D interactive pin canvas, CMF matrix colorways with VDI 3400 textures, raycast surface decals with zero Z-fighting, live boolean section cutaways, and non-blocking GPU batch render queues with 1-click DXF export.
+                KeyShot-grade product visualization embedded directly into Blender's 3D Viewport. Native Rhino (<code className="text-neutral-200">.3dm</code>) &amp; STEP CAD ingestion, multi-shot studio cameras, procedural HDRI dome with 2D interactive pin canvas, CMF matrix colorways with VDI 3400 textures, surface decals, parametric exploded views, and automated GPU batch rendering.
               </p>
             </div>
           </div>
 
-          {/* Download Action Bar */}
-          <div className="p-6 md:p-8 bg-neutral-900/90 rounded-2xl border border-neutral-800 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-14">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl overflow-hidden border border-neutral-700/80 shrink-0 bg-neutral-950 shadow-sm">
-                <img 
-                  src={renderFloIcon} 
-                  alt="ID RenderFlo Icon" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="space-y-1">
+          {/* Dual Action / Download Bar */}
+          <div className="p-6 md:p-8 bg-neutral-900/90 rounded-2xl border border-neutral-800 mb-12">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div className="space-y-1.5">
                 <div className="flex items-center gap-2 text-white font-mono text-sm font-semibold">
-                  <span>id_renderflo-3.0.0-website-standalone.zip</span>
-                  <span className="text-xs text-orange-400 font-normal">(v3.0.0 Production Release)</span>
+                  <span>Available on Official Blender Extensions Platform</span>
+                  <span className="text-xs text-orange-400 font-normal">(Extensions 4.2+ &amp; Classic Add-on)</span>
                 </div>
                 <p className="text-neutral-400 text-xs font-mono">
-                  Includes: <code className="text-neutral-200">blender_manifest.toml</code>, <code className="text-neutral-200">modules/</code>, <code className="text-neutral-200">app_template/</code>, <code className="text-neutral-200">properties.py</code>, <code className="text-neutral-200">HOW_TO.md</code>, <code className="text-neutral-200">RELEASE_NOTES.md</code>
+                  Install instantly from Blender via <code className="text-neutral-200">Edit &gt; Preferences &gt; Get Extensions</code> or download the standalone offline package below.
                 </p>
               </div>
-            </div>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <a 
-                href="/assets/id_renderflo-3.0.0-website-standalone.zip" 
-                download="id_renderflo-3.0.0-website-standalone.zip"
-                className="inline-flex items-center gap-2.5 bg-white text-neutral-900 hover:bg-neutral-100 active:scale-95 px-6 py-3.5 rounded-full font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-md group"
-              >
-                <Download className="w-4 h-4 text-neutral-900 group-hover:translate-y-0.5 transition-transform" />
-                <span>Download v3.0.0 (.zip)</span>
-                <span className="text-[10px] text-neutral-500 font-normal">316 KB</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <a 
+                  href="https://extensions.blender.org/add-ons/id-renderflo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 active:scale-95 text-black px-5 py-3 rounded-full font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-md group"
+                >
+                  <span>Blender Extensions</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
 
-              <button
-                onClick={handleCopyInstall}
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-mono text-xs transition-colors cursor-pointer"
-                title="Copy installation path"
-              >
-                {copiedInstall ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Copied Path</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5" />
-                    <span>Copy Install Path</span>
-                  </>
-                )}
-              </button>
+                <a 
+                  href="/assets/id_renderflo-3.2.0-website-standalone.zip" 
+                  download="id_renderflo-3.2.0-website-standalone.zip"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-neutral-100 active:scale-95 text-neutral-900 px-5 py-3 rounded-full font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-md group"
+                >
+                  <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+                  <span>Download .zip</span>
+                  <span className="text-[10px] text-neutral-500 font-normal">108 KB</span>
+                </a>
+
+                <button
+                  onClick={handleCopyInstall}
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-mono text-xs transition-colors cursor-pointer"
+                  title="Copy installation path"
+                >
+                  {copiedInstall ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Copied</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>Copy Path</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* WHAT'S NEW IN V3.0.0 (LATEST RELEASE NOTES) */}
-          <div className="mb-14 p-6 md:p-8 bg-neutral-900/70 rounded-2xl border border-neutral-800/90">
-            <div className="flex items-center justify-between flex-wrap gap-3 mb-8 pb-4 border-b border-neutral-800">
-              <div className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-orange-400">
-                <Zap className="w-4 h-4 text-orange-400" />
-                <span>What's New in v3.0.0 — 6-Menu Lifecycle Dock &amp; Topbar Ribbon</span>
-              </div>
-              <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-wider bg-neutral-800 px-2.5 py-1 rounded">
-                Official Release Notes // v3.0.0
+          {/* What's New in v3.2.0 & v3.1.0 Highlights (Crisp & Scannable) */}
+          <div className="mb-12 p-6 md:p-8 bg-neutral-900/60 rounded-2xl border border-neutral-800">
+            <div className="flex items-center justify-between flex-wrap gap-2 mb-6 pb-3 border-b border-neutral-800">
+              <span className="font-mono text-xs uppercase tracking-widest text-orange-400 font-bold flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
+                <span>What's New in v3.2.0 &amp; Recent Updates</span>
+              </span>
+              <span className="font-mono text-[10px] text-neutral-400">
+                Official Multi-OS Build
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Note 1: 6-Menu Lifecycle Dock */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    01
-                  </div>
-                  <h4 className="text-base font-medium text-white">🎛️ Reorganized 6-Menu Industrial Design Lifecycle Dock</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-4 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-1.5">
+                <div className="font-mono text-xs font-medium text-white flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-orange-400" />
+                  <span>Official Extensions Listing</span>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  The N-Panel sidebar dock has been redesigned into a continuous 6-stage industrial design workflow:
-                </p>
-                <ul className="text-neutral-300 text-xs space-y-1.5 list-disc list-inside font-light">
-                  <li><strong className="text-white">1. CAD Bridge:</strong> STEP &amp; Rhino <code className="text-neutral-300">.3dm</code> import, unit calibration, origin centering, and 1-Click Hot-Reload.</li>
-                  <li><strong className="text-white">2. Studios:</strong> Multi-shot camera framing, model sets &amp; exploded part transforms (<code className="text-neutral-300">use_transforms</code>), padlock protection, and custom render samples.</li>
-                  <li><strong className="text-white">3. Lighting:</strong> Procedural HDRI dome, interactive 2D pin canvas, and physical studio softboxes.</li>
-                  <li><strong className="text-white">4. CMF Matrix:</strong> Color, Material &amp; Finish variants, VDI 3400 mold-tech textures, and anodized/brushed metals.</li>
-                  <li><strong className="text-white">5. Decals &amp; FX:</strong> Raycast surface sticker dropper, conformal shrinkwrap with zero Z-fighting, and live section cutaways.</li>
-                  <li><strong className="text-white">6. Render &amp; DXF:</strong> GPU batch queue, custom output directory selector, and manufacturing DXF export.</li>
-                </ul>
-              </div>
-
-              {/* Note 2: Topbar Ribbon */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    02
-                  </div>
-                  <h4 className="text-base font-medium text-white">⚡ Unified Persistent Topbar Ribbon</h4>
-                </div>
-                <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Directly accessible from Blender's main topbar alongside standard menus for instant global control:
-                </p>
-                <ul className="text-neutral-300 text-xs space-y-1.5 list-disc list-inside font-light">
-                  <li><strong className="text-white">CAD Quick Actions:</strong> <code className="text-neutral-300">Import CAD (.STEP/.3DM)</code> and <code className="text-neutral-300">Hot-Reload CAD</code> buttons.</li>
-                  <li><strong className="text-white">Studio Selector:</strong> Active studio dropdown, camera padlock toggle, 1-click <code className="text-neutral-300">Exploded / Part Pos</code> switcher, and <code className="text-neutral-300">+ Add Studio</code>.</li>
-                  <li><strong className="text-white">CMF Quick Matrix:</strong> Active CMF variant selector, <code className="text-neutral-300">Rename Variant</code>, and <code className="text-neutral-300">Duplicate Colorway</code>.</li>
-                  <li><strong className="text-white">Aspect Ratio Selector:</strong> 1-Click format presets (<code className="text-neutral-300">1:1</code>, <code className="text-neutral-300">4:5</code>, <code className="text-neutral-300">16:9</code>, <code className="text-neutral-300">9:16</code>, <code className="text-neutral-300">2.39:1</code>).</li>
-                </ul>
-              </div>
-
-              {/* Note 3: True Scale & Orientation */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    03
-                  </div>
-                  <h4 className="text-base font-medium text-white">📐 CAD Import True Scale &amp; Orientation Defaults</h4>
-                </div>
-                <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  <strong className="text-white">True Scale Default:</strong> Set to <strong className="text-orange-400">Millimeters (0.001x True Scale / Recommended)</strong>. In Blender, 1 unit = 1 meter. Converting millimeter CAD assemblies by 0.001x guarantees accurate real-world dimensions for Cycles lighting inverse-square falloff, shadows, and physical camera depth-of-field.
-                </p>
-                <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  <strong className="text-white">Z-Up Default:</strong> Default CAD Up-Axis set to Z-Up to natively match Rhino, Fusion 360, and Blender coordinate systems. Streamlined strictly for <code className="text-neutral-300">.step/.stp</code> and Rhino <code className="text-neutral-300">.3dm</code> with 1-click hot-reload.
+                  Published on <a href="https://extensions.blender.org/add-ons/id-renderflo/" target="_blank" rel="noopener noreferrer" className="text-orange-400 underline underline-offset-2">extensions.blender.org</a> with dedicated wheels for Windows, macOS Apple Silicon/Intel, and Linux.
                 </p>
               </div>
 
-              {/* Note 4: Per-Studio Samples */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    04
-                  </div>
-                  <h4 className="text-base font-medium text-white">🔢 Per-Studio Custom Render Samples</h4>
+              <div className="p-4 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-1.5">
+                <div className="font-mono text-xs font-medium text-white flex items-center gap-1.5">
+                  <Flame className="w-3.5 h-3.5 text-orange-400" />
+                  <span>Per-Studio Bloom &amp; Glow</span>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Restored custom sample limits per studio item (<code className="text-neutral-300">use_custom_samples</code> and <code className="text-neutral-300">studio_samples</code>). Features real-time bidirectional sync with <code className="text-neutral-300">scene.cycles.samples</code>—allowing rapid draft angles to preview at 128 samples while hero closeups and optical glass renders compute at 1024+ samples during sequential batch jobs.
+                  Real-time viewport glare and bloom with alpha channel transparency preservation for clean product PNG cutouts.
                 </p>
               </div>
 
-              {/* Note 5: Output Directory & Folder Opener */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    05
-                  </div>
-                  <h4 className="text-base font-medium text-white">📂 Interactive Render Output Directory</h4>
+              <div className="p-4 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-1.5">
+                <div className="font-mono text-xs font-medium text-white flex items-center gap-1.5">
+                  <Eye className="w-3.5 h-3.5 text-orange-400" />
+                  <span>Part Visibility Snapshots</span>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Added a dedicated output directory path picker in both the Render tab and the Studio Dashboard. Includes a 1-click <strong className="text-white">Open Folder</strong> button that instantly reveals the destination render directory in Windows File Explorer, macOS Finder, or Linux file manager without manually browsing filesystem paths.
+                  Store hidden/unhidden component states per studio. Isolate internal sub-assemblies and restore exterior housings automatically.
                 </p>
               </div>
 
-              {/* Note 6: Decals & Section Cutaways */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    06
-                  </div>
-                  <h4 className="text-base font-medium text-white">🏷️ Decals &amp; Section Cutaways Refinement</h4>
+              <div className="p-4 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-1.5">
+                <div className="font-mono text-xs font-medium text-white flex items-center gap-1.5">
+                  <Cpu className="w-3.5 h-3.5 text-orange-400" />
+                  <span>Blender 5.2+ &amp; Python 3.13</span>
                 </div>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Streamlined the decal workflow to focus on high-precision raycast decal dropping, normal surface alignment, rotation controls, and conformal shrinkwrapping with zero Z-fighting. Removed experimental mesh displace deformers to prevent geometry corruption on dense CAD assemblies, paired with fast live boolean section cutaways via an interactive slicing box.
-                </p>
-              </div>
-
-              {/* Note 7: Consolidated Manufacturing Export (Spans 2 cols on md) */}
-              <div className="p-6 bg-neutral-950/70 rounded-xl border border-neutral-800/80 space-y-3 md:col-span-2">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono text-xs font-bold">
-                    07
-                  </div>
-                  <h4 className="text-base font-medium text-white">🏭 Consolidated Manufacturing Export</h4>
-                </div>
-                <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Moved 1-Click DXF silhouette and flat pattern export into the unified <strong className="text-white">Render &amp; DXF</strong> tab. Create 2D laser-cutting outlines, sheet-metal silhouettes, and engineering drawing contours directly alongside high-fidelity photorealistic rendering for a unified product design handoff stage.
+                  Dual-ABI support with forward compatibility across Blender 3.6 LTS through modern Blender 5.0, 5.1, and 5.2+.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* HISTORICAL CHANGELOG ARCHIVE (V2.4.1 & V2.4.0) TOGGLE */}
-          <div className="mb-14">
-            <button
-              onClick={() => setShowOlderNotes(!showOlderNotes)}
-              className="w-full p-4 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:bg-neutral-900/80 transition-colors flex items-center justify-between font-mono text-xs text-neutral-300 cursor-pointer"
-            >
-              <span className="flex items-center gap-2">
-                <ClockIcon className="w-3.5 h-3.5 text-neutral-400" />
-                <span>View Previous Release Notes (v2.4.1 &amp; v2.4.0 Archive)</span>
-              </span>
-              {showOlderNotes ? (
-                <ChevronUp className="w-4 h-4 text-neutral-400" />
-              ) : (
-                <ChevronDown className="w-4 h-4 text-neutral-400" />
-              )}
-            </button>
-
-            {showOlderNotes && (
-              <div className="mt-4 p-6 md:p-8 bg-neutral-900/40 rounded-2xl border border-neutral-800 space-y-8 animate-in fade-in duration-200">
-                {/* v2.4.1 Notes */}
-                <div>
-                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-neutral-800 font-mono text-xs text-neutral-300 font-bold uppercase tracking-wider">
-                    <span>What's New in v2.4.1 — Official Extensions Compliance &amp; Stability</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-light text-neutral-400">
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">📦 Official Extensions Platform Compliance</h5>
-                      <p>Pre-bundled Python wheels for Windows, Linux, macOS Apple Silicon, and Intel. Zero network downloads, no runtime pip, and direct in-memory CAD conversion.</p>
-                    </div>
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">⚡ Depsgraph &amp; Performance Stability</h5>
-                      <p>Removed mutating depsgraph handlers to eliminate viewport lag and undo corruption. Rock-solid event-driven persistence on explicit user action.</p>
-                    </div>
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">🛡️ Python Environment Isolation</h5>
-                      <p>Passes isolated mode flags (<code className="text-neutral-300">-I</code>) and eliminated manual <code className="text-neutral-300">sys.path</code> tampering to prevent system variable conflicts.</p>
-                    </div>
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">🏷️ Manifest &amp; Tag Standards</h5>
-                      <p>Updated manifest tags to conform strictly to Blender Extensions standards: <code className="text-neutral-300">tags = ["Render", "Import-Export"]</code>.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* v2.4.0 Notes */}
-                <div>
-                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-neutral-800 font-mono text-xs text-neutral-300 font-bold uppercase tracking-wider">
-                    <span>What Was Introduced in v2.4.0 — Studio Workflow &amp; Parametric CAD Overhaul</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-light text-neutral-400">
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">🦏 Native Rhino .3DM CAD Importer</h5>
-                      <p>Direct extraction of Rhino Meshes, Breps, SubD, and cached render meshes with custom split vertex normals and automatic layer-to-material mapping.</p>
-                    </div>
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">💡 KeyShot-Style Procedural HDRI Dome &amp; 2D Pin Canvas</h5>
-                      <p>Interactive 2D panoramic canvas inside the 3D Viewport with specular spotlight pins, softbox strips, and eyedropper normal raycasting.</p>
-                    </div>
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">🔦 Simultaneous Dual-Lighting Rig</h5>
-                      <p>Concurrent evaluation of HDRI environment dome and physical studio lamps without viewport interference.</p>
-                    </div>
-                    <div className="p-4 bg-neutral-950/60 rounded-lg border border-neutral-800/60 space-y-1.5">
-                      <h5 className="font-medium text-white">🎨 Color Management Look &amp; Contrast Selector</h5>
-                      <p>Dedicated Contrast selector beside Exposure for instant auditioning of all 8 standard Blender color management looks.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* FULL FEATURE SUMMARY (FOR GITHUB & STUDIO TEAMS) */}
-          <div className="mb-14">
+          {/* 6 Core Industrial Design Stages (Crisp Feature Matrix) */}
+          <div className="mb-12">
             <div className="flex items-center gap-2 mb-6 font-mono text-xs uppercase tracking-widest text-neutral-400">
               <Cpu className="w-4 h-4 text-orange-400" />
-              <span>Full Feature Summary (For GitHub &amp; Studio Teams)</span>
+              <span>Core Architecture // 6-Stage Industrial Design Lifecycle</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Feature 1 */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Box className="w-4 h-4" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {/* Stage 1: CAD Bridge */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
+                    <Box className="w-4 h-4" />
+                  </div>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase">Stage 01</span>
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Universal CAD Bridge (STEP &amp; .3DM)</h4>
+                <h4 className="text-base font-medium text-white">CAD Bridge (STEP &amp; Rhino .3DM)</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Imports Rhino <code className="text-neutral-300">.3dm</code> and <code className="text-neutral-300">.step/.stp</code> assemblies directly in memory with true custom split normals. Defaults to Millimeter True-Scale (0.001x) and Z-Up with 1-click Hot-Reload.
+                  Native Rhino <code className="text-neutral-300">.3dm</code> and <code className="text-neutral-300">.step/.stp</code> assembly ingestion with razor-sharp custom split vertex normals. Default Millimeter True-Scale (0.001x), Z-Up, and 1-Click Hot-Reload.
                 </p>
               </div>
 
-              {/* Feature 2 */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Camera className="w-4 h-4" />
+              {/* Stage 2: Studios */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
+                    <Camera className="w-4 h-4" />
+                  </div>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase">Stage 02</span>
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Multi-Studio Camera &amp; Topbar Ribbon</h4>
+                <h4 className="text-base font-medium text-white">Multi-Studio Camera Manager</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Persistent Blender topbar access with aspect ratio presets (1:1, 4:5, 16:9, 9:16, 2.39:1), padlock protection against accidental edits, and per-studio custom render sample limits.
+                  Multi-shot framing, aspect ratio presets (1:1, 4:5, 16:9, 9:16, 2.39:1), camera padlock toggle, 1-click shot reordering, and independent per-studio render sample overrides.
                 </p>
               </div>
 
-              {/* Feature: Model Sets & Exploded Views */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Layers className="w-4 h-4" />
+              {/* Stage 3: Lighting & HDRI Pins */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
+                    <Sliders className="w-4 h-4" />
+                  </div>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase">Stage 03</span>
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Model Sets &amp; Exploded Views</h4>
+                <h4 className="text-base font-medium text-white">HDRI Dome &amp; 2D Pin Canvas</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Record and restore per-studio part positions, rotations, and collection visibility (<code className="text-neutral-300">use_transforms</code>). Features a non-destructive parametric explosion slider to smoothly explode CAD assemblies for technical views, with automatic rest-position restoration when returning to hero studios.
+                  Interactive KeyShot-style 2D panoramic canvas inside the 3D Viewport. Spotlights, rectangular softboxes, and surface normal raycasting to pin specular highlights directly onto product fillets.
                 </p>
               </div>
 
-              {/* Feature 3 */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Sliders className="w-4 h-4" />
+              {/* Stage 4: CMF Matrix */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
+                    <Eye className="w-4 h-4" />
+                  </div>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase">Stage 04</span>
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Procedural HDRI Dome &amp; 2D Pin Canvas</h4>
+                <h4 className="text-base font-medium text-white">CMF Matrix &amp; Mold-Tech Textures</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Interactive KeyShot-style 2D panoramic canvas in the 3D Viewport. Position round spotlights and rectangular softboxes, or click anywhere on CAD surfaces to raycast highlights directly.
+                  Fast multi-colorway variations, procedural VDI 3400 spark erosion textures, anodized aluminum, and brushed finishes with topbar variant renaming and duplicating.
                 </p>
               </div>
 
-              {/* Feature 4 */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Eye className="w-4 h-4" />
+              {/* Stage 5: Model Sets & Exploded Views */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
+                    <Layers className="w-4 h-4" />
+                  </div>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase">Stage 05</span>
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">CMF Matrix &amp; Mold-Tech Textures</h4>
+                <h4 className="text-base font-medium text-white">Model Sets &amp; Exploded Views</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Manage multi-part colorways, rename and duplicate variants from the topbar, and apply procedural VDI 3400 spark erosion mold textures, brushed aluminum, and anodized finishes.
+                  Non-destructive parametric explosion slider and per-studio transform memory (<code className="text-neutral-300">use_transforms</code>). Toggles between assembled hero and exploded technical views with automatic rest-position recovery.
                 </p>
               </div>
 
-              {/* Feature 5 */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Sticker className="w-4 h-4" />
+              {/* Stage 6: Decals & Render Queue */}
+              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
+                    <Sticker className="w-4 h-4" />
+                  </div>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase">Stage 06</span>
                 </div>
-                <h4 className="text-base font-medium text-white mb-2">Raycast Decals &amp; Live Cutaways</h4>
+                <h4 className="text-base font-medium text-white">Decals, Section Cutaways &amp; Batch</h4>
                 <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Drop stickers and graphics directly onto 3D surfaces with conformal shrinkwrap and zero Z-fighting. Slice dense assemblies cleanly with live interactive boolean cutaway boxes.
-                </p>
-              </div>
-
-              {/* Feature 6 */}
-              <div className="p-6 bg-neutral-900/60 rounded-xl border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center mb-4">
-                  <Cpu className="w-4 h-4" />
-                </div>
-                <h4 className="text-base font-medium text-white mb-2">GPU Batch Queue &amp; DXF Export</h4>
-                <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                  Render cross-product Studios x CMFs matrices sequentially with 1-click OS folder openers, paired with 1-click manufacturing DXF flat pattern and silhouette exports.
+                  Conformal shrinkwrap surface decals (zero Z-fighting), live boolean slicing boxes, and sequential GPU batch matrix renders with 1-click manufacturing DXF flat pattern exports.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* INSTALLATION INSTRUCTIONS (DUAL BLENDER SUPPORT) */}
+          {/* Crisp Installation Instructions */}
           <div className="p-6 md:p-8 bg-neutral-900/50 rounded-2xl border border-neutral-800">
             <div className="flex items-center justify-between flex-wrap gap-2 mb-6 pb-3 border-b border-neutral-800">
               <span className="font-mono text-xs uppercase tracking-widest text-neutral-300 font-bold">
-                // Installation Instructions (Cross-Version Setup)
+                // Quick Installation (Blender 3.6 LTS – 5.2+)
               </span>
-              <span className="font-mono text-[10px] text-neutral-400">
-                Backward &amp; Forward Compatible: 3.6 LTS – 5.2.2+
-              </span>
+              <a 
+                href="https://extensions.blender.org/add-ons/id-renderflo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-400 hover:text-orange-300 font-mono text-[11px] inline-flex items-center gap-1"
+              >
+                <span>View on Blender Extensions</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 font-mono text-xs">
               {/* Method A: Blender 4.2+ Extensions */}
-              <div className="p-5 bg-neutral-950/80 rounded-xl border border-neutral-800 space-y-3">
+              <div className="p-5 bg-neutral-950/80 rounded-xl border border-neutral-800 space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-orange-400 font-bold">BLENDER 4.2+ (EXTENSION PACKAGE)</span>
+                  <span className="text-orange-400 font-bold">BLENDER 4.2+ (OFFICIAL EXTENSION)</span>
                   <span className="text-[10px] text-neutral-500 uppercase">Recommended</span>
                 </div>
                 <ol className="list-decimal list-inside space-y-1.5 text-neutral-300 font-sans text-xs font-light leading-relaxed">
                   <li>In Blender, go to <strong className="text-white">Edit &gt; Preferences &gt; Get Extensions</strong>.</li>
-                  <li>Click the top-right menu icon (down arrow) and select <strong className="text-white">Install from Disk...</strong></li>
-                  <li>Select <code className="text-neutral-200 font-mono bg-neutral-900 px-1 py-0.5 rounded">id_renderflo-3.0.0-website-standalone.zip</code> and enable the extension.</li>
-                  <li>Press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd> in any 3D Viewport to open the <strong className="text-white">ID RenderFlo</strong> dock.</li>
+                  <li>Search for <strong className="text-orange-400">ID RenderFlo</strong> and click Install, or click the down arrow and select <strong className="text-white">Install from Disk...</strong> with the downloaded zip.</li>
+                  <li>Press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd> in any 3D Viewport to open the dock.</li>
                 </ol>
               </div>
 
               {/* Method B: Blender 3.6 - 4.1 Classic Add-on */}
-              <div className="p-5 bg-neutral-950/80 rounded-xl border border-neutral-800 space-y-3">
+              <div className="p-5 bg-neutral-950/80 rounded-xl border border-neutral-800 space-y-2.5">
                 <div className="flex items-center justify-between">
                   <span className="text-neutral-300 font-bold">BLENDER 3.6 LTS – 4.1 (CLASSIC ADD-ON)</span>
                   <span className="text-[10px] text-neutral-500 uppercase">Legacy LTS</span>
                 </div>
                 <ol className="list-decimal list-inside space-y-1.5 text-neutral-300 font-sans text-xs font-light leading-relaxed">
                   <li>In Blender, go to <strong className="text-white">Edit &gt; Preferences &gt; Add-ons</strong>.</li>
-                  <li>Click <strong className="text-white">Install...</strong> at the top right.</li>
-                  <li>Select <code className="text-neutral-200 font-mono bg-neutral-900 px-1 py-0.5 rounded">id_renderflo-3.0.0-website-standalone.zip</code> and check the box to activate.</li>
-                  <li>Press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd> in any 3D Viewport to access the studio manager.</li>
+                  <li>Click <strong className="text-white">Install...</strong> at the top right and select <code className="text-neutral-200 font-mono bg-neutral-900 px-1 py-0.5 rounded">id_renderflo-3.2.0-website-standalone.zip</code>.</li>
+                  <li>Check the box to activate, then press <kbd className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-neutral-200">N</kbd> to open.</li>
                 </ol>
               </div>
             </div>
@@ -552,23 +426,5 @@ export default function ExperimentsPage() {
         </span>
       </div>
     </div>
-  );
-}
-
-function ClockIcon(props) {
-  return (
-    <svg 
-      {...props}
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <polyline points="12 6 12 12 16 14" />
-    </svg>
   );
 }
