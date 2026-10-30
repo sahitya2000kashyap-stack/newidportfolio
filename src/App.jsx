@@ -13,6 +13,7 @@ import CommercialPage from './pages/CommercialPage';
 import PlaygroundPage from './pages/PlaygroundPage';
 import ExperimentsPage from './pages/ExperimentsPage';
 import AboutPage from './pages/AboutPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 /* --- ROOT APP --- */
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/personal" element={<PlaygroundPage />} />
               <Route path="/experiments" element={<ExperimentsPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
           <Footer />

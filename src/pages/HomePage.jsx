@@ -44,7 +44,7 @@ export default function HomePage() {
             </h2>
           </div>
           <span className="text-[11px] sm:text-xs font-mono text-neutral-400 self-end sm:self-auto shrink-0">
-            Confidential Client Preview
+            Current Competency
           </span>
         </div>
 

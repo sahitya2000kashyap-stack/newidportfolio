@@ -1,10 +1,10 @@
-import galaLogo from '../assets/brands/gala.png';
+import galaLogo from '../assets/brands/gala.webp';
 import eurekaForbesLogo from '../assets/brands/eureka-forbes.svg';
 import marutiSuzukiLogo from '../assets/brands/maruti-suzuki.svg';
-import luminousLogo from '../assets/brands/luminous.png';
-import drdoLogo from '../assets/brands/drdo.png';
-import webbyToysLogo from '../assets/brands/webby-toys.png';
-import objectifyLogo from '../assets/brands/objectify.png';
+import luminousLogo from '../assets/brands/luminous.webp';
+import drdoLogo from '../assets/brands/drdo.webp';
+import webbyToysLogo from '../assets/brands/webby-toys.webp';
+import objectifyLogo from '../assets/brands/objectify.webp';
 import tataLogo from '../assets/brands/tata.svg';
 
 export const BRANDS = [

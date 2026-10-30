@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { 
   Download, 
   Terminal, 
   Camera, 
   Layers, 
   Box, 
-  Copy, 
-  Check, 
   Sliders, 
   Eye, 
   ShieldCheck, 
@@ -15,20 +13,12 @@ import {
   ExternalLink
 } from 'lucide-react';
 import PlaygroundHeaderNav from '../components/PlaygroundHeaderNav';
-import renderFloIcon from '../assets/id-renderflo-icon.png';
+import renderFloIcon from '../assets/id-renderflo-icon.webp';
 
 export default function ExperimentsPage() {
-  const [copiedInstall, setCopiedInstall] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleCopyInstall = () => {
-    navigator.clipboard.writeText('Edit > Preferences > Get Extensions > Install from Disk... > id_renderflo-3.2.0-website-standalone.zip');
-    setCopiedInstall(true);
-    setTimeout(() => setCopiedInstall(false), 2000);
-  };
 
   return (
     <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-32">
@@ -199,23 +189,6 @@ export default function ExperimentsPage() {
                 <span className="text-[10px] text-neutral-500 font-normal">108 KB</span>
               </a>
 
-              <button
-                onClick={handleCopyInstall}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-mono text-xs transition-colors cursor-pointer"
-                title="Copy installation path"
-              >
-                {copiedInstall ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Copied</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5" />
-                    <span>Copy Path</span>
-                  </>
-                )}
-              </button>
             </div>
           </div>
 
