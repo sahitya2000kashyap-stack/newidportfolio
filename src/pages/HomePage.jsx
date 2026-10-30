@@ -16,9 +16,9 @@ export default function HomePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
             </span>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-              INDUSTRIAL DESIGNER @ FUTURE FACTORY, MUMBAI
-            </p>
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-mono">
+              Industrial Designer @ Future Factory, Mumbai
+            </h2>
           </div>
           
           <h1 className="text-5xl md:text-[84px] font-medium leading-[1.05] tracking-tight text-neutral-900 mb-10">
@@ -44,7 +44,7 @@ export default function HomePage() {
             </h2>
           </div>
           <span className="text-[11px] sm:text-xs font-mono text-neutral-400 self-end sm:self-auto shrink-0">
-            In Active Development
+            Confidential Client Preview
           </span>
         </div>
 
@@ -65,10 +65,10 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-neutral-900/10 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
                   <div className="bg-neutral-900/90 border border-neutral-700 text-white px-4 py-2 rounded-full flex items-center gap-2 font-mono text-[10px] tracking-wider uppercase mb-1 shadow-sm">
                     <Lock className="w-3.5 h-3.5 text-orange-400" />
-                    <span>In Active Development</span>
+                    <span>{idx === 0 ? "High-CADR Air Filtration" : "Thermal Espresso Machine"}</span>
                   </div>
                   <span className="font-mono text-[9px] text-neutral-700 font-semibold tracking-wider">
-                    Unreleased Flagship Project
+                    {idx === 0 ? "Tooling DFM & Acoustics // 2026 Flagship" : "Kinematics & Precision CMF // 2026 Flagship"}
                   </span>
                 </div>
               </div>
