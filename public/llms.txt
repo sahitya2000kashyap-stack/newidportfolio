@@ -1,0 +1,36 @@
+# Sahitya Kashyap — Industrial Design Portfolio & Engineering Systems
+
+> Portfolio of Sahitya Kashyap, an Industrial Designer based in Mumbai, India, working at Future Factory. Specializes in consumer appliance design, toolmaking DFM (injection molding, progressive dies), CMF strategy, kinematics, SolidWorks parametric modeling (CSWP), and Blender 3D visualization.
+
+## About Sahitya Kashyap
+- Role: Industrial Designer at Future Factory, Mumbai (June 2025 – Present)
+- Background: 4-Year Diploma in Tool & Die Making from Delhi Institute of Tool Engineering (DITE, 2017–2021)
+- Education: Bachelor of Design (B.Des) from Delhi Technological University (DTU, 2021–2025)
+- Intensives: Offsite Pro Advanced Industrial Design (Chicago, 2024)
+- Honors: IndiaSkills Gold Medalist in Mechanical Engineering CAD & Industrial Design (2021)
+- Certifications: Certified SOLIDWORKS Professional (CSWP) in Mechanical Design; Certified SOLIDWORKS Associate (CSWA) in Additive Manufacturing
+
+## Core Pages
+- [Home](https://sahityakashyap.in/): Primary design portfolio landing page featuring 2026 confidential flagship previews and archive case studies.
+- [About & Background](https://sahityakashyap.in/about): Detailed career timeline, toolmaking roots, verified CSWP credentials, education, and resume download.
+- [Commercial Hardware](https://sahityakashyap.in/commercial): Sanitized commercial programs spanning high-CADR air purifiers, institutional floor-standing RO systems, commercial battery enclosures, and cleaning hardware.
+- [Design Playground](https://sahityakashyap.in/playground): Visual lab of unconstrained Blender CAD studies, ergonomic clay mockups, Grasshopper algorithmic fluting, and CMF material explorations.
+- [Workflow Experiments & ID RenderFlo](https://sahityakashyap.in/experiments): Official Blender Extensions pipeline for native Rhino `.3dm` & STEP CAD ingestion, KeyShot-style procedural HDRI pin canvas, and CMF matrix variants.
+
+## Key Projects & Case Studies
+- [Joseph Joseph Glue Gun](https://sahityakashyap.in/project/joseph-joseph): Dual-mode hot glue gun concept redesign with rotating kinematic transformation, functional ergonomics, and Joseph Joseph houseware CMF. Featured internationally on Yanko Design.
+- [Coordinate War](https://sahityakashyap.in/project/coordinate-war): Physical tabletop strategy game with rack-and-pinion turret kinematics, spring projectile mechanism, and DFM sheet-metal progressive die nesting.
+- [MOODI Algorithmic Lamp](https://sahityakashyap.in/project/moodi): Domestic luminaire featuring Grasshopper computational surface fluting, non-planar injection mold parting line architecture, and tactile knurled potentiometer.
+- [One Hand Scotch Tape Dispenser](https://sahityakashyap.in/project/scotch): Dual-mode handheld and desktop tape dispenser featuring slide-to-hinge spool mechanics, high-gloss CMF specularity, and one-hand cut ergonomics.
+
+## Software & Extensions
+- [ID RenderFlo on Blender Extensions](https://extensions.blender.org/add-ons/id-renderflo/): Official published extension for Blender 4.2+ LTS and 5.0+ offering parametric CAD bridge, multi-shot studio cameras, procedural HDRI pin lighting, and headless GPU rendering.
+
+## Verified Credentials & External Links
+- [CSWP Verification](https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-HMES8F2RX9): Dassault Systèmes Certified SOLIDWORKS Professional (ID: C-HMES8F2RX9)
+- [CSWA Verification](https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-J6NKQF4RXT): Dassault Systèmes Certified SOLIDWORKS Associate in Additive Manufacturing (ID: C-J6NKQF4RXT)
+- [Yanko Design Feature](https://www.yankodesign.com/2024/09/27/this-modern-glue-gun-concept-is-inspired-by-the-houseware-brand-joseph-joseph/): International publication of the Joseph Joseph Glue Gun redesign
+- [LinkedIn](https://www.linkedin.com/in/sahityakashyap/): Professional profile
+- [Behance](https://www.behance.net/sahityakashyap): Industrial design portfolio archive
+- [Resume PDF](https://sahityakashyap.in/assets/Sahitya_Kashyap_Industrial_Design_Resume.pdf): Direct download of full CV
+
