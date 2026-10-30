@@ -35,7 +35,7 @@ export default function ExperimentsPage() {
       <PlaygroundHeaderNav />
 
       {/* Hero Manifesto Header */}
-      <div className="max-w-4xl mb-14">
+      <header className="max-w-4xl mb-14">
         <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-neutral-900 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full uppercase tracking-widest font-mono">
           <Terminal className="w-3 h-3 text-orange-500" />
           <span>Workflows // Automation // Systematic Shortcuts</span>
@@ -54,61 +54,66 @@ export default function ExperimentsPage() {
             It is not always about writing code; it is about <strong className="font-medium text-neutral-900">systematic leverage</strong>. Eliminating redundant clicks, standardizing studio rigs, and building pipelines that get out of the way so the physical industrial design craft can flourish.
           </p>
         </div>
-      </div>
+      </header>
 
       {/* 3 Philosophy Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        <div className="p-7 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
-          <div>
-            <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-3">
-              01 // REPEATABLE LEVERAGE
-            </span>
-            <h3 className="text-lg font-medium text-neutral-900 mb-2">
-              Never repeat what a system can automate
-            </h3>
-            <p className="text-xs text-neutral-500 leading-relaxed font-light">
-              If an action requires more than three identical clicks per render or CAD iteration, it belongs in a pipeline, a template, or a macro.
-            </p>
+      <section className="mb-16" aria-labelledby="workflow-philosophy-heading">
+        <h2 id="workflow-philosophy-heading" className="sr-only">
+          Workflow Leverage Philosophy
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-7 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
+            <div>
+              <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-3">
+                01 // REPEATABLE LEVERAGE
+              </span>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">
+                Never repeat what a system can automate
+              </h3>
+              <p className="text-xs text-neutral-500 leading-relaxed font-light">
+                If an action requires more than three identical clicks per render or CAD iteration, it belongs in a pipeline, a template, or a macro.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-neutral-200/80 font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
+              Zero Redundancy
+            </div>
           </div>
-          <div className="mt-5 pt-3 border-t border-neutral-200/80 font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
-            Zero Redundancy
-          </div>
-        </div>
 
-        <div className="p-7 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
-          <div>
-            <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-3">
-              02 // RESOURCEFUL CRAFT
-            </span>
-            <h3 className="text-lg font-medium text-neutral-900 mb-2">
-              Not code for code's sake
-            </h3>
-            <p className="text-xs text-neutral-500 leading-relaxed font-light">
-              Shortcuts don't need complicated software. Use whatever tool is right in front of you—Python, Grasshopper math, CAD macros, or workshop jigs.
-            </p>
+          <div className="p-7 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
+            <div>
+              <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-3">
+                02 // RESOURCEFUL CRAFT
+              </span>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">
+                Not code for code's sake
+              </h3>
+              <p className="text-xs text-neutral-500 leading-relaxed font-light">
+                Shortcuts don't need complicated software. Use whatever tool is right in front of you—Python, Grasshopper math, CAD macros, or workshop jigs.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-neutral-200/80 font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
+              Pragmatic Engineering
+            </div>
           </div>
-          <div className="mt-5 pt-3 border-t border-neutral-200/80 font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
-            Pragmatic Engineering
-          </div>
-        </div>
 
-        <div className="p-7 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
-          <div>
-            <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-3">
-              03 // PURE ENJOYMENT
-            </span>
-            <h3 className="text-lg font-medium text-neutral-900 mb-2">
-              Solving workflow puzzles for fun
-            </h3>
-            <p className="text-xs text-neutral-500 leading-relaxed font-light">
-              Designing the tool is as creatively engaging as designing the product. Personal weapons built to make high-fidelity physical realization effortless.
-            </p>
-          </div>
-          <div className="mt-5 pt-3 border-t border-neutral-200/80 font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
-            Studio Labs
+          <div className="p-7 bg-neutral-50 rounded-2xl border border-neutral-200 flex flex-col justify-between">
+            <div>
+              <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-3">
+                03 // PURE ENJOYMENT
+              </span>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">
+                Solving workflow puzzles for fun
+              </h3>
+              <p className="text-xs text-neutral-500 leading-relaxed font-light">
+                Designing the tool is as creatively engaging as designing the product. Personal weapons built to make high-fidelity physical realization effortless.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-neutral-200/80 font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
+              Studio Labs
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* FEATURED WORKFLOW ASSET: ID RENDERFLO */}
       <section className="bg-neutral-950 text-white rounded-3xl border border-neutral-800 p-8 md:p-12 mb-16 relative overflow-hidden shadow-2xl">
@@ -146,7 +151,9 @@ export default function ExperimentsPage() {
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden shadow-2xl border border-neutral-700/80 bg-neutral-900 shrink-0 transform hover:scale-105 transition-all duration-300">
               <img 
                 src={renderFloIcon} 
-                alt="ID RenderFlo Plugin Icon" 
+                alt="ID RenderFlo Blender Extension Official Icon" 
+                loading="eager"
+                fetchPriority="high"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -218,7 +225,7 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Box className="w-3.5 h-3.5" />
               </div>
-              <h4 className="text-sm font-medium text-white">01 // CAD Bridge</h4>
+              <h3 className="text-sm font-medium text-white">01 // CAD Bridge</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
                 Native STEP, IGES, STL &amp; Rhino <code className="text-neutral-300">.3dm</code> import with true CAD split normals, millimeter true-scale calibration (0.001x), and 1-click hot-reload.
               </p>
@@ -228,7 +235,7 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Camera className="w-3.5 h-3.5" />
               </div>
-              <h4 className="text-sm font-medium text-white">02 // Studio &amp; Camera Dock</h4>
+              <h3 className="text-sm font-medium text-white">02 // Studio &amp; Camera Dock</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
                 Multi-shot framing, aspect ratio presets (1:1, 4:5, 16:9, 9:16, 2.39:1), camera padlock toggle, and independent per-studio render samples.
               </p>
@@ -238,7 +245,7 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Sliders className="w-3.5 h-3.5" />
               </div>
-              <h4 className="text-sm font-medium text-white">03 // HDRI Dome &amp; 2D Pin Canvas</h4>
+              <h3 className="text-sm font-medium text-white">03 // HDRI Dome &amp; 2D Pin Canvas</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
                 Interactive 2D panoramic canvas inside the 3D Viewport with specular spotlights, softboxes, and surface normal raycasting to pin reflections directly onto product fillets.
               </p>
@@ -248,7 +255,7 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Eye className="w-3.5 h-3.5" />
               </div>
-              <h4 className="text-sm font-medium text-white">04 // CMF Matrix &amp; Mold-Tech</h4>
+              <h3 className="text-sm font-medium text-white">04 // CMF Matrix &amp; Mold-Tech</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
                 Rapid multi-part colorway variations, procedural VDI 3400 spark erosion textures, and brushed or anodized aluminum finishes with 1-click topbar duplication.
               </p>
@@ -258,7 +265,7 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Layers className="w-3.5 h-3.5" />
               </div>
-              <h4 className="text-sm font-medium text-white">05 // Model Sets &amp; Exploded Views</h4>
+              <h3 className="text-sm font-medium text-white">05 // Model Sets &amp; Exploded Views</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
                 Non-destructive parametric explosion slider and per-studio transform memory. Seamlessly toggle between assembled hero and exploded technical views with auto-restoring rest positions.
               </p>
@@ -268,7 +275,7 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Sticker className="w-3.5 h-3.5" />
               </div>
-              <h4 className="text-sm font-medium text-white">06 // Decals, Cutaways &amp; Batch</h4>
+              <h3 className="text-sm font-medium text-white">06 // Decals, Cutaways &amp; Batch</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
                 Conformal shrinkwrap surface stickers (zero Z-fighting), live boolean slicing cutaways, and sequential GPU batch matrix renders with 1-click manufacturing DXF export.
               </p>

@@ -63,7 +63,8 @@ export default function AboutPage() {
             <div className="w-full aspect-[4/3] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-neutral-200 bg-neutral-100">
               <ProjectImage 
                 id="sahitya-studio-cad-setup"
-                altText="Sahitya Kashyap Studio CAD & Prototyping Setup" 
+                altText="Sahitya Kashyap Studio CAD & Prototyping Setup with SolidWorks and 3D Printer" 
+                priority={true}
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -106,13 +107,13 @@ export default function AboutPage() {
               </div>
 
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
-                <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
+                <h3 className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
                   <GraduationCapIcon className="w-4 h-4 text-neutral-300" /> Formal Education
-                </div>
+                </h3>
                 <div className="space-y-4 text-sm">
                   {EDUCATION_DATA.map((edu, idx) => (
                     <div key={idx} className={idx > 0 ? "border-t border-neutral-700/50 pt-3" : ""}>
-                      <h5 className="font-medium text-white">{edu.title}</h5>
+                      <h4 className="font-medium text-white">{edu.title}</h4>
                       <p className="text-neutral-400 text-xs">{edu.institution}</p>
                     </div>
                   ))}
@@ -120,9 +121,9 @@ export default function AboutPage() {
               </div>
 
               <div className="p-8 bg-neutral-800/40 rounded-2xl border border-neutral-800 space-y-6">
-                <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
+                <h3 className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
                   <WrenchIcon className="w-4 h-4 text-neutral-300" /> Design Competencies
-                </div>
+                </h3>
                 <div className="space-y-4 text-xs">
                   {COMPETENCIES_DATA.map((comp, idx) => (
                     <div key={idx} className={idx > 0 ? "border-t border-neutral-700/50 pt-3" : ""}>
@@ -135,7 +136,7 @@ export default function AboutPage() {
             </div>
             
             <div className="lg:col-span-7">
-              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-8">Work Experience</h3>
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-8">Work Experience</h2>
               <div className="space-y-8">
                 {WORK_EXPERIENCE_DATA.map((item, idx) => (
                   <div 
@@ -143,7 +144,7 @@ export default function AboutPage() {
                     className="p-4 -mx-4 rounded-xl border border-transparent hover:border-neutral-800 hover:bg-neutral-800/30 transition-all duration-200 flex flex-col md:flex-row justify-between gap-4 border-b border-neutral-800 pb-8 last:border-0"
                   >
                     <div>
-                      <h4 className="text-xl font-medium text-white">{item.role}</h4>
+                      <h3 className="text-xl font-medium text-white">{item.role}</h3>
                       <p className="text-neutral-400 text-sm mt-1">{item.company}</p>
                     </div>
                     <div className="md:text-right flex flex-col md:items-end gap-1">
@@ -163,9 +164,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
               
               <div className="lg:col-span-5">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-4">
+                <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-4">
                   Honors &amp; Certifications
-                </h3>
+                </h2>
                 <p className="text-neutral-400 text-sm font-light leading-relaxed max-w-sm">
                   Official software releases, national CAD medals, design publications, and verified Dassault Systèmes credentials.
                 </p>
@@ -180,7 +181,7 @@ export default function AboutPage() {
                     >
                       <div>
                         <div className="flex items-center gap-2">
-                          <h4 className="text-xl font-medium text-white">{item.title}</h4>
+                          <h3 className="text-xl font-medium text-white">{item.title}</h3>
                           {item.link && (
                             <a 
                               href={item.link} 

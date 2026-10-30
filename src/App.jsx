@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import MetaUpdater from './components/MetaUpdater';
 
 import HomePage from './pages/HomePage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
@@ -15,13 +16,10 @@ import AboutPage from './pages/AboutPage';
 
 /* --- ROOT APP --- */
 export default function App() {
-  useEffect(() => {
-    document.title = "Sahitya Kashyap | Industrial Designer";
-  }, []);
-
   return (
     <ErrorBoundary>
       <Router>
+        <MetaUpdater />
         <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col">
           <CustomCursor />
           <Navbar />

@@ -34,8 +34,9 @@ export default function BrandLogos({
             >
               <img
                 src={brand.logo}
-                alt={`${brand.name} Logo`}
+                alt={`${brand.name} Corporate Client Industrial Design Logo`}
                 loading="lazy"
+                decoding="async"
                 className={`${brand.sizeClass} w-auto object-contain filter grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105`}
               />
             </div>

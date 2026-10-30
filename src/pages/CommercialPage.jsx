@@ -30,19 +30,22 @@ export default function CommercialPage() {
         <ArrowLeft className="w-3.5 h-3.5" /> Back to home
       </Link>
       
-      <div className="max-w-4xl mb-14">
+      <header className="max-w-4xl mb-14">
         <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-bold text-white bg-neutral-900 px-3 py-1 rounded-full uppercase tracking-widest">
           <Lock className="w-3 h-3" /> Confidential Commercial Portfolio
         </div>
         <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-neutral-900 mb-8 leading-tight">
-          Commercialized & <br /> Mass Produced Projects
+          Commercialized &amp; <br /> Mass Produced Projects
         </h1>
         <p className="text-2xl text-neutral-500 leading-relaxed font-light">
           Selected commercial programs spanning domestic appliances and institutional hardware. Focused on strategic form ideation, and 1:1 high-fidelity visual mockups. Client identities protected under NDA.
         </p>
-      </div>
+      </header>
 
-      <div className="space-y-24">
+      <section className="space-y-24" aria-labelledby="commercial-programs-heading">
+        <h2 id="commercial-programs-heading" className="sr-only">
+          Commercial Hardware Programs
+        </h2>
         {COMMERCIAL_PROGRAMS.map((prog, pIdx) => (
           <div key={pIdx} className="border-t border-neutral-200 pt-12">
             <div className="flex items-center gap-3 mb-10">
@@ -50,7 +53,7 @@ export default function CommercialPage() {
                 {getProgramIcon(prog.iconType)}
               </div>
               <div>
-                <h2 className="text-2xl md:text-3xl font-medium text-neutral-900">{prog.category}</h2>
+                <h3 className="text-2xl md:text-3xl font-medium text-neutral-900">{prog.category}</h3>
                 <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">{prog.badge}</span>
               </div>
             </div>
@@ -64,7 +67,8 @@ export default function CommercialPage() {
                   <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-neutral-200/60 relative overflow-hidden border-b border-neutral-200">
                     <ProjectImage 
                       id={item.imageId} 
-                      altText={`${item.title} Confidential Hardware`} 
+                      altText={`${item.title} — Confidential Hardware CAD Architecture`} 
+                      priority={pIdx === 0 && itemIdx === 0}
                       className="w-full h-full object-cover filter blur-[6px] scale-105 opacity-80"
                     />
                     <div className="absolute inset-0 bg-neutral-950/20 backdrop-blur-[2px] flex flex-col items-center justify-center text-center p-4">
@@ -81,7 +85,7 @@ export default function CommercialPage() {
                   <div className="p-8 md:p-10 flex-grow flex flex-col justify-between">
                     <div>
                       <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">{item.tag}</span>
-                      <h3 className="text-xl md:text-2xl font-medium text-neutral-900 mb-3">{item.title}</h3>
+                      <h4 className="text-xl md:text-2xl font-medium text-neutral-900 mb-3">{item.title}</h4>
                       <p className="text-neutral-600 text-sm leading-relaxed mb-6 font-light">{item.desc}</p>
                     </div>
                     <div className="flex flex-wrap gap-2 pt-4 border-t border-neutral-200/70">
@@ -97,10 +101,10 @@ export default function CommercialPage() {
             </div>
           </div>
         ))}
-      </div>
+      </section>
       
-      <div className="mt-28 p-12 bg-neutral-900 rounded-3xl text-center flex flex-col items-center">
-        <h3 className="text-3xl font-medium text-white mb-4">Request Commercial Projects walkthrough</h3>
+      <section className="mt-28 p-12 bg-neutral-900 rounded-3xl text-center flex flex-col items-center" aria-labelledby="walkthrough-heading">
+        <h2 id="walkthrough-heading" className="text-3xl font-medium text-white mb-4">Request Commercial Projects walkthrough</h2>
         <p className="text-neutral-400 text-base mb-8 max-w-xl font-light">
           Available for private walk-throughs of Design Process, physical visual mockups, and renders for verified teams.
         </p>
@@ -110,8 +114,7 @@ export default function CommercialPage() {
         >
           Contact for access
         </a>
-      </div>
+      </section>
     </div>
   );
 }
-

@@ -9,7 +9,7 @@ import { FLAGSHIP_2026_PROJECTS, ARCHIVE_PROJECTS } from '../data/projectsData';
 export default function HomePage() {
   return (
     <div>
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 pt-24 pb-20">
+      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-24 pb-20">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2.5 mb-8">
             <span className="relative flex h-2.5 w-2.5">
@@ -27,10 +27,10 @@ export default function HomePage() {
           </h1>
           
           <p className="text-xl md:text-2xl text-neutral-500 max-w-3xl leading-relaxed font-light">
-            Industrial designer translating complex human behaviors into refined physical products. Leveraging a foundation in Tool & Die precision to ensure that expressive forms, ergonomic interactions, and premium CMF translate flawlessly into high-volume manufacturing.
+            Industrial designer translating complex human behaviors into refined physical products. Leveraging a foundation in Tool &amp; Die precision to ensure that expressive forms, ergonomic interactions, and premium CMF translate flawlessly into high-volume manufacturing.
           </p>
         </div>
-      </section>
+      </header>
 
       {/* SECTION 1: 2026 FLAGSHIP PROJECTS */}
       <section id="work" className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
@@ -49,15 +49,16 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-20">
-          {FLAGSHIP_2026_PROJECTS.map((proj) => (
+          {FLAGSHIP_2026_PROJECTS.map((proj, idx) => (
             <div 
-              key={proj.slug} 
+              key={idx} 
               className="flex flex-col relative select-none cursor-not-allowed group"
             >
               <div className="w-full aspect-[4/3] lg:aspect-[16/11] bg-neutral-100 overflow-hidden mb-6 md:mb-8 relative rounded-2xl shadow-xs border border-neutral-200">
                 <ProjectImage 
                   id={proj.thumbId} 
-                  altText={proj.title}
+                  altText={`${proj.title} — ${proj.tagline}`}
+                  priority={idx < 2}
                   className="filter blur-[8px] opacity-60 scale-105 pointer-events-none" 
                 />
                 
@@ -101,9 +102,9 @@ export default function HomePage() {
             <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 font-mono text-[10px] font-bold uppercase rounded shrink-0">
               2023 — 2024
             </span>
-            <h3 className="text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500">
-              Foundation & Archive Projects
-            </h3>
+            <h2 className="text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500">
+              Foundation &amp; Archive Projects
+            </h2>
           </div>
           <span className="text-[11px] sm:text-xs font-mono text-neutral-400 self-end sm:self-auto shrink-0">
             04 Case Studies
@@ -120,7 +121,7 @@ export default function HomePage() {
               <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-neutral-100 overflow-hidden mb-4 rounded-xl shadow-xs border border-neutral-150">
                 <ProjectImage 
                   id={proj.thumbId} 
-                  altText={proj.title}
+                  altText={`${proj.title} — ${proj.category} by Sahitya Kashyap`}
                   className="group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
               </div>
@@ -129,9 +130,9 @@ export default function HomePage() {
                   <span className="font-bold uppercase tracking-wider text-neutral-500">{proj.category}</span>
                   <span className="text-neutral-400">{proj.date}</span>
                 </div>
-                <h4 className="text-base md:text-lg font-medium text-neutral-900 mb-1 group-hover:text-neutral-600 transition-colors leading-snug">
+                <h3 className="text-base md:text-lg font-medium text-neutral-900 mb-1 group-hover:text-neutral-600 transition-colors leading-snug">
                   {proj.title}
-                </h4>
+                </h3>
                 <p className="text-neutral-400 text-xs line-clamp-2 leading-relaxed">
                   {proj.tagline}
                 </p>
@@ -142,7 +143,10 @@ export default function HomePage() {
       </section>
 
       {/* Cross-Page Navigation Cards */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32" aria-labelledby="cross-page-heading">
+        <h2 id="cross-page-heading" className="sr-only">
+          Explore Dossiers, Visual Lab &amp; Background
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Link 
             to="/commercial" 
@@ -152,7 +156,7 @@ export default function HomePage() {
               <Lock className="w-4 h-4 text-neutral-900" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-900">Sanitized Dossier</span>
             </div>
-            <h4 className="text-xl font-medium text-neutral-900 mb-2">Commercial Hardware</h4>
+            <h3 className="text-xl font-medium text-neutral-900 mb-2">Commercial Hardware</h3>
             <p className="text-neutral-500 text-xs leading-relaxed mb-6 font-light">
               High-volume commercial programs spanning dual-mode cleaning equipment, heavy-duty institutional water systems, and domestic appliances.
             </p>
@@ -169,7 +173,7 @@ export default function HomePage() {
               <Sparkles className="w-4 h-4 text-neutral-900" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-900">Visual Lab</span>
             </div>
-            <h4 className="text-xl font-medium text-neutral-900 mb-2">Design Playground</h4>
+            <h3 className="text-xl font-medium text-neutral-900 mb-2">Design Playground</h3>
             <p className="text-neutral-500 text-xs leading-relaxed mb-6 font-light">
               Dynamic multi-aspect mosaic of unconstrained Blender CAD experiments, physical mockups, and material explorations.
             </p>
@@ -186,7 +190,7 @@ export default function HomePage() {
               <GraduationCapIcon className="w-4 h-4 text-neutral-300" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300">Design Background</span>
             </div>
-            <h4 className="text-xl font-medium text-white mb-2">About Sahitya</h4>
+            <h3 className="text-xl font-medium text-white mb-2">About Sahitya</h3>
             <p className="text-neutral-400 text-xs leading-relaxed mb-6 font-light">
               B.Des from DTU, Offsite Pro Chicago, CSWP Certified, Blender 3D, and Future Factory experience.
             </p>
@@ -199,4 +203,3 @@ export default function HomePage() {
     </div>
   );
 }
-

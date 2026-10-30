@@ -79,14 +79,16 @@ export default function ProjectDetailPage() {
         <div className={`w-full ${project.heroAspectClass || 'aspect-[16/10] md:aspect-[21/9]'} bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 shadow-sm`}>
           <ProjectImage 
             id={project.heroId} 
-            altText={`${project.title} Hero Banner`} 
+            altText={`${project.title} Hero Industrial Design & CAD Banner`}
+            priority={true} 
             className="w-full h-full object-cover"
           />
         </div>
       </div>
 
       {/* Dynamic Slide Blocks Engine */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-28">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-28" aria-labelledby="case-study-heading">
+        <h2 id="case-study-heading" className="sr-only">Detailed Case Study &amp; Engineering Process</h2>
         {project.deckBlocks && project.deckBlocks.map((block, idx) => {
           
           /* LAYOUT: Video Embed (YouTube Privacy-Enhanced Player) */
@@ -401,10 +403,10 @@ export default function ProjectDetailPage() {
         {/* Technical DFM Specifications Drawer */}
         {project.specs && (
           <div className="p-8 md:p-12 bg-neutral-900 text-white rounded-3xl border border-neutral-800 font-mono text-xs">
-            <div className="text-neutral-400 font-semibold mb-6 flex items-center gap-2">
+            <h2 className="text-neutral-400 font-semibold mb-6 flex items-center gap-2 text-xs uppercase tracking-wider">
               <Wrench className="w-4 h-4 text-orange-400" />
-              <span>SHOPFLOOR DFM & TOOLING ARCHITECTURE</span>
-            </div>
+              <span>SHOPFLOOR DFM &amp; TOOLING ARCHITECTURE</span>
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <div>
                 <span className="text-neutral-500 block mb-1">MATERIAL SPECIFICATION:</span>
@@ -440,7 +442,7 @@ export default function ProjectDetailPage() {
             Full High-Res Boards on Behance <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
-      </div>
+      </section>
     </article>
   );
 }

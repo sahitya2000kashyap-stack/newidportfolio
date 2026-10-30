@@ -24,7 +24,11 @@ export default function ProjectImage({
   className = "", 
   imgClassName = "", 
   fitMode = "object-cover", 
-  withLoader = false 
+  withLoader = false,
+  priority = false,
+  loading,
+  fetchPriority,
+  decoding = "async"
 }) {
   const src = getAssetUrl(id);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -42,6 +46,9 @@ export default function ProjectImage({
   }
 
   const isAutoHeight = className.includes('h-auto') || fitMode.includes('h-auto');
+  const computedAlt = altText || (id ? `${id.replace(/[-_]/g, ' ')} CAD and industrial design study` : 'Industrial design CAD model');
+  const imageLoading = loading || (priority ? 'eager' : 'lazy');
+  const imageFetchPriority = fetchPriority || (priority ? 'high' : 'auto');
 
   return (
     <div className={`relative w-full ${isAutoHeight ? 'h-auto' : 'h-full'} overflow-hidden ${className}`}>
@@ -52,8 +59,10 @@ export default function ProjectImage({
       )}
       <img 
         src={src} 
-        alt={altText} 
-        decoding="async" 
+        alt={computedAlt} 
+        loading={imageLoading}
+        fetchPriority={imageFetchPriority}
+        decoding={decoding} 
         onLoad={() => setIsLoaded(true)}
         className={`${fitMode} w-full ${isAutoHeight ? 'h-auto block' : 'h-full'} ${imgClassName} transition-all duration-700 ease-out ${
           withLoader ? (isLoaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-xs scale-102') : 'opacity-100'
