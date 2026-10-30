@@ -37,7 +37,7 @@ export default function Navbar() {
           </div>
 
           <a 
-            href="https://drive.usercontent.google.com/download?id=1jmTcx1ExOH2r-nisx45hZydq_H0DPOTM&export=download&authuser=0&confirm=t&uuid=75ec48ca-98cf-465b-bca9-e54bb6b8e49e&at=AMrWOn3HA2kfxLXmkeLtfvd8c7UO:1791902749615" 
+            href="/assets/Sahitya_Kashyap_Industrial_Design_Resume.pdf" 
             target="_blank"
             rel="noopener noreferrer"
             download
@@ -84,7 +84,7 @@ export default function Navbar() {
             </a>
             <div className="pt-2">
               <a 
-                href="https://drive.usercontent.google.com/download?id=1jmTcx1ExOH2r-nisx45hZydq_H0DPOTM&export=download&authuser=0&confirm=t&uuid=75ec48ca-98cf-465b-bca9-e54bb6b8e49e&at=AMrWOn3HA2kfxLXmkeLtfvd8c7UO:1791902749615" 
+                href="/assets/Sahitya_Kashyap_Industrial_Design_Resume.pdf" 
                 target="_blank"
                 rel="noopener noreferrer"
                 download

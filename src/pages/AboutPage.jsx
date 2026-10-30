@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Download, Award, ExternalLink } from 'lucide-react';
 import ProjectImage from '../components/ProjectImage';
 import BrandLogos from '../components/BrandLogos';
 import { GraduationCapIcon, WrenchIcon } from '../components/Icons';
@@ -8,6 +8,7 @@ import {
   EDUCATION_DATA, 
   COMPETENCIES_DATA, 
   CERTIFICATIONS_AND_AWARDS, 
+  HONORS_AND_CREDENTIALS,
   WORK_EXPERIENCE_DATA 
 } from '../data/aboutData';
 
@@ -39,9 +40,23 @@ export default function AboutPage() {
               Design Sensibility <br />
               <span className="text-neutral-400">With Technical Vigour.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-light">
-              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool & Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and hardware that manufacturers can produce without compromise.
+            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-light mb-8">
+              Formal Industrial Design background from DTU and Offsite Pro, enriched by 4 years of deep shopfloor Tool &amp; Die craftsmanship. I craft cohesive product languages, ergonomic consumer experiences, and hardware that manufacturers can produce without compromise.
             </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <a 
+                href="/assets/Sahitya_Kashyap_Industrial_Design_Resume.pdf" 
+                download="Sahitya_Kashyap_Industrial_Design_Resume.pdf"
+                className="inline-flex items-center gap-2.5 bg-neutral-900 hover:bg-neutral-800 active:scale-95 text-white px-6 py-3 rounded-full text-xs font-mono font-semibold uppercase tracking-wider transition-all shadow-sm group"
+              >
+                <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+                <span>Download Resume (PDF)</span>
+              </a>
+              <span className="font-mono text-xs text-neutral-400">
+                Direct PDF · ~586 KB
+              </span>
+            </div>
           </div>
 
           <div className="lg:col-span-5">
@@ -62,13 +77,15 @@ export default function AboutPage() {
         tagline="Design & Manufacturing engagements across consumer appliances, cabin interior CMF, and additive manufacturing and topology optimization."
       />
 
-      <section className="bg-neutral-900 py-32 text-white">
+      <section className="bg-neutral-900 py-24 md:py-32 text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Main 2-column layout: Education & Competencies + Work Experience */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
             
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Design Education & ToolMaking Background</h2>
+                <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Design Education &amp; ToolMaking Background</h2>
                 <p className="text-neutral-400 text-lg font-light leading-relaxed mb-6">
                   Industrial design leadership driven by user empathy, visual form development, and tactical ergonomics. My foundation in toolmaking acts as a production accelerator—ensuring aesthetic visions survive the engineering handoff intact.
                 </p>
@@ -78,8 +95,8 @@ export default function AboutPage() {
                       key={idx}
                       className={`px-3.5 py-1.5 border border-neutral-700 rounded-full text-xs font-mono ${
                         item.highlight 
-                          ? 'bg-neutral-800/60 text-white font-medium' 
-                          : 'text-neutral-300'
+                          ? 'bg-neutral-800/60 text-white font-medium border-neutral-600' 
+                          : 'text-neutral-400'
                       }`}
                     >
                       {item.label}
@@ -140,6 +157,79 @@ export default function AboutPage() {
             </div>
 
           </div>
+
+          {/* Dedicated Section: Recognition, Certifications & Publications */}
+          <div className="pt-20 border-t border-neutral-800">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+              <div>
+                <div className="inline-flex items-center gap-2 mb-3 text-[10px] font-bold text-orange-400 uppercase tracking-widest font-mono">
+                  <Award className="w-3.5 h-3.5 text-orange-400" />
+                  <span>Honors // Certifications // Releases</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight">
+                  Recognition, Certifications &amp; Publications
+                </h3>
+              </div>
+              <p className="text-neutral-400 text-sm font-light max-w-md">
+                Official software release on Blender Extensions, national skill competition medals, international design features, and certified Dassault Systèmes credentials.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {HONORS_AND_CREDENTIALS.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="p-7 bg-neutral-800/40 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-colors flex flex-col justify-between space-y-5 group"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-950/40 border border-orange-500/20 px-2.5 py-1 rounded-full">
+                        {item.tag}
+                      </span>
+                      {item.link && (
+                        <a 
+                          href={item.link} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="text-neutral-500 hover:text-white transition-colors"
+                          title={`Open ${item.linkLabel || 'link'}`}
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="text-base font-medium text-white leading-snug group-hover:text-orange-300 transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs font-mono text-neutral-400 mt-1">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                    <p className="text-xs text-neutral-400 font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-[11px] font-mono text-neutral-500">
+                    <span>{item.organization}</span>
+                    {item.link && (
+                      <a 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-neutral-400 hover:text-orange-400 flex items-center gap-1 transition-colors"
+                      >
+                        <span>{item.linkLabel}</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
     </div>
