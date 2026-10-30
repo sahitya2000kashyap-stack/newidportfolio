@@ -26,7 +26,7 @@ export const COMMERCIAL_PROGRAMS = [
       {
         title: "2 High-Capacity Institutional Floor-Standing Purification Station",
         tag: "Industrial Canteen & Enterprise Architecture",
-        desc: "Engineered an industrial-scale standing RO purification station for high-footfall institutions, canteens, and enterprise workspaces. Multi-bay maintenance access and insulated foam tanks.",
+        desc: "Designed an industrial-scale standing RO purification station for high-footfall institutions, canteens, and enterprise workspaces. Multi-bay maintenance access and insulated foam tanks.",
         imageId: "commercial-standing-ro-purifier",
         specs: [
           "Heavy-Duty 1.5mm CRCA Metal Enclosure",
@@ -45,7 +45,7 @@ export const COMMERCIAL_PROGRAMS = [
       {
         title: "Domestic Inverter Battery Enclosure & Texture Study",
         tag: "Parametric Surface Texture & Heavy-Duty Load Linkages",
-        desc: "Re-engineered heavy 150 Ah tall-tubular inverter battery housings into a modern domestic hardware asset with aerated stiffness dimples and dual rope pivot handles.",
+        desc: "Re-Designed heavy 150 Ah tall-tubular inverter battery housings into a modern domestic hardware asset with aerated stiffness dimples and dual rope pivot handles.",
         imageId: "commercial-inverter-battery-housing",
         specs: [
           "High-Impact Polypropylene Shell",

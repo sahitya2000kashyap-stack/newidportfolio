@@ -47,21 +47,23 @@ export const CERTIFICATIONS_AND_AWARDS = [
 export const HONORS_AND_CREDENTIALS = [
   {
     id: "blender-extension",
-    title: "Official Blender Extension Published",
-    subtitle: "ID RenderFlo — KeyShot-Style Studio & CAD Pipeline",
-    organization: "Blender Foundation Extensions Platform",
-    tag: "Software Release",
-    description: "Architected, packaged, and published ID RenderFlo to the official extensions directory (extensions.blender.org) with multi-OS pre-compiled wheels for Blender 4.2+ LTS to 5.2+.",
+    title: "Official Blender Extension",
+    subtitle: "ID RenderFlo — CAD & Studio Pipeline for Blender",
+    organization: "Blender Foundation",
+    period: "2024 — Present",
+    tag: "Blender 4.2+ LTS",
+    desc: "Architected, packaged, and published to the official Blender Extensions platform with pre-bundled wheels across Windows, Linux, and macOS.",
     link: "https://extensions.blender.org/add-ons/id-renderflo/",
     linkLabel: "extensions.blender.org"
   },
   {
     id: "yanko-design",
-    title: "Yanko Design International Feature",
+    title: "Yanko Design Feature",
     subtitle: "Dual-Mode Hot Glue Gun Concept Redesign",
-    organization: "Yanko Design Publication",
-    tag: "Design Publication",
-    description: "Featured internationally for transformative tool ergonomics, rotating kinematic activation mechanism, and premium houseware CMF semantics inspired by Joseph Joseph.",
+    organization: "Yanko Design International",
+    period: "Sept 2024",
+    tag: "Publication",
+    desc: "Featured internationally for transformative tool ergonomics, rotating kinematic activation mechanism, and Joseph Joseph-inspired houseware CMF.",
     link: "https://www.yankodesign.com/2024/09/27/this-modern-glue-gun-concept-is-inspired-by-the-houseware-brand-joseph-joseph/",
     linkLabel: "yankodesign.com"
   },
@@ -69,25 +71,32 @@ export const HONORS_AND_CREDENTIALS = [
     id: "indiaskills-gold",
     title: "IndiaSkills Gold Medalist",
     subtitle: "Delhi State Gold & Regional Gold Medalist",
-    organization: "National Skill Development Corporation / WorldSkills India",
+    organization: "WorldSkills India / NSDC",
+    period: "2021",
     tag: "National Honors",
-    description: "Awarded Gold Medals in Mechanical Engineering CAD & Industrial Design across Delhi State and Northern Regional WorldSkills / IndiaSkills competitions."
+    desc: "Awarded Gold Medals in Mechanical Engineering CAD & Industrial Design across Delhi State and Northern Regional WorldSkills competitions."
   },
   {
     id: "cswp",
-    title: "CSWP — Certified SOLIDWORKS Professional",
-    subtitle: "Advanced Mechanical Design & Complex Assemblies",
+    title: "CSWP — SOLIDWORKS Professional",
+    subtitle: "Mechanical Design (Advanced Parts & Assemblies)",
     organization: "Dassault Systèmes",
-    tag: "Professional Certification",
-    description: "Certified proficiency in complex parametric part modeling, kinematic assembly mechanics, multi-body configurations, and advanced DFM drawings."
+    period: "March 2022",
+    tag: "ID: C-HMES8F2RX9",
+    desc: "Certified proficiency in complex parametric part modeling, kinematic assembly mechanics, and manufacturing drawings.",
+    link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-HMES8F2RX9",
+    linkLabel: "Verify Certificate"
   },
   {
     id: "cswa",
-    title: "CSWA — Certified SOLIDWORKS Associate",
-    subtitle: "Additive Manufacturing & Mechanical Modeling",
+    title: "CSWA — SOLIDWORKS Associate",
+    subtitle: "Additive Manufacturing (DFAM & 3D Printing)",
     organization: "Dassault Systèmes",
-    tag: "Industry Certification",
-    description: "Certified in Additive Manufacturing (DFAM), 3D printing geometries, topology optimization, and core SolidWorks engineering foundations."
+    period: "March 2022",
+    tag: "ID: C-J6NKQF4RXT",
+    desc: "Certified proficiency in Design for Additive Manufacturing, topology optimization, and 3D printing engineering foundations.",
+    link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-J6NKQF4RXT",
+    linkLabel: "Verify Certificate"
   }
 ];
 

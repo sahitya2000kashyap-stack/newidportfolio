@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Download, Award, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Download } from 'lucide-react';
 import ProjectImage from '../components/ProjectImage';
 import BrandLogos from '../components/BrandLogos';
 import { GraduationCapIcon, WrenchIcon } from '../components/Icons';
@@ -158,75 +158,73 @@ export default function AboutPage() {
 
           </div>
 
-          {/* Dedicated Section: Recognition, Certifications & Publications */}
+          {/* Recognition & Certifications */}
           <div className="pt-20 border-t border-neutral-800">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-              <div>
-                <div className="inline-flex items-center gap-2 mb-3 text-[10px] font-bold text-orange-400 uppercase tracking-widest font-mono">
-                  <Award className="w-3.5 h-3.5 text-orange-400" />
-                  <span>Honors // Certifications // Releases</span>
-                </div>
-                <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight">
-                  Recognition, Certifications &amp; Publications
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+              
+              <div className="lg:col-span-5">
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-4">
+                  Honors &amp; Certifications
                 </h3>
+                <p className="text-neutral-400 text-sm font-light leading-relaxed max-w-sm">
+                  Official software releases, national CAD medals, design publications, and verified Dassault Systèmes credentials.
+                </p>
               </div>
-              <p className="text-neutral-400 text-sm font-light max-w-md">
-                Official software release on Blender Extensions, national skill competition medals, international design features, and certified Dassault Systèmes credentials.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {HONORS_AND_CREDENTIALS.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="p-7 bg-neutral-800/40 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-colors flex flex-col justify-between space-y-5 group"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-950/40 border border-orange-500/20 px-2.5 py-1 rounded-full">
-                        {item.tag}
-                      </span>
-                      {item.link && (
-                        <a 
-                          href={item.link} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          className="text-neutral-500 hover:text-white transition-colors"
-                          title={`Open ${item.linkLabel || 'link'}`}
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
-                      )}
+              <div className="lg:col-span-7">
+                <div className="space-y-8">
+                  {HONORS_AND_CREDENTIALS.map((item, idx) => (
+                    <div 
+                      key={idx} 
+                      className="p-4 -mx-4 rounded-xl border border-transparent hover:border-neutral-800 hover:bg-neutral-800/30 transition-all duration-200 flex flex-col md:flex-row justify-between gap-4 border-b border-neutral-800 pb-8 last:border-0"
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-xl font-medium text-white">{item.title}</h4>
+                          {item.link && (
+                            <a 
+                              href={item.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="text-neutral-500 hover:text-white transition-colors"
+                              title={`Verify ${item.title}`}
+                            >
+                              <ArrowUpRight className="w-4 h-4" />
+                            </a>
+                          )}
+                        </div>
+                        <p className="text-neutral-400 text-sm mt-1">{item.subtitle}</p>
+                        <p className="text-neutral-500 text-xs font-mono mt-1">{item.organization}</p>
+                      </div>
+                      <div className="md:text-right flex flex-col md:items-end gap-1">
+                        <div className="flex items-center md:justify-end gap-2">
+                          <span className="text-neutral-300 text-sm font-mono font-medium">{item.period}</span>
+                          {item.tag && (
+                            <span className="text-neutral-500 text-xs font-mono">
+                              • {item.tag}
+                            </span>
+                          )}
+                        </div>
+                        {item.link ? (
+                          <a 
+                            href={item.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-neutral-400 hover:text-white text-xs font-mono inline-flex items-center gap-1 transition-colors underline underline-offset-4 decoration-neutral-700 hover:decoration-white"
+                          >
+                            <span>{item.linkLabel || 'Verify'}</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        ) : null}
+                        <p className="text-neutral-400 text-sm max-w-sm md:text-right font-light mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-base font-medium text-white leading-snug group-hover:text-orange-300 transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs font-mono text-neutral-400 mt-1">
-                        {item.subtitle}
-                      </p>
-                    </div>
-                    <p className="text-xs text-neutral-400 font-light leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                  
-                  <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-[11px] font-mono text-neutral-500">
-                    <span>{item.organization}</span>
-                    {item.link && (
-                      <a 
-                        href={item.link} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="text-neutral-400 hover:text-orange-400 flex items-center gap-1 transition-colors"
-                      >
-                        <span>{item.linkLabel}</span>
-                        <ArrowUpRight className="w-3 h-3" />
-                      </a>
-                    )}
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
             </div>
           </div>
 
