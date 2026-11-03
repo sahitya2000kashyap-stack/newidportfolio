@@ -115,7 +115,7 @@ export default function ExperimentsPage() {
             <div className="flex flex-wrap items-center gap-2.5">
               <span className="bg-orange-500 text-black px-3 py-1 rounded-full font-mono text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-black" />
-                <span>v3.2.0</span>
+                <span>v3.3.0</span>
               </span>
               <a 
                 href="https://extensions.blender.org/add-ons/id-renderflo/"
@@ -180,15 +180,30 @@ export default function ExperimentsPage() {
               </a>
 
               <a 
-                href="/assets/id_renderflo-3.2.0-website-standalone.zip" 
-                download="id_renderflo-3.2.0-website-standalone.zip"
+                href="/assets/id_renderflo-3.3.0-website-standalone.zip" 
+                download="id_renderflo-3.3.0-website-standalone.zip"
                 className="inline-flex items-center gap-1.5 bg-white hover:bg-neutral-100 active:scale-95 text-neutral-900 px-4 py-2.5 rounded-full font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-md group"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Download .zip</span>
-                <span className="text-[10px] text-neutral-500 font-normal">108 KB</span>
+                <span className="text-[10px] text-neutral-500 font-normal">424 KB</span>
               </a>
 
+            </div>
+          </div>
+
+          {/* Plugin Video Walkthrough */}
+          <div className="w-full mb-10 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/90 shadow-2xl">
+            <div className="relative w-full aspect-video">
+              <iframe 
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/10DBt2Cq2s4?si=rHB0aVM1yBxrUf5e" 
+                title="ID RenderFlo — Blender Extension Walkthrough & Demo" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+              />
             </div>
           </div>
 
@@ -228,9 +243,9 @@ export default function ExperimentsPage() {
               <div className="w-7 h-7 rounded-lg bg-neutral-800 text-orange-400 flex items-center justify-center">
                 <Eye className="w-3.5 h-3.5" />
               </div>
-              <h3 className="text-sm font-medium text-white">04 // CMF Matrix &amp; Mold-Tech</h3>
+              <h3 className="text-sm font-medium text-white">04 // Materials &amp; CMF Matrix</h3>
               <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                Rapid multi-part colorway variations, procedural VDI 3400 spark erosion textures, and brushed or anodized aluminum finishes with 1-click topbar duplication.
+                Scrollable material shelf with live 3D preview sizing, 14 studio environments, procedural VDI 3400 spark erosion textures, and instant 1-click CMF quick-save.
               </p>
             </div>
 
