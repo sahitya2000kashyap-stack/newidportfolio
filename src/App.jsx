@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
@@ -34,6 +34,16 @@ export default function App() {
               <Route path="/personal" element={<PlaygroundPage />} />
               <Route path="/experiments" element={<ExperimentsPage />} />
               <Route path="/about" element={<AboutPage />} />
+
+              {/* Canonical Redirects for Legacy / Search Engine Indexing */}
+              <Route path="/index.html" element={<Navigate to="/" replace />} />
+              <Route path="/index" element={<Navigate to="/" replace />} />
+              <Route path="/home" element={<Navigate to="/" replace />} />
+              <Route path="/about.html" element={<Navigate to="/about" replace />} />
+              <Route path="/commercial.html" element={<Navigate to="/commercial" replace />} />
+              <Route path="/playground.html" element={<Navigate to="/playground" replace />} />
+              <Route path="/experiments.html" element={<Navigate to="/experiments" replace />} />
+
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

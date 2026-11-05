@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, Navigate } from 'react-router-dom';
 import { ArrowLeft, Home, Compass, Wrench, Mail } from 'lucide-react';
 import { updateMetaTags } from '../hooks/useSEO';
 
 export default function NotFoundPage() {
+  const location = useLocation();
+
+  // Automatic recovery for legacy URLs ending in .html or index
+  if (location.pathname.endsWith('.html') || location.pathname === '/index') {
+    const cleanPath = location.pathname.replace(/\.html$/, '');
+    return <Navigate to={cleanPath === '/index' ? '/' : cleanPath} replace />;
+  }
+
   useEffect(() => {
     updateMetaTags({
       title: 'Page Not Found (404) | Sahitya Kashyap',

@@ -9,6 +9,16 @@ const STATIC_ROUTE_META = {
     description: 'Portfolio of Sahitya Kashyap, Industrial Designer at Future Factory. Specializing in consumer appliances, SolidWorks CAD, toolmaking DFM, and CMF.',
     canonical: '/'
   },
+  '/index.html': {
+    title: 'Sahitya Kashyap | Industrial Designer & CAD Specialist',
+    description: 'Portfolio of Sahitya Kashyap, Industrial Designer at Future Factory. Specializing in consumer appliances, SolidWorks CAD, toolmaking DFM, and CMF.',
+    canonical: '/'
+  },
+  '/index': {
+    title: 'Sahitya Kashyap | Industrial Designer & CAD Specialist',
+    description: 'Portfolio of Sahitya Kashyap, Industrial Designer at Future Factory. Specializing in consumer appliances, SolidWorks CAD, toolmaking DFM, and CMF.',
+    canonical: '/'
+  },
   '/about': {
     title: 'About Sahitya Kashyap | Industrial Designer & Toolmaker',
     description: 'Industrial Designer with a DTU B.Des, 4 years of Tool & Die craftsmanship, CSWP certification, and mass-market appliance experience at Future Factory.',
