@@ -14,6 +14,9 @@ export default function ProjectDetailPage() {
   }, [slug]);
 
   const project = ALL_PROJECTS.find(p => p.slug === slug);
+  const isArchiveProject = ['joseph-joseph', 'coordinate-war', 'moodi', 'scotch'].includes(project?.slug);
+  const showCaptions = !isArchiveProject;
+  const showSpecs = !isArchiveProject && !!project?.specs;
 
   if (!project) {
     return (
@@ -142,7 +145,9 @@ export default function ProjectDetailPage() {
                     className="w-full h-full"
                   />
                 </div>
-                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+                {showCaptions && block.caption && (
+                  <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+                )}
               </section>
             );
           }
@@ -171,7 +176,9 @@ export default function ProjectDetailPage() {
                 <div className={`w-full ${block.aspectClass || 'aspect-[16/9]'} rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100`}>
                   <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                 </div>
-                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+                {showCaptions && block.caption && (
+                  <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+                )}
               </section>
             );
           }
@@ -214,7 +221,9 @@ export default function ProjectDetailPage() {
                 <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
                   <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                 </div>
-                <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+                {showCaptions && block.caption && (
+                  <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2.5">fig.{idx + 1} — {block.caption}</span>
+                )}
               </section>
             );
           }
@@ -233,7 +242,9 @@ export default function ProjectDetailPage() {
                     <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
                       <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                     </div>
-                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                    {showCaptions && block.caption && (
+                      <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                    )}
                   </div>
                 </div>
               </section>
@@ -249,7 +260,9 @@ export default function ProjectDetailPage() {
                     <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
                       <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                     </div>
-                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                    {showCaptions && block.caption && (
+                      <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                    )}
                   </div>
                   <div className="lg:col-span-5 order-1 lg:order-2 space-y-4">
                     <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block">// {block.tag}</span>
@@ -298,7 +311,7 @@ export default function ProjectDetailPage() {
                 <div className={`w-full ${block.aspectClass || 'aspect-[16/9] md:aspect-[21/9]'} bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 shadow-sm`}>
                   <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                 </div>
-                {block.caption && (
+                {showCaptions && block.caption && (
                   <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-3 text-center">
                     {block.caption}
                   </span>
@@ -384,7 +397,9 @@ export default function ProjectDetailPage() {
                     <div className={`w-full ${block.aspectClass || 'aspect-[16/10]'} bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200`}>
                       <ProjectImage id={block.imageId} altText={block.caption} fitMode={block.fitMode || "object-cover"} className="w-full h-full" />
                     </div>
-                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                    {showCaptions && block.caption && (
+                      <span className="font-mono text-[11px] text-neutral-400 tracking-wider block mt-2">fig.{idx + 1} — {block.caption}</span>
+                    )}
                   </div>
                 </div>
               </section>
@@ -401,7 +416,7 @@ export default function ProjectDetailPage() {
         })}
 
         {/* Technical DFM Specifications Drawer */}
-        {project.specs && (
+        {showSpecs && project.specs && (
           <div className="p-8 md:p-12 bg-neutral-900 text-white rounded-3xl border border-neutral-800 font-mono text-xs">
             <h2 className="text-neutral-400 font-semibold mb-6 flex items-center gap-2 text-xs uppercase tracking-wider">
               <Wrench className="w-4 h-4 text-orange-400" />

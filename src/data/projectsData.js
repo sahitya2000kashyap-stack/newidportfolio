@@ -228,13 +228,7 @@ export const ARCHIVE_PROJECTS = [
         aspectClass: "aspect-[16/9]",
         fitMode: "object-cover"
       }
-    ],
-    specs: {
-      material: "High-impact heat-resistant Polyamide (PA66-GF) + Food-grade Silicone Boot",
-      finish: "Velvet Soft-touch Matte body with glossy functional highlight levers",
-      tooling: "Internal central pivot joint with detent indexing and flexible silicone wire conduit",
-      software: "SolidWorks, Blender (Procedural Silicone & Cycles Renders), KeyShot Studio, Clay Ergonomics"
-    }
+    ]
   },
 
   /* 2. TOY DESIGN */
@@ -346,13 +340,7 @@ export const ARCHIVE_PROJECTS = [
         desc: "Watch the live demonstration of the 180° rotary aiming turret, 2D Cartesian coordinate indexing, and marble launch feedback.",
         youtubeId: "TGUaLafrzao"
       }
-    ],
-    specs: {
-      material: "Precision FSC MDF / Pine composite sheets + Low-friction Delrin bushings",
-      finish: "Direct UV Screen Printed Graphics with clear matte protective coat",
-      tooling: "High-yield CNC laser cutting and die nesting optimization (<6% scrap rate)",
-      software: "Rhino 3D, Blender (Product Stills & Assembly Exploded Views), SolidWorks, AutoCAD"
-    }
+    ]
   },
 
   /* 3. LAMP DESIGN */
@@ -499,13 +487,7 @@ export const ARCHIVE_PROJECTS = [
         aspectClass: "aspect-[16/9] md:aspect-[21/9] lg:aspect-[21/9]",
         fitMode: "object-cover"
       }
-    ],
-    specs: {
-      material: "Shade: Translucent PETG (Continuous AM). Base: Matte ABS Injection Resins",
-      finish: "Diffuser: Optical refractive wave fluting. Base: Mold-Tech MT-11010 Fine Matte",
-      tooling: "Single-action 2-plate tool using non-planar curves to avoid costly side-actions",
-      software: "Rhino, Grasshopper (GhPython), Blender (Procedural Shaders), SolidWorks, Arduino"
-    }
+    ]
   },
 
   /* 4. TAPE DISPENSER */
@@ -656,13 +638,7 @@ export const ARCHIVE_PROJECTS = [
         aspectClass: "aspect-[16/10] md:aspect-[16/9]",
         fitMode: "object-contain bg-white"
       }
-    ],
-    specs: {
-      material: "Optical-grade Polycarbonate (PC) + High-Tack Overmoulded TPE Grip",
-      finish: "SPI-A2 High Polish Body with VDI 24 Textured Thumb Indents",
-      tooling: "2-plate injection mould with dual mechanical slide lifters for core spool hub",
-      software: "SolidWorks, Blender (Ideation & Rendering), KeyShot Studio, Rapid 3D Mockups"
-    }
+    ]
   }
 ];
 
