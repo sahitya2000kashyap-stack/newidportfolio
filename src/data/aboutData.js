@@ -50,7 +50,7 @@ export const HONORS_AND_CREDENTIALS = [
     title: "Official Blender Extension",
     subtitle: "ID RenderFlo - CAD & Studio Pipeline (Blender 4.2+ LTS)",
     organization: "Blender Foundation",
-    period: "2024",
+    period: "2026",
     link: "https://extensions.blender.org/add-ons/id-renderflo/",
     linkLabel: "extensions.blender.org"
   },

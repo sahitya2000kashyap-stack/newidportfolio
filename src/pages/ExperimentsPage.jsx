@@ -40,9 +40,6 @@ export default function ExperimentsPage() {
           <p>
             I have an allergic reaction to manual, repetitive friction. I would genuinely rather spend three hours engineering a clever, repeatable workflow using whatever resources are right in front of me than spend twenty minutes doing brain-numbing repetitive tasks by hand.
           </p>
-          <p>
-            It is not always about writing code; it is about <strong className="font-medium text-neutral-900">systematic leverage</strong>. Eliminating redundant clicks, standardizing studio rigs, and building pipelines that get out of the way so the physical industrial design craft can flourish.
-          </p>
         </div>
       </header>
 
