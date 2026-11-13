@@ -5,17 +5,17 @@ import { ALL_PROJECTS } from '../data/projectsData';
 
 const STATIC_ROUTE_META = {
   '/': {
-    title: 'Sahitya Kashyap | Industrial Designer & CAD Specialist',
+    title: 'Sahitya Kashyap | Industrial Designer',
     description: 'Portfolio of Sahitya Kashyap, Industrial Designer at Future Factory. Specializing in consumer appliances, SolidWorks CAD, toolmaking DFM, and CMF.',
     canonical: '/'
   },
   '/index.html': {
-    title: 'Sahitya Kashyap | Industrial Designer & CAD Specialist',
+    title: 'Sahitya Kashyap | Industrial Designer',
     description: 'Portfolio of Sahitya Kashyap, Industrial Designer at Future Factory. Specializing in consumer appliances, SolidWorks CAD, toolmaking DFM, and CMF.',
     canonical: '/'
   },
   '/index': {
-    title: 'Sahitya Kashyap | Industrial Designer & CAD Specialist',
+    title: 'Sahitya Kashyap | Industrial Designer',
     description: 'Portfolio of Sahitya Kashyap, Industrial Designer at Future Factory. Specializing in consumer appliances, SolidWorks CAD, toolmaking DFM, and CMF.',
     canonical: '/'
   },
