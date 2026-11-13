@@ -4,31 +4,79 @@ import { Lock, ArrowUpRight, Sparkles } from 'lucide-react';
 import ProjectImage from '../components/ProjectImage';
 import { GraduationCapIcon } from '../components/Icons';
 import { FLAGSHIP_2026_PROJECTS, ARCHIVE_PROJECTS } from '../data/projectsData';
+import renderFloIcon from '../assets/id-renderflo-icon.webp';
 
 /* --- PAGE 1: HOME --- */
 export default function HomePage() {
   return (
     <div>
-      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-24 pb-20">
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2.5 mb-8">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
-            </span>
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-mono">
-              Industrial Designer @ Future Factory, Mumbai
-            </h2>
+      <header className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 md:pt-24 pb-14 md:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          
+          {/* Main Hero Copy (Left) */}
+          <div className="lg:col-span-7 xl:col-span-8">
+            <div className="inline-flex items-center gap-2.5 mb-6 md:mb-8">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
+              </span>
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-mono">
+                Industrial Designer @ Future Factory, Mumbai
+              </h2>
+            </div>
+            
+            <h1 className="text-5xl md:text-[80px] lg:text-[84px] font-medium leading-[1.05] tracking-tight text-neutral-900 mb-6 md:mb-8">
+              Designing for <br />
+              <span className="text-neutral-400">the real world.</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-neutral-500 max-w-2xl leading-relaxed font-light">
+              Industrial designer translating complex human behaviors into refined physical products. Leveraging a foundation in Tool &amp; Die precision to ensure that expressive forms, ergonomic interactions, and premium CMF translate flawlessly into high-volume manufacturing.
+            </p>
           </div>
-          
-          <h1 className="text-5xl md:text-[84px] font-medium leading-[1.05] tracking-tight text-neutral-900 mb-10">
-            Designing for <br />
-            <span className="text-neutral-400">the real world.</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-neutral-500 max-w-3xl leading-relaxed font-light">
-            Industrial designer translating complex human behaviors into refined physical products. Leveraging a foundation in Tool &amp; Die precision to ensure that expressive forms, ergonomic interactions, and premium CMF translate flawlessly into high-volume manufacturing.
-          </p>
+
+          {/* Right Column: Compact Highlight Card */}
+          <div className="lg:col-span-5 xl:col-span-4 flex lg:justify-end">
+            <Link 
+              to="/experiments" 
+              className="group w-full max-w-md p-4 sm:p-5 bg-neutral-950 text-white rounded-2xl border border-neutral-800 hover:border-orange-500/60 shadow-lg hover:shadow-orange-500/10 transition-all duration-300 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-orange-500/20 transition-colors" />
+
+              <div className="relative z-10 flex items-start gap-3.5">
+                <div className="relative shrink-0">
+                  <img 
+                    src={renderFloIcon} 
+                    alt="ID RenderFlo Blender Extension" 
+                    className="w-11 h-11 rounded-xl object-cover border border-neutral-700 group-hover:scale-105 transition-transform duration-300 shadow-sm" 
+                  />
+                  <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                  </span>
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="inline-flex items-center gap-1 font-mono text-[9px] font-bold uppercase tracking-wider text-orange-400 bg-orange-950/70 border border-orange-500/30 px-2 py-0.5 rounded-full">
+                      <Sparkles className="w-2.5 h-2.5 text-orange-400" />
+                      What I'm Learning &amp; Doing Currently
+                    </span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                  </div>
+
+                  <h3 className="text-xs sm:text-sm font-medium text-white group-hover:text-orange-300 transition-colors leading-snug">
+                    ID RenderFlo — Industrial Design Rendering Pipeline
+                  </h3>
+
+                  <p className="text-[11px] text-neutral-400 font-light mt-1 leading-relaxed">
+                    Official Blender extension for native STEP/Rhino CAD bridge, procedural HDRI pins, and CMF matrix variants.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
         </div>
       </header>
 
